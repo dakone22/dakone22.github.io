@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ОП. Экзамен</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#синтаксис-и-семантика-языков-программирования.-алфавит-языка-delphi-pascal.-описание-синтаксиса-языка-синтаксические-диаграммы.-примеры.">1. Синтаксис и семантика языков программирования. Алфавит языка Delphi Pascal. Описание синтаксиса языка: синтаксические диаграммы. Примеры.</a></li>
+<li><a href="#представление-данных-в-delphi-pascal-константы-и-переменные.-классификация-скалярных-типов-данных-операции-над-ними.-примеры.">2. Представление данных в Delphi Pascal: константы и переменные. Классификация скалярных типов данных, операции над ними. Примеры.</a>
+<ul>
+<li><a href="#классификация-типов-данных-языка">Классификация типов данных языка</a></li>
+</ul>
+</li>
+<li><a href="#совместимость-типов-данных-и-операции-преобразования-типов.-примеры.">3. Совместимость типов данных и операции преобразования типов. Примеры.</a>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><a href="#присваивание-условный-оператор-оператор-выбора.-синтаксис-операторов-их-особенности-и-примеры-использования.">4. Присваивание, условный оператор, оператор выбора. Синтаксис операторов, их особенности и примеры использования.</a>
+<ul>
+<li><a href="#присваивание-">Присваивание :=</a></li>
+<li><a href="#условный-оператор-if">Условный оператор if</a></li>
+<li><a href="#оператор-выбора-case">Оператор выбора case</a></li>
+</ul>
+</li>
+<li><a href="#операторы-циклов-delphi-pascal.-синтаксис-операторов-их-особенности-и-примеры-использования.">5. Операторы циклов Delphi Pascal. Синтаксис операторов, их особенности и примеры использования.</a>
+<ul>
+<li></li>
+<li><a href="#счётный-цикл-for-loop">Счётный цикл for-loop</a></li>
+<li><a href="#итерационные-циклы">Итерационные циклы</a></li>
+</ul>
+</li>
+<li><a href="#поисковый-цикл.-неструктурная-и-структурная-реализации-поискового-цикла.">6. Поисковый цикл. Неструктурная и структурная реализации поискового цикла.</a>
+<ul>
+<li><a href="#неструктурная-реализация-поискового-цикла">Неструктурная реализация поискового цикла</a></li>
+<li><a href="#структурная-реализация-поискового-цикла-№1-через-while-do">Структурная реализация поискового цикла №1 (через while-do)</a></li>
+</ul>
+</li>
+<li><a href="#массивы-delphi-pascal.-описание-операции-над-массивами-и-их-элементами.-примеры.">7. Массивы Delphi Pascal. Описание, операции над массивами и их элементами. Примеры.</a>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><a href="#строки-delphi-pascal.-описание-операции-над-строками-и-их-элементами.-примеры.">8. Строки Delphi Pascal. Описание, операции над строками и их элементами. Примеры.</a>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><a href="#множества-delphi-pascal.-описание-операции-над-множествами-и-их-элементами.-примеры.">9. Множества Delphi Pascal. Описание, операции над множествами и их элементами. Примеры.</a>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><a href="#записи-delphi-pascal.-описание-операции-над-записями-и-их-элементами.-примеры.">10. Записи Delphi Pascal. Описание, операции над записями и их элементами. Примеры.</a>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><a href="#процедуры-и-функции.-определение-описание-особенности.-примеры.">11. Процедуры и функции. Определение, описание, особенности. Примеры.</a>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><a href="#способы-передачи-данных-в-подпрограмму-на-delphi-pascal.-примеры.">12. Способы передачи данных в подпрограмму на Delphi Pascal. Примеры.</a>
+<ul>
+<li><a href="#типы-параметров">Типы параметров</a></li>
+</ul>
+</li>
+<li><a href="#локальные-и-глобальные-переменные-законы-«видимости»-идентификаторов.-примеры.">13. Локальные и глобальные переменные, законы «видимости» идентификаторов. Примеры.</a></li>
+<li><a href="#формальные-и-фактические-параметры-подпрограмм-delphi-pascal.-примеры.">14. Формальные и фактические параметры подпрограмм Delphi Pascal. Примеры.</a></li>
+<li><a href="#параметры-строки-параметры-массивы.-примеры.">15. Параметры-строки, параметры-массивы. Примеры.</a></li>
+<li><a href="#принципы-разработки-универсальных-подпрограмм-«открытые»-массивы-и-строки.-примеры.">16. Принципы разработки универсальных подпрограмм: «открытые» массивы и строки. Примеры.</a></li>
+<li><a href="#открытые-массивы">Открытые массивы</a>
+<ul>
+<li><a href="#открытые-строки">Открытые строки</a></li>
+</ul>
+</li>
+<li><a href="#принципы-разработки-универсальных-подпрограмм-нетипизированные-параметры-параметры-процедурного-типа.-примеры.">17. Принципы разработки универсальных подпрограмм: нетипизированные параметры, параметры процедурного типа. Примеры.</a>
+<ul>
+<li><a href="#нетипизированные-параметры.">Нетипизированные параметры.</a></li>
+<li><a href="#параметры-процедурного-типа">Параметры процедурного типа</a></li>
+</ul>
+</li>
+<li><a href="#структура-модуля-delphi-pascal.-законы-видимости-идентификаторов.-доступ-к-«перекрытым»-идентификаторам.-примеры.">18. Структура модуля Delphi Pascal. Законы видимости идентификаторов. Доступ к «перекрытым» идентификаторам. Примеры.</a>
+<ul>
+<li><a href="#структура-модуля">Структура модуля:</a></li>
+<li><a href="#законы-видимости-идентификаторов.-доступ-к-«перекрытым»-идентификаторам">Законы видимости идентификаторов. Доступ к «перекрытым» идентификаторам</a></li>
+</ul>
+</li>
+<li><a href="#рекурсия.-виды-рекурсии.-особенности-программирования.-достоинства-и-недостатки.-пример.">19. Рекурсия. Виды рекурсии. Особенности программирования. Достоинства и недостатки. Пример.</a></li>
+<li><a href="#адресация-динамической-памяти-понятие-адреса-операции-получения-адреса-и-разыменования.-процедуры-получения-памяти-и-освобождения-ее.-примеры.">20. Адресация динамической памяти: понятие адреса, операции получения адреса и разыменования. Процедуры получения памяти и освобождения ее. Примеры.</a>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><a href="#списковые-структуры-данных.-классификация-и-основные-приемы-работы-с-ними-создание-элемента-добавление-элемента-к-списку-удаление-элемента-из-списка.-область-применения-списковых-структур-данных.-пример.">21. Списковые структуры данных. Классификация и основные приемы работы с ними: создание элемента, добавление элемента к списку, удаление элемента из списка. Область применения списковых структур данных. Пример.</a>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><a href="#основы-файловой-системы-файл-каталог-дисковод-полное-имя-файла-внутреннее-представление-информации-в-файле.-файловая-переменная.-операции-открытия-и-закрытия-файлов.-примеры.">22. Основы файловой системы: файл, каталог, дисковод, полное имя файла, внутреннее представление информации в файле. Файловая переменная. Операции открытия и закрытия файлов. Примеры.</a>
+<ul>
+<li>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#текстовые-файлы.-внутреннее-представление-информации-в-файле.-операции-над-файлами.-пример.">23. Текстовые файлы. Внутреннее представление информации в файле. Операции над файлами. Пример.</a>
+<ul>
+<li><a href="#операции-с-текстовыми-файлами">Операции с текстовыми файлами</a></li>
+</ul>
+</li>
+<li><a href="#типизированные-файлы-внутреннее-представление-информации-в-файле.-операции-над-файлами.-пример.">24. Типизированные файлы: внутреннее представление информации в файле. Операции над файлами. Пример.</a>
+<ul>
+<li><a href="#процедуры-и-функции-обработки-типизированных-файлов">Процедуры и функции обработки типизированных файлов</a></li>
+</ul>
+</li>
+<li><a href="#нетипизированные-файлы.-внутреннее-представление-информации-в-файле.-операции-над-файлами.-пример.">25. Нетипизированные файлы. Внутреннее представление информации в файле. Операции над файлами. Пример.</a>
+<ul>
+<li><a href="#процедуры-и-функции-обработки-нетипизированных-файлов">Процедуры и функции обработки нетипизированных файлов</a></li>
+</ul>
+</li>
+<li><a href="#классы-консольного-режима-delphi-описание-классов-поля-и-методы-объявление-объектов-класса-доступ-к-полям-и-методам-объекта-ограничение-доступа.-пример.">26. Классы консольного режима Delphi: описание классов, поля и методы, объявление объектов класса, доступ к полям и методам объекта, ограничение доступа. Пример.</a></li>
+<li><a href="#классы-консольного-режима-delphi-способы-инициализация-полей.-неявный-параметр-self.-пример.">27. Классы консольного режима Delphi: Способы инициализация полей. Неявный параметр Self. Пример.</a></li>
+<li><a href="#процедурная-и-объектная-декомпозиция.-диаграммы-классов.-отношения-между-классами.-примеры.">28. Процедурная и объектная декомпозиция. Диаграммы классов. Отношения между классами. Примеры.</a></li>
+<li><a href="#динамические-объекты-и-объекты-с-динамическими-полями-в-консольном-режиме-delphi.-примеры.">29. Динамические объекты и объекты с динамическими полями в консольном режиме Delphi. Примеры.</a>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><a href="#технология-событийного-программирования.-события-windows-сообщения-и-события-delphi.-основные-события-delphi.-примеры.">30. Технология событийного программирования. События Windows, сообщения и события Delphi. Основные события Delphi. Примеры.</a>
+<ul>
+<li><a href="#события-delphi-и-их-обработчики">События Delphi и их обработчики</a></li>
+<li><a href="#примеры-событий-delphi-обрабатываемые-объектами-класса-tform">Примеры событий Delphi, обрабатываемые объектами класса TForm</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <h1 id="синтаксис-и-семантика-языков-программирования.-алфавит-языка-delphi-pascal.-описание-синтаксиса-языка-синтаксические-диаграммы.-примеры.">1. Синтаксис и семантика языков программирования. Алфавит языка Delphi Pascal. Описание синтаксиса языка: синтаксические диаграммы. Примеры.</h1>
+<p><strong>Синтаксис</strong> – правила, определяющие допустимые конструкции языка, построенные из символов его алфавита.</p>
+<p><strong>Семантика</strong> – правила, определяющие смысл синтаксически корректных предложений.</p>
+<p>Алфавит языка программирования <em>Delphi Pascal</em> включает:</p>
+<ol>
+<li>латинские буквы <strong>без различия</strong> строчных и прописных + символ <code>_</code> (считается как буква);</li>
+<li>арабские цифры;</li>
+<li>шестнадцатеричные цифры: <code>0..9</code>, <code>а..f</code> или <code>A..F</code>;</li>
+<li>специальные символы: <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>=</code> <code>:=</code> <code>;</code> и т. д.;</li>
+<li>служебные слова.</li>
+</ol>
+<p><strong>Синтаксическая диаграмма</strong> – это направленный граф с одним входным ребром и одним выходным ребром и помеченными вершинами.</p>
+<h1 id="представление-данных-в-delphi-pascal-константы-и-переменные.-классификация-скалярных-типов-данных-операции-над-ними.-примеры.">2. Представление данных в Delphi Pascal: константы и переменные. Классификация скалярных типов данных, операции над ними. Примеры.</h1>
+<ul>
+<li>Данные.
+<ol>
+<li><strong>Константы</strong> – данные, не изменяемые в процессе выполнения программы.
+<ol>
+<li><strong>Литералы</strong> – константы, указанные непосредственно в тексте программы.</li>
+<li><strong>Поименованные константы</strong> – константы, обращение к которым выполняется по имени.</li>
+</ol>
+</li>
+<li><strong>Переменные</strong> – поименованные данные, которые могут изменяться в процессе выполнения программы.</li>
+</ol>
+</li>
+</ul>
+<h2 id="классификация-типов-данных-языка">Классификация типов данных языка</h2>
+<ol>
+<li>Простой<br>
+1. Порядковые<br>
+1. Целые;<br>
+2. Логические;<br>
+3. Символ;<br>
+4. <em>Перечисление;</em><br>
+5. <em>Отрезок (Интервал);</em><br>
+3. Вещественный<br>
+1. Вещественные;<br>
+2. Большое целое;</li>
+</ol>
+<h1 id="совместимость-типов-данных-и-операции-преобразования-типов.-примеры.">3. Совместимость типов данных и операции преобразования типов. Примеры.</h1>
+<p>По правилам <strong>совместимы</strong>:</p>
+<ol>
+<li>все целые типы между собой;</li>
+<li>все вещественные типы между собой;</li>
+<li>отрезок базового типа и базовый тип;</li>
+<li>два отрезка одного и того же базового типа;</li>
+<li>символ и строка.</li>
+</ol>
+<h3 id="неявное-преобразование-типов">Неявное преобразование типов</h3>
+<p>Если типы результата и переменной не совпадают, но совместимы, то при выполнении присваивания выполняется <strong>неявное автоматическое преобразование</strong>.</p>
+<h3 id="явное-преобразование-типов">Явное преобразование типов</h3>
+<p>Для несовместимых типов результата и переменной, в которую его необходимо занести, при выполнении присваивания необходимо <strong>явное преобразование типов</strong>, например, посредством специальных функций:</p>
+<ul>
+<li><code>trunc(x: float): int</code> или <code>int(x: float): int</code> – преобразует вещественное число в целое, отбрасывая дробную часть.</li>
+<li><code>round(x: float): int</code> – округляет вещественное число до целого по правилам арифметики.</li>
+<li><code>ord(c: ordinal): int</code> – преобразует значение в его номер.</li>
+<li><code>chr(x: int): Char</code> – преобразует номер символа в символ.</li>
+</ul>
+<h1 id="присваивание-условный-оператор-оператор-выбора.-синтаксис-операторов-их-особенности-и-примеры-использования.">4. Присваивание, условный оператор, оператор выбора. Синтаксис операторов, их особенности и примеры использования.</h1>
+<h2 id="присваивание-">Присваивание <code>:=</code></h2>
+<p>Используется для изменения значений переменных.<br>
+Формат: <code>&lt;идентификатор_переменной&gt; := &lt;выражение&gt;;</code></p>
+<p>Корректное выполнение оператора предполагает, что результат вычисления и переменная правой части <strong>одного типа</strong> или <strong>совместимы по типу</strong>.</p>
+<h2 id="условный-оператор-if">Условный оператор <code>if</code></h2>
+<p>Оператор условной передачи управления используется при обработке вариантов вычислений и реализует конструкцию ветвления.</p>
+<p>Формат: <code>if &lt;логическое_выражение&gt; then &lt;оператор&gt; [else &lt;оператор&gt;];</code></p>
+<p><em>Оператором</em> может быть как простой оператор, так и составной оператор (блок операторов в операторных скобках <code>begin...end</code>)</p>
+<h2 id="оператор-выбора-case">Оператор выбора <code>case</code></h2>
+<p>Оператор позволяет программировать несколько вариантов решения.</p>
+<p>Пример:</p>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">case</span> <span class="token number">1</span> <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">*</span> j <span class="token keyword">of</span>
+    <span class="token number">3</span><span class="token punctuation">:</span>         z<span class="token operator">:=</span>sin<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token number">-1</span><span class="token operator">..</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">:</span> z<span class="token operator">:=</span>cos<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span>       z<span class="token operator">:=</span><span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">end</span><span class="token punctuation">;</span>
+</code></pre>
+<h1 id="операторы-циклов-delphi-pascal.-синтаксис-операторов-их-особенности-и-примеры-использования.">5. Операторы циклов Delphi Pascal. Синтаксис операторов, их особенности и примеры использования.</h1>
+<h3 id="операторы-организации-циклов">Операторы организации циклов</h3>
+<ul>
+<li><strong>Cчетный цикл</strong> – цикл, количество повторений которого известно или можно посчитать. Выход из такого цикла программируется по счетчику (<code>for-loop</code>).</li>
+<li><strong>Итерационный цикл</strong> – цикл, количество повторений которого неизвестно или считается неизвестным при построении цикла. Выход из цикла программируется по выполнению или нарушению условия (<code>while-do</code>, <code>repeat-until</code>).</li>
+<li><strong>Поисковый цикл</strong> имеет два выхода: <em>нашли</em> и <em>перебрали все и не нашли</em>.</li>
+</ul>
+<h2 id="счётный-цикл-for-loop">Счётный цикл <code>for-loop</code></h2>
+<p>Выполняется конкретное количество раз.<br>
+Формат:<br>
+<code>for &lt;переменная-счётчик&gt; := &lt;значение_от&gt; to &lt;значение_по&gt; do &lt;оператор&gt;;</code> (если <em>от</em> &lt; <em>по</em>)<br>
+<code>for &lt;переменная-счётчик&gt; := &lt;значение_от&gt; downto &lt;значение_по&gt; do &lt;оператор&gt;;</code> (если <em>от</em> &gt; <em>по</em>)</p>
+<p>Пример:</p>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">var</span> i<span class="token punctuation">:</span> Integer<span class="token punctuation">;</span>
+<span class="token comment">{...}</span>
+<span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">1</span> <span class="token keyword">to</span> <span class="token number">10</span> <span class="token keyword">do</span>
+    <span class="token keyword">begin</span>
+        x <span class="token operator">:=</span> x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        e <span class="token operator">:=</span> e <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">end</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="итерационные-циклы">Итерационные циклы</h2>
+<h3 id="while-do"><code>while-do</code></h3>
+<p>Выполняется, пока <em>условие <strong>истинно</strong></em>.</p>
+<p>Пример:</p>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">while</span> abs<span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token operator">&gt;=</span> <span class="token number">1e-5</span> <span class="token keyword">do</span>
+    <span class="token keyword">begin</span>
+        x <span class="token operator">:=</span> x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        e <span class="token operator">:=</span> e <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">end</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="repeat-until"><code>repeat-until</code></h3>
+<p>Выполняется, до тех пор, пока <em>условие не станет <strong>истинно</strong></em> (то есть пока условие ложно).<br>
+Первый раз один проход цикла выполняется в любом случае.</p>
+<p>Пример:</p>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">repeat</span>
+    x <span class="token operator">:=</span> x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    e <span class="token operator">:=</span> e <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">until</span> abs<span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">1e-5</span><span class="token punctuation">;</span>
+</code></pre>
+<h1 id="поисковый-цикл.-неструктурная-и-структурная-реализации-поискового-цикла.">6. Поисковый цикл. Неструктурная и структурная реализации поискового цикла.</h1>
+<p><strong>Поисковый цикл</strong> – особый вид цикла, который имеет два случая выхода:</p>
+<ol>
+<li>нашли,</li>
+<li>перебрали все элементы, но не нашли.</li>
+</ol>
+<h2 id="неструктурная-реализация-поискового-цикла">Неструктурная реализация поискового цикла</h2>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">var</span>
+    found<span class="token punctuation">:</span> boolean<span class="token punctuation">;</span>
+
+<span class="token comment">{...}</span>
+found <span class="token operator">:=</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token keyword">true</span> <span class="token keyword">do</span>
+    <span class="token keyword">begin</span>
+        <span class="token comment">{операторы, выполняемые до проверки}</span>
+        
+        <span class="token keyword">if</span> <span class="token comment">{проверка на то, нашли ли необходимое}</span> <span class="token keyword">then</span> <span class="token keyword">begin</span>
+                found <span class="token operator">:=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>  <span class="token comment">// ставим флаг, что нашли</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>          <span class="token comment">// прерываем цикл</span>
+            <span class="token keyword">end</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token comment">{проверка на то, не перебрали ли всё}</span> <span class="token keyword">then</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        
+        <span class="token comment">{операторы, выполняемые после проверки}</span>
+    <span class="token keyword">end</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> found <span class="token keyword">then</span>
+    <span class="token comment">{нашли}</span>
+<span class="token keyword">else</span>
+    <span class="token comment">{не нашли}</span>
+</code></pre>
+<h2 id="структурная-реализация-поискового-цикла-№1-через-while-do">Структурная реализация поискового цикла №1 (через <code>while-do</code>)</h2>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">var</span>
+    found<span class="token punctuation">:</span> boolean<span class="token punctuation">;</span>
+
+<span class="token comment">{...}</span>
+<span class="token comment">{операторы, выполняемые до проверки}</span>
+found <span class="token operator">:=</span> <span class="token comment">{нашли ли необходимое}</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token operator">not</span> <span class="token punctuation">(</span>found<span class="token punctuation">)</span> <span class="token operator">and</span> <span class="token operator">not</span> <span class="token punctuation">(</span><span class="token comment">{не перебрали ли всё}</span><span class="token punctuation">)</span> <span class="token keyword">do</span>
+    <span class="token keyword">begin</span>
+        <span class="token comment">{операторы, выполняемые после проверки}</span>
+        <span class="token comment">{операторы, выполняемые до проверки}</span>
+        <span class="token keyword">if</span> <span class="token comment">{нашли ли необходимое}</span> <span class="token keyword">then</span>
+                found <span class="token operator">:=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>  <span class="token comment">// ставим флаг, что нашли</span>
+    <span class="token keyword">end</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> found <span class="token keyword">then</span>
+    <span class="token comment">{нашли}</span>
+<span class="token keyword">else</span>
+    <span class="token comment">{не нашли}</span>
+</code></pre>
+<h3 id="структурная-реализация-поискового-цикла-№2-через-repeat-until">Структурная реализация поискового цикла №2 (через <code>repeat-until</code>)</h3>
+<p>Примерный общий вид структурной реализации поискового цикла:</p>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">var</span>
+    found<span class="token punctuation">:</span> boolean<span class="token punctuation">;</span>
+<span class="token comment">{...}</span>
+
+found <span class="token operator">:=</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+<span class="token keyword">repeat</span>
+    <span class="token comment">{операторы, выполняемые после проверки}</span>
+    <span class="token comment">{операторы, выполняемые до проверки}</span> <span class="token comment">// !!! </span>
+                                         <span class="token comment">// тут отличается от первой структурной реализации:</span>
+                  <span class="token comment">// выполнится в первый раз в любой случае, в отличие от первой реализации!</span>
+    <span class="token keyword">if</span> <span class="token comment">{нашли ли необходимое}</span> <span class="token keyword">then</span>
+        found <span class="token operator">:=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>                   <span class="token comment">// ставим флаг, что нашли</span>
+<span class="token keyword">until</span> <span class="token punctuation">(</span>found<span class="token punctuation">)</span> <span class="token operator">or</span> <span class="token punctuation">(</span><span class="token comment">{всё перебрали}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span> found <span class="token keyword">then</span>
+    <span class="token comment">{нашли}</span>
+<span class="token keyword">else</span>
+    <span class="token comment">{не нашли}</span>
+</code></pre>
+<h1 id="массивы-delphi-pascal.-описание-операции-над-массивами-и-их-элементами.-примеры.">7. Массивы Delphi Pascal. Описание, операции над массивами и их элементами. Примеры.</h1>
+<p><strong>Массив</strong> – это <em>упорядоченная</em> совокупность <em>однотипных</em> данных. Каждому элементу массива соответствует один или несколько <em>индексов порядкового типа</em>, определяющих положение элемента в массиве.</p>
+<p>Формат: <code>array [&lt;типы индекса&gt;] of &lt;тип элемента&gt;</code> (<em>типы индекса перечисляются через запятую, если их больше одного</em>).</p>
+<p>Количество типов индексов задает <strong>размерность</strong> массива.<br>
+<strong>Тип индекса</strong> – порядковый – определяет доступ к элементу.<br>
+<strong>Тип элемента</strong> – любой кроме файла, в том числе массивы, строки и т.п.<br>
+Массив в памяти не может занимать более 2 Гб (из-за технических ограничений).</p>
+<h3 id="операции-над-массивами">Операции над массивами</h3>
+<ol>
+<li>Операция присваивания (только для массивов одного типа)</li>
+<li>Доступ к элементу массива (<strong>прямой</strong> и <strong>косвенный доступ</strong>)</li>
+<li>Ввод/вывод массивов осуществляется поэлементно:</li>
+</ol>
+<h1 id="строки-delphi-pascal.-описание-операции-над-строками-и-их-элементами.-примеры.">8. Строки Delphi Pascal. Описание, операции над строками и их элементами. Примеры.</h1>
+<p><strong>Строка</strong> – последовательность символов (<em>фактически, массив символов</em>).</p>
+<p>Формат (обычно): <code>string</code> или <code>string[&lt;размер&gt;]</code>, где <em>размер</em> – максимальная длина строки.</p>
+<h3 id="операции-над-строками">Операции над строками</h3>
+<ol>
+<li>Присваивание строк:</li>
+<li>Обращение к элементу:</li>
+<li><strong>Конкатенация</strong> (сцепление) строк:</li>
+<li><strong>Операции отношения</strong> – выполняется попарным сравнением кодов символов, результат определяется по отношению кодов первых различных символов:</li>
+<li>Ввод-вывод  строк:</li>
+</ol>
+<h1 id="множества-delphi-pascal.-описание-операции-над-множествами-и-их-элементами.-примеры.">9. Множества Delphi Pascal. Описание, операции над множествами и их элементами. Примеры.</h1>
+<p><strong>Множество</strong> – <em>неупорядоченная</em> совокупность <em>неповторяющихся</em> элементов.</p>
+<p>Формат: <code>set of &lt;базовый_тип&gt;</code>.<br>
+Тип элементов – <em>порядковый</em>, но количество элементов <strong>не должно превышать 256</strong>. (То есть нельзя использовать <code>Word</code>, <code>Integer</code>, <code>UInt64</code> и т. д., так как они явно больше 256)</p>
+<h3 id="операции-над-множествами">Операции над множествами</h3>
+<ol>
+<li>Присваивание.</li>
+<li>Объединение, пересечение и дополнение:
+<ul>
+<li><code>A + B</code> (<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>∪</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A \cup B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">∪</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathdefault" style="margin-right: 0.05017em;">B</span></span></span></span></span>) – объединение множеств <code>А</code> и <code>B</code> – множество, состоящее из элементов, принадлежащих множествам <code>А</code> и <code>B</code>.</li>
+<li><code>A * B</code> (<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>∩</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A \cap B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">∩</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathdefault" style="margin-right: 0.05017em;">B</span></span></span></span></span>) – пересечение множеств <code>А</code> и <code>B</code> – множество, состоящее из элементов, принадлежащих одновременно и множеству <code>А</code> и множеству <code>B</code>.</li>
+<li><code>A - B</code> (<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>∖</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A \setminus B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 1em; vertical-align: -0.25em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">∖</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathdefault" style="margin-right: 0.05017em;">B</span></span></span></span></span>) – дополнение множества <code>А</code> до <code>B</code> – множество, состоящее из тех элементов множества <code>А</code>, которые не принадлежат множеству <code>B</code>.</li>
+</ul>
+</li>
+<li>Операции отношения:
+<ul>
+<li><code>A = B</code> (<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>=</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A = B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathdefault" style="margin-right: 0.05017em;">B</span></span></span></span></span>) – проверка совпадения множеств А и B (если совпадают – <code>true</code>).</li>
+<li><code>A &lt;&gt; B</code> (<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>≠</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A \not= B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.88888em; vertical-align: -0.19444em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.69444em;"><span class="" style="top: -3em;"><span class="pstrut" style="height: 3em;"></span><span class="rlap"><span class="strut" style="height: 0.88888em; vertical-align: -0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.19444em;"><span class=""></span></span></span></span></span></span></span><span class="base"><span class="strut" style="height: 0.36687em; vertical-align: 0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathdefault" style="margin-right: 0.05017em;">B</span></span></span></span></span>) – проверка не совпадения множеств А и B (не совпадают – <code>true</code>).</li>
+<li><code>A &lt;= B</code> (<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>⊆</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A \subseteq B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.8193em; vertical-align: -0.13597em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">⊆</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathdefault" style="margin-right: 0.05017em;">B</span></span></span></span></span>) – проверка нестрогого вхождения A в B (если входит – <code>true</code>).</li>
+<li><code>A &gt; B</code> (<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>⊃</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A \supset B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.72243em; vertical-align: -0.0391em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">⊃</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathdefault" style="margin-right: 0.05017em;">B</span></span></span></span></span>) – проверка строгого вхождения B в A (если входит – <code>true</code>).</li>
+</ul>
+</li>
+<li>Проверка вхождения элемента во множество:<br>
+<code>x in A</code> (<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∈</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">x \in A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.5782em; vertical-align: -0.0391em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathdefault">A</span></span></span></span></span>) – входит ли элемент <code>x</code> в множество <code>A</code> (если входит – <code>true</code>).</li>
+</ol>
+<h1 id="записи-delphi-pascal.-описание-операции-над-записями-и-их-элементами.-примеры.">10. Записи Delphi Pascal. Описание, операции над записями и их элементами. Примеры.</h1>
+<p><strong>Запись</strong> – это структура данных, образованная <em>фиксированным числом разнотипных компонентов</em>, называемых <strong>полями</strong> записи</p>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">type</span>
+    EntryType <span class="token operator">=</span> <span class="token punctuation">(</span>Book<span class="token punctuation">,</span> Magazine<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Entry <span class="token operator">=</span> <span class="token keyword">record</span>
+        autor<span class="token punctuation">,</span> title<span class="token punctuation">:</span> <span class="token keyword">String</span><span class="token punctuation">;</span>
+        year <span class="token punctuation">:</span> <span class="token number">1</span><span class="token operator">..</span><span class="token number">2000</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> tag<span class="token punctuation">:</span> EntryType <span class="token keyword">of</span>
+            Book<span class="token punctuation">:</span> <span class="token punctuation">(</span>publisher<span class="token punctuation">,</span> city<span class="token punctuation">:</span> <span class="token keyword">String</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Magazine<span class="token punctuation">:</span> <span class="token punctuation">(</span>
+                magName<span class="token punctuation">:</span> <span class="token keyword">String</span><span class="token punctuation">;</span> 
+                volume<span class="token punctuation">,</span> issue<span class="token punctuation">:</span> Integer
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment">// case не имеет своего end'а и пишется последним.</span>
+    <span class="token keyword">end</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="операции-над-записями">Операции над записями</h3>
+<ol>
+<li>Присваивание записей одного типа.</li>
+<li>Доступ к полям записи (<em>точечная нотация</em>, <em>оператор доступа <code>with</code></em>).</li>
+<li>Ввод и вывод записей осуществляется по полям.</li>
+</ol>
+<h1 id="процедуры-и-функции.-определение-описание-особенности.-примеры.">11. Процедуры и функции. Определение, описание, особенности. Примеры.</h1>
+<p><strong>Процедуры и функции</strong> – самостоятельные фрагменты программы, соответствующим образом оформленные и вызываемые по имени (программные блоки).</p>
+<p>Общий вид программного блока: <code>Заголовок блока -&gt; Раздел описаний -&gt; Раздел операторов</code></p>
+<h3 id="процедура">Процедура</h3>
+<p>Заголовок начинается с служебного слова <code>procedure</code>.<br>
+После работы процедура не возвращает значений.</p>
+<h3 id="функция">Функция</h3>
+<p>Заголовок начинается с служебного слова <code>function</code> и заканчивается возвращаемым типом. После работы функции, она возвращает значение типа, который указан в заголовке как возвращаемый.</p>
+<p>Чтобы вернуть какое-то значение из функции, в процессе её выполнения необходимо присвоить системной переменной <em><code>&lt;идентификатор_функции&gt;</code></em> (или <code>result</code>, при включенном расширенном синтаксисе <code>{$X+}</code>) это необходимое значение.</p>
+<h1 id="способы-передачи-данных-в-подпрограмму-на-delphi-pascal.-примеры.">12. Способы передачи данных в подпрограмму на Delphi Pascal. Примеры.</h1>
+<p>Подпрограмма может получать данные из основной программы:</p>
+<ol>
+<li><strong>неявно</strong> – с использованием свойства доступности глобальных переменных;</li>
+<li><strong>явно</strong> – через параметры.</li>
+</ol>
+<p>Очевидно, что <em>явная</em> передача значительно лучше, так как позволяет делать подпрограммы более универсальными и независимыми.</p>
+<h2 id="типы-параметров">Типы параметров</h2>
+<ul>
+<li>
+<p><strong>Параметры-значения</strong> при описании подпрограммы не помечаются. По факту в эту переменную <em>копируется</em> значение переданного аргумента, поэтому изменение этой переменной в подпрограмме не отразится на внешней.</p>
+</li>
+<li>
+<p><strong>Параметры-переменные</strong> при описании подпрограммы помечаются служебным словом <code>var</code>.<br>
+По факту происходит передача переменной <em>по адресу</em>, то есть все изменения такой переменной в подпрограмме <strong>отразятся на внешней</strong>!</p>
+</li>
+<li>
+<p><strong>Параметры-константы</strong> при описании подпрограммы помечаются служебным словом <code>const</code>.<br>
+Как и с <em>параметрами-переменными</em>, по факту происходит передача переменной <em>по адресу</em>, но при попытке изменить значение переменной в подпрограмме, вызывается ошибка. То есть изменять значение в подпрограмме запрещено.</p>
+</li>
+</ul>
+<h1 id="локальные-и-глобальные-переменные-законы-«видимости»-идентификаторов.-примеры.">13. Локальные и глобальные переменные, законы «видимости» идентификаторов. Примеры.</h1>
+
+<table>
+<thead>
+<tr>
+<th>Классы переменных</th>
+<th>Время жизни</th>
+<th>Доступность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Глобальные</strong> – объявленные в основной программе</td>
+<td>От запуска до завершения программы</td>
+<td>Из любого места программы, включая подпрограммы*</td>
+</tr>
+<tr>
+<td><strong>Локальные</strong> – объявленные в подпрограмме</td>
+<td>От вызова подпрограммы до возврата управления</td>
+<td>Из подпрограммы и подпрограмм, вызываемых из нее*</td>
+</tr>
+</tbody>
+</table><p><strong>*</strong> – при отсутствии перекрытия имен</p>
+<h1 id="формальные-и-фактические-параметры-подпрограмм-delphi-pascal.-примеры.">14. Формальные и фактические параметры подпрограмм Delphi Pascal. Примеры.</h1>
+<p>Параметры, описанные в заголовке – <strong>формальные</strong>.</p>
+<p>При вызове подпрограммы необходимо определить <strong>фактические</strong> значения этих параметров – аргументы (константы и переменные).</p>
+<blockquote>
+<p>Вот только кто вообще их так называет?<br>
+Обычно их называют <strong>параметрами</strong> и <strong>аргументами</strong> соответственно.</p>
+</blockquote>
+<p><em>Формальные</em> и <em>фактические</em> параметры должны соответствовать по количеству, типу и порядку:</p>
+<h1 id="параметры-строки-параметры-массивы.-примеры.">15. Параметры-строки, параметры-массивы. Примеры.</h1>
+<p>Структурные типы параметров должны быть <strong>предварительно объявлены</strong>.</p>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">type</span>
+    IntArr <span class="token operator">=</span> <span class="token keyword">array</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">..</span><span class="token number">100</span><span class="token punctuation">]</span> <span class="token keyword">of</span> Integer<span class="token punctuation">;</span>
+    MyStr <span class="token operator">=</span> <span class="token keyword">string</span><span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> sum<span class="token punctuation">(</span>arr<span class="token punctuation">:</span> IntArr<span class="token punctuation">;</span> n<span class="token punctuation">:</span> Integer<span class="token punctuation">)</span><span class="token punctuation">:</span> integer<span class="token punctuation">;</span>
+<span class="token comment">{...}</span>
+
+<span class="token keyword">procedure</span> test_string<span class="token punctuation">(</span>str<span class="token punctuation">:</span> MyStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">{...}</span>
+
+<span class="token keyword">var</span>
+    my_arr<span class="token punctuation">:</span> IntArr<span class="token punctuation">;</span>
+    my_str<span class="token punctuation">:</span> MyStr<span class="token punctuation">;</span>
+    <span class="token comment">{...}</span>
+
+<span class="token keyword">begin</span>
+    <span class="token comment">{...}</span>
+    writeLn<span class="token punctuation">(</span><span class="token string">'Sum(arr) = '</span><span class="token punctuation">,</span> sum<span class="token punctuation">(</span>my_arr<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    test_string<span class="token punctuation">(</span>my_str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">end</span><span class="token punctuation">.</span>
+</code></pre>
+<h1 id="принципы-разработки-универсальных-подпрограмм-«открытые»-массивы-и-строки.-примеры.">16. Принципы разработки универсальных подпрограмм: «открытые» массивы и строки. Примеры.</h1>
+<h1 id="открытые-массивы">Открытые массивы</h1>
+<p><strong>Открытый массив</strong> – конструкция описания типа массива без указания типа индексов.<br>
+Используется только при объявлении <em>формальных параметров</em>.</p>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">array</span> <span class="token keyword">of</span> Single<span class="token punctuation">;</span>
+<span class="token keyword">array</span> <span class="token keyword">of</span> Integer<span class="token punctuation">;</span>
+</code></pre>
+<p>С помощью открытых массивов можно делать более <em>универсальные</em> подпрограммы.</p>
+<p><strong>Индексы открытого массива всегда начинаются с <code>0</code>-го.</strong></p>
+<p>Размер можно:</p>
+<ul>
+<li>передать через дополнительный параметр;</li>
+<li>получить, используя функцию <code>high(&lt;идентификатор_массива&gt;)</code>.</li>
+</ul>
+<h2 id="открытые-строки"><s>Открытые строки</s></h2>
+<p><s><strong>Для строк, передаваемых в подпрограмму как параметр-переменная, осуществляет контроль длины строки.</strong></s></p>
+<p><s>Чтобы избежать его необходимо использовать «<em>открытые</em>» строки (<code>openstring</code>).</s></p>
+<blockquote>
+<p>Устаревшая информация. В новых версиях проблем с передачей строк быть не должно.</p>
+</blockquote>
+<h1 id="принципы-разработки-универсальных-подпрограмм-нетипизированные-параметры-параметры-процедурного-типа.-примеры.">17. Принципы разработки универсальных подпрограмм: нетипизированные параметры, параметры процедурного типа. Примеры.</h1>
+<h2 id="нетипизированные-параметры.">Нетипизированные параметры.</h2>
+<p><strong>Нетипизированные параметры</strong> – <em>параметры-переменные</em>, тип которых при объявлении не указан.</p>
+<p>Для приведения нетипизированного параметра к определенному типу можно использовать:</p>
+<ol>
+<li>
+<p>автоопределенное преобразование типов:</p>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">procedure</span> proc<span class="token punctuation">(</span><span class="token keyword">var</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">{...}</span>
+b <span class="token operator">:=</span> Integer<span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">10</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>
+<p>наложенное описание переменной определенного типа:</p>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">type</span>
+    TType <span class="token operator">=</span> <span class="token punctuation">(</span>TReal<span class="token punctuation">,</span> TInteger<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">procedure</span> proc<span class="token punctuation">(</span><span class="token keyword">var</span> a<span class="token punctuation">;</span> t<span class="token punctuation">:</span> TType<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span>
+    r<span class="token punctuation">:</span> Real <span class="token keyword">absolute</span> a<span class="token punctuation">;</span>
+    i<span class="token punctuation">:</span> Integer <span class="token keyword">absolute</span> a<span class="token punctuation">;</span>
+
+<span class="token comment">{...}</span>
+    <span class="token keyword">if</span> t <span class="token operator">=</span> TReal <span class="token keyword">then</span>
+        <span class="token comment">{используем переменную `r`}</span>
+    <span class="token keyword">else</span>
+        <span class="token comment">{используем переменную `i`}</span>
+</code></pre>
+<p>По факту, тут <code>a</code> является ссылкой на какой-то адрес в памяти, но нужный размер в памяти нам неизвестен. С помощью наложения мы делаем несколько видов переменных, <em>накладывая</em> на адрес переменной <code>a</code> разные типы.</p>
+</li>
+</ol>
+<h2 id="параметры-процедурного-типа">Параметры процедурного типа</h2>
+<p>Параметры процедурного типа используются для передачи в подпрограмму имен процедур и функций.</p>
+<p>Для объявления процедурного типа используется заголовок подпрограммы, в котором отсутствует имя:</p>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">type</span>
+    Proc <span class="token operator">=</span> <span class="token keyword">procedure</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">:</span> Real<span class="token punctuation">;</span> <span class="token keyword">var</span> d<span class="token punctuation">:</span> Real<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    UnaryFunc <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> Double<span class="token punctuation">)</span><span class="token punctuation">:</span> Double<span class="token punctuation">;</span>
+</code></pre>
+<p>Значениями переменных процедурных типов являются идентификаторы процедур и функций с соответствующими заголовками.</p>
+<h1 id="структура-модуля-delphi-pascal.-законы-видимости-идентификаторов.-доступ-к-«перекрытым»-идентификаторам.-примеры.">18. Структура модуля Delphi Pascal. Законы видимости идентификаторов. Доступ к «перекрытым» идентификаторам. Примеры.</h1>
+<p><strong>Модуль</strong> – это автономно компилируемая коллекция программных ресурсов, предназначенных для использования другими модулями и программами</p>
+<h2 id="структура-модуля">Структура модуля:</h2>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">unit</span> <span class="token operator">&lt;</span>имя_модуля<span class="token operator">&gt;</span><span class="token punctuation">;</span>  <span class="token comment">// Имя модуля должно совпадать с </span>
+                    <span class="token comment">// именем файла, в котором он описан.</span>
+
+<span class="token keyword">interface</span>
+    <span class="token operator">&lt;</span>интерфейсная_секция<span class="token operator">&gt;</span>
+
+<span class="token keyword">implementation</span>
+    <span class="token operator">&lt;</span>секция_реализации<span class="token operator">&gt;</span>
+
+<span class="token punctuation">[</span><span class="token keyword">initialization</span>
+    <span class="token operator">&lt;</span>секция_инициализации<span class="token operator">&gt;</span>
+
+<span class="token punctuation">[</span><span class="token keyword">finalization</span>
+    <span class="token operator">&lt;</span>секция_завершения<span class="token operator">&gt;</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token keyword">end</span><span class="token punctuation">.</span>
+</code></pre>
+<h2 id="законы-видимости-идентификаторов.-доступ-к-«перекрытым»-идентификаторам">Законы видимости идентификаторов. Доступ к «перекрытым» идентификаторам</h2>
+<p><strong>Ресурсы модуля перекрываются ресурсами программы и ранее указанных модулей.</strong></p>
+<p>Для доступа к перекрытым ресурсам модуля используют точечную нотацию: <code>&lt;имя_модуля&gt;.&lt;имя_ресурса&gt;</code></p>
+<p>Пример:<br>
+<img src="https://i.imgur.com/R0qXc5n.png" alt="identificators_intersection"></p>
+<h1 id="рекурсия.-виды-рекурсии.-особенности-программирования.-достоинства-и-недостатки.-пример.">19. Рекурсия. Виды рекурсии. Особенности программирования. Достоинства и недостатки. Пример.</h1>
+<p><strong>Рекурсия</strong> – организация вычислений, при которой процедура или функция обращаются к самим себе.</p>
+<p>Различают <em>явную</em> и <em>косвенную</em> рекурсии.<br>
+При <em>явной</em> – в теле подпрограммы существует вызов самой себя, при <em>косвенной</em> – вызов осуществляется в подпрограммах, вызываемых из рассматриваемой.</p>
+<p>Косвенная рекурсия требует предопределения <code>forward</code>.</p>
+<h1 id="адресация-динамической-памяти-понятие-адреса-операции-получения-адреса-и-разыменования.-процедуры-получения-памяти-и-освобождения-ее.-примеры.">20. Адресация динамической памяти: понятие адреса, операции получения адреса и разыменования. Процедуры получения памяти и освобождения ее. Примеры.</h1>
+<p>Минимальная адресуемая единица памяти – <strong>байт</strong>.</p>
+<p><strong>Физический адрес</strong> <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi mathvariant="normal">А</mi><mi mathvariant="normal">ф</mi></msub></mrow><annotation encoding="application/x-tex">А_ф</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.83333em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord cyrillic_fallback">А</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.336108em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cyrillic_fallback mtight">ф</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span></span></span></span></span> – номер байта оперативной памяти.</p>
+<p>Адресация по схеме «база+смещение»: <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi mathvariant="normal">А</mi><mi mathvariant="normal">ф</mi></msub><mo>=</mo><msub><mi mathvariant="normal">А</mi><mi mathvariant="normal">б</mi></msub><mo>+</mo><msub><mi mathvariant="normal">А</mi><mrow><mi mathvariant="normal">с</mi><mi mathvariant="normal">м</mi></mrow></msub></mrow><annotation encoding="application/x-tex">А_ф = А_б + А_{см}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.83333em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord cyrillic_fallback">А</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.336108em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cyrillic_fallback mtight">ф</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.83333em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord cyrillic_fallback">А</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.336108em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cyrillic_fallback mtight">б</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right: 0.222222em;"></span></span><span class="base"><span class="strut" style="height: 0.83333em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord cyrillic_fallback">А</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.151392em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cyrillic_fallback mtight">с</span><span class="mord cyrillic_fallback mtight">м</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span></span></span></span></span>,<br>
+где <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi mathvariant="normal">А</mi><mi mathvariant="normal">б</mi></msub></mrow><annotation encoding="application/x-tex">А_б</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.83333em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord cyrillic_fallback">А</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.336108em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cyrillic_fallback mtight">б</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span></span></span></span></span> – адрес базы – адрес, относительно которого считают остальные адреса;<br>
+<span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi mathvariant="normal">А</mi><mrow><mi mathvariant="normal">с</mi><mi mathvariant="normal">м</mi></mrow></msub></mrow><annotation encoding="application/x-tex">А_{см}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.83333em; vertical-align: -0.15em;"></span><span class="mord"><span class="mord cyrillic_fallback">А</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.151392em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord cyrillic_fallback mtight">с</span><span class="mord cyrillic_fallback mtight">м</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"><span class=""></span></span></span></span></span></span></span></span></span></span> – смещение – расстояние от базового адреса до физического.</p>
+<p><strong>Указатель</strong> – тип данных, используемый для хранения <strong>смещений</strong>.<br>
+В памяти занимает 4 байта, адресует сегмент размером <span class="katex--inline"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi><mo>=</mo><msup><mn>2</mn><mn>32</mn></msup><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">V = 2^{32} = 4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.68333em; vertical-align: 0em;"></span><span class="mord mathdefault" style="margin-right: 0.22222em;">V</span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.814108em; vertical-align: 0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.814108em;"><span class="" style="top: -3.063em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.277778em;"></span></span><span class="base"><span class="strut" style="height: 0.64444em; vertical-align: 0em;"></span><span class="mord">4</span></span></span></span></span> ГБ.<br>
+Базовый адрес = адрес сегмента.</p>
+<p>Различают указатели:</p>
+<ul>
+<li><em>типизированные</em> – адресующие данные конкретного типа;</li>
+<li><em>нетипизированные</em> – не связанные с данными определенного типа.</li>
+</ul>
+<h3 id="операции-с-указателями">Операции с указателями</h3>
+<ol>
+<li><strong>Получение адреса</strong>: оператор <code>@</code>. Результат операции – указатель типа <code>pointer</code> – может присвоен любому указателю.</li>
+<li><strong>Доступ к данным</strong> по указателю (<strong>операция разыменования</strong>). Полученное значение имеет тип, совпадающий с базовым типом данных указателя. <em>Нетипизированные указатели разыменовывать нельзя</em>.</li>
+</ol>
+<h3 id="процедуры-для-работы-с-памятью">Процедуры для работы с памятью</h3>
+<ol>
+<li>Процедура <code>new(var p: ^&lt;тип&gt;)</code> – выделяет память для размещения переменной, размер определяется типом указателя.</li>
+<li>Процедура <code>dispose(var p: ^&lt;тип&gt;)</code> – освобождает выделенную память.</li>
+<li>Процедура <code>getMem(var p: Pointer; size: Integer)</code> – выделяет указанное количество памяти и помещает ее адрес в указатель.</li>
+<li>Процедура <code>freeMem(var p: Pointer[; size: Integer])</code> – освобождает выделенную память.</li>
+<li>Процедура <code>sizeOf(x): Integer</code> – возвращает размер объекта в байтах.<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">type</span>
+    ByteArr <span class="token operator">=</span> <span class="token keyword">array</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">..</span><span class="token number">100</span><span class="token punctuation">]</span> <span class="token keyword">of</span> Byte<span class="token punctuation">;</span>
+
+<span class="token keyword">var</span>
+    buffer<span class="token punctuation">:</span> <span class="token string">^B</span>yteArr<span class="token punctuation">;</span>
+
+<span class="token comment">{...}</span>
+getMem<span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> sizeOf<span class="token punctuation">(</span>ByteArr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+buffer<span class="token operator">^</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">:=</span> <span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token comment">{...}</span>
+freeMem<span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> sizeOf<span class="token punctuation">(</span>Byte<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+</code></pre>
+</li>
+</ol>
+<h1 id="списковые-структуры-данных.-классификация-и-основные-приемы-работы-с-ними-создание-элемента-добавление-элемента-к-списку-удаление-элемента-из-списка.-область-применения-списковых-структур-данных.-пример.">21. Списковые структуры данных. Классификация и основные приемы работы с ними: создание элемента, добавление элемента к списку, удаление элемента из списка. Область применения списковых структур данных. Пример.</h1>
+<p><strong>Список</strong> – способ организации данных, предполагающий использование указателей для определения следующего элемента.</p>
+<p>Элемент списка состоит из двух частей: <em>информационной</em> и <em>адресной</em>.</p>
+<p><em>Информационная</em> часть содержит поля данных.<br>
+<em>Адресная</em> – включает от одного до n указателей, содержащих адреса следующих элементов. Количество связей, между соседними элементами списка определяет его связность: односвязные, двусвязные, n-связные.</p>
+<h3 id="виды-списков">Виды списков</h3>
+<ul>
+<li><strong>Линейный односвязный</strong> – у каждого элемента есть указатель на следующий после него элемент (кроме, соответственно, последнего).</li>
+<li><strong>Линейный двусвязный</strong> – у каждого элемента есть указатель на следующий и предыдущий элементы (кроме крайних, у них нет одного соответственного).</li>
+<li><strong>Кольцевой односвязный</strong> – у каждого элемента есть указатель на следующий после него элемент, а у последнего есть указатель на первый.</li>
+<li><strong>Кольцевой двусвязный</strong> – у каждого элемента есть указатель на следующий и предыдущий элементы, а у первого и последнего есть указатели на последний и первый соответственно.</li>
+<li><strong>Сетевой <em>n</em>-связный</strong> – у каждого есть сразу несколько указателей на другие элементы.</li>
+</ul>
+<h1 id="основы-файловой-системы-файл-каталог-дисковод-полное-имя-файла-внутреннее-представление-информации-в-файле.-файловая-переменная.-операции-открытия-и-закрытия-файлов.-примеры.">22. Основы файловой системы: файл, каталог, дисковод, полное имя файла, внутреннее представление информации в файле. Файловая переменная. Операции открытия и закрытия файлов. Примеры.</h1>
+<p><strong>Файл</strong> – поименованная последовательность элементов данных (компонентов файла), хранящихся, как правило, во внешней памяти.<br>
+Как исключение данные файла могут не храниться, а вводиться с <em>внешних устройств</em> (<em>ВУ</em>), например клавиатуры или выводиться на <em>ВУ</em>.<br>
+Полное имя файла включает:<br>
+<code>&lt;Имя диска&gt;:&lt;Список имен каталогов&gt;\&lt;Имя файла&gt;.&lt;Расширение&gt;</code></p>
+<p><strong>Файл языка Pascal</strong> – последовательность однотипных компонентов: файл записей, файл целых чисел, файл строк.</p>
+<p>В зависимости от типа компонентов различают три типа файлов: <strong>типизированные</strong>, <strong>текстовые</strong> и <strong>нетипизированные</strong>.</p>
+<p><em>Количество компонентов</em> файла при объявлении файловой переменной не указывается.<br>
+<em>Максимальный размер</em> файла определяется свободным пространством на устройстве, например, диске.<br>
+Физически операции ввода-вывода с файлами выполняются <em>с использованием буфера</em>.</p>
+<p>Доступ к компонентам файла осуществляется через <strong>указатель файла</strong>.<br>
+При выполнении операции чтения или записи указатель <strong>автоматически</strong> перемещается на следующий компонент.<br>
+После вывода последнего компонента файла система пишет специальную запись – <strong>маркер «<em>Конец файла</em>»</strong> (байт <code>#26</code>).<br>
+При обнаружении во время операции чтения маркера конца файла – операция завершается. Попытка читать маркер вызывает прерывание по ошибке чтения.</p>
+<p>Процедура <code>assign</code> или <code>assignFile (var f; path: String)</code> (<em>предпочтительнее</em>) – связывает файловую переменную <code>f</code> с файлом, имя которого указано в строке <code>path</code>.</p>
+<h4 id="инициализация-файловой-переменной">Инициализация файловой переменной</h4>
+<p>Процедура <code>assign</code> или <code>assignFile (var f; path: String)</code> (<em>предпочтительнее</em>) – связывает файловую переменную <code>f</code> с файлом, имя которого указано в строке <code>path</code>.</p>
+<p>Если файл находится в текущем каталоге, то достаточно задать имя файла и его расширение. В противном случае необходимо указать полное имя файла.</p>
+<h4 id="открытие-файла">Открытие файла</h4>
+<p>При открытии файла необходимо задать направление передачи данных: запись или чтение. Кроме того текстовый файл можно открыть для добавления компонентов.</p>
+<ol>
+<li>
+<p>Процедура <code>reSet(var f)</code> – открывает файл для чтения данных.<br>
+Устанавливает указатель файла на первый компонент. Если файл не существует, выдается сообщение об ошибке.</p>
+</li>
+<li>
+<p>Процедура <code>reWrite(var f)</code> – открывает файл для записи.<br>
+Если указанный файл существовал, то он уничтожается без выдачи предупреждения пользователю, иначе он создается и указатель устанавливается на начало.</p>
+</li>
+<li>
+<p>Процедура <code>append(var f: Text)</code> – открывает текстовый файл для добавления данных.<br>
+Указатель файла устанавливается на конец файла.</p>
+</li>
+</ol>
+<h4 id="закрытие-файла">Закрытие файла</h4>
+<p>Процедура <code>close</code> или <code>closeFile(var f)</code> - выполняет закрытие файла. При этом вновь созданный файл регистрируется в каталоге.</p>
+<p>Процедура закрытия файла обеспечивает <strong>вывод оставшихся компонентов из буфера в файл</strong>.</p>
+<p>Связь файловой переменной с файлом при закрытии сохраняется, поэтому при продолжении обработки повторно процедуру <code>assignFile()</code> можно не выполнять.</p>
+<h1 id="текстовые-файлы.-внутреннее-представление-информации-в-файле.-операции-над-файлами.-пример.">23. Текстовые файлы. Внутреннее представление информации в файле. Операции над файлами. Пример.</h1>
+<p><strong>Текстовый файл</strong> – файл, компонентами которого являются символьные строки переменной длины, заканчивающиеся специальным маркером – <strong>маркером «Конец строки»</strong>.</p>
+<p>Текстовые файлы используют для хранения и обработки символов, строк, символьных массивов. Числовые и логические данные при записи в текстовые файлы должны преобразовываться в символьные строки.</p>
+<p>Текстовый файл можно открыть для записи, чтения и добавления записей в конец. Файл, открытый для записи, не может использоваться для чтения и наоборот.</p>
+<h2 id="операции-с-текстовыми-файлами">Операции с текстовыми файлами</h2>
+<ol>
+<li>Функция <code>EOLn([var f]): Boolean</code> – возвращает <code>TRUE</code>, если во входном текстовом файле достигнут маркер конца строки; при отсутствии файловой переменной проверяется файл <code>INPUT</code>, связанный с клавиатурой.
+<ul>
+<li>При работе с <em>клавиатурой</em> функция <code>EOLn</code> возвращает <code>TRUE</code>, если <strong>последним</strong> считанным был символ <code>#13</code>.</li>
+<li>При работе с <em>диском</em> функция <code>EOLn</code> возвращает <code>TRUE</code>, если <strong>следующим</strong> считанным будет символ <code>#13</code>.</li>
+</ul>
+</li>
+<li>Процедура <code>read([var f: text;] v1, v2, {...} vn)</code></li>
+<li>Процедура <code>readLn([var f: text;] v1, v2, {...} vn)</code></li>
+<li>Процедура <code>write([var f: text;] v1, v2, {...} vn)</code></li>
+<li>Процедура <code>writeLn([var f: text;] v1, v2, {...} vn)</code></li>
+<li>Процедура <code>seekEOLn([var f]): Boolean</code> – пропускает пробелы и знаки табуляции до маркера конца строки или до первого значащего символа и возвращает <code>TRUE</code>, при обнаружении маркера.</li>
+<li>Процедура <code>SeekEOF([var f]): Boolean</code> – пропускает все пробелы, знаки табуляции и маркеры конца строки до маркера конца файла или до первого значащего символа и возвращает <code>TRUE</code> при обнаружении маркера.</li>
+</ol>
+<h1 id="типизированные-файлы-внутреннее-представление-информации-в-файле.-операции-над-файлами.-пример.">24. Типизированные файлы: внутреннее представление информации в файле. Операции над файлами. Пример.</h1>
+<p><strong>Типизированный файл</strong> – файл, все компоненты которого одного типа, заданного при объявлении файловой переменной.</p>
+<p>Компоненты хранятся на диске во <em>внутреннем</em> (двоичном) формате.</p>
+<p>Типизированный файл можно открыть для записи и чтения. Файл, открытый для записи, может использоваться для чтения. В файл, открытый для чтения, можно писать.</p>
+<p>Поскольку размер компонентов <strong>одинаков</strong>, принципиально возможен не только последовательный, но и <strong>прямой доступ</strong>.</p>
+<h2 id="процедуры-и-функции-обработки-типизированных-файлов">Процедуры и функции обработки типизированных файлов</h2>
+<ol>
+<li>Процедура <code>read(var f; c1, c2, {...} cn)</code></li>
+<li>Процедура <code>write(var f; c1, c2, {...} cn)</code></li>
+<li>Процедура <code>seek(var f; numcomp: LongInt)</code></li>
+<li>Функция <code>fileSize(var f): LongInt</code></li>
+<li>Функция <code>filePos(var f): LongInt</code></li>
+<li>Процедура <code>truncate(var f)</code> – выполняет «<em>усечение</em>» файла.</li>
+</ol>
+<h1 id="нетипизированные-файлы.-внутреннее-представление-информации-в-файле.-операции-над-файлами.-пример.">25. Нетипизированные файлы. Внутреннее представление информации в файле. Операции над файлами. Пример.</h1>
+<p><strong>Нетипизированными</strong> называют файлы, объявленные без указания типа компонентов.</p>
+<p>Операции чтения и записи с такими файлами осуществляются блоками, что позволяет организовать высокоскоростной обмен данными между диском и памятью. Отсутствие типа делает эти файлы совместимыми с любыми другими.</p>
+<p>Нетипизированные файлы, как и типизированные, допускают организацию прямого доступа.<br>
+Нетипизированный файл можно открыть для записи и для чтения:</p>
+<pre class=" language-pascal"><code class="prism  language-pascal">reSet<span class="token punctuation">(</span><span class="token keyword">var</span> f<span class="token punctuation">[</span><span class="token punctuation">;</span> recsize<span class="token punctuation">:</span> Word<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class=" language-pascal"><code class="prism  language-pascal">reWrite<span class="token punctuation">(</span><span class="token keyword">var</span> f<span class="token punctuation">[</span><span class="token punctuation">;</span> recsize<span class="token punctuation">:</span> Word<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>где <code>recsize</code> – размер записи файла в байтах. Длину записи задают кратной 512 байт, например: 1024, 2048. Если длина записи не указана, она принимается равной 128.</p>
+<h2 id="процедуры-и-функции-обработки-нетипизированных-файлов">Процедуры и функции обработки нетипизированных файлов</h2>
+<ol>
+<li>
+<p>Процедура <code>blockRead(var f: file; var buf; count: Word[; var res: Word])</code> – осуществляет чтение блока записей из файла в буфер <code>buf</code>.<br>
+Параметр <code>res</code> будет содержать количество фактически обработанных записей. Если последняя запись – неполная, то значение параметра <code>res</code> ее не учтет.</p>
+</li>
+<li>
+<p>Процедура <code>blockWrite(var f: file; var buf; count: Word[; var res: Word])</code> – осуществляет запись блока из буфера <code>buf</code> в файл.</p>
+</li>
+</ol>
+<h1 id="классы-консольного-режима-delphi-описание-классов-поля-и-методы-объявление-объектов-класса-доступ-к-полям-и-методам-объекта-ограничение-доступа.-пример.">26. Классы консольного режима Delphi: описание классов, поля и методы, объявление объектов класса, доступ к полям и методам объекта, ограничение доступа. Пример.</h1>
+<p><strong>Класс</strong> – это структурный тип данных, который включает описание полей данных, а также процедур и функций, работающих с этими полями данных.<br>
+C точки зрения синтаксиса <strong>класс</strong> – структурный тип данных, в котором помимо полей разрешается описывать <em>прототипы</em> (заголовки) процедур и функций, работающих с этими полями данных.</p>
+<p>Применительно к классам такие процедуры и функции получили название <strong>методов</strong>.<br>
+<strong>Объект-переменная</strong> – переменная типа «класс».</p>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">var</span> a<span class="token punctuation">:</span> TRoom <span class="token operator">=</span> <span class="token punctuation">(</span>length<span class="token punctuation">:</span> <span class="token number">3.5</span><span class="token punctuation">;</span> width<span class="token punctuation">:</span> <span class="token number">5.1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Модификатор доступа</th>
+<th>Доступность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public</code></td>
+<td>поля и методы, доступны из других модулей</td>
+</tr>
+<tr>
+<td><code>private</code></td>
+<td>поля и методы, доступны только в пределах модуля</td>
+</tr>
+<tr>
+<td><code>protected</code></td>
+<td>поля и методы, доступны только в классах потомках</td>
+</tr>
+<tr>
+<td><code>published</code></td>
+<td>поля и методы, видимы в инспекторе объектов</td>
+</tr>
+</tbody>
+</table><p>По умолчанию для всех полей используется модификатор <code>public</code>.</p>
+<h1 id="классы-консольного-режима-delphi-способы-инициализация-полей.-неявный-параметр-self.-пример.">27. Классы консольного режима Delphi: Способы инициализация полей. Неявный параметр Self. Пример.</h1>
+<p>Любой метод неявно получает параметр <strong><code>self</code></strong> – ссылку (адрес) на поля объекта, и обращение к полям происходит через это имя.</p>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">function</span> TRoom<span class="token punctuation">.</span>square<span class="token punctuation">;</span>
+<span class="token keyword">begin</span>
+    <span class="token keyword">result</span> <span class="token operator">:=</span> <span class="token keyword">self</span><span class="token punctuation">.</span>length <span class="token operator">*</span> <span class="token keyword">self</span><span class="token punctuation">.</span>width<span class="token punctuation">;</span>
+<span class="token keyword">End</span><span class="token punctuation">;</span>
+</code></pre>
+<p>При необходимости эту ссылку можно указывать явно:</p>
+<p><code>@self</code> – адрес области полей данных объекта.</p>
+<h1 id="процедурная-и-объектная-декомпозиция.-диаграммы-классов.-отношения-между-классами.-примеры.">28. Процедурная и объектная декомпозиция. Диаграммы классов. Отношения между классами. Примеры.</h1>
+<p><strong>Процедурная декомпозиция</strong> – процесс разбиения программы на подпрограммы.</p>
+<p><strong>Структурной</strong> называют декомпозицию, если:</p>
+<ul>
+<li>каждая подпрограмма имеет один вход и один выход;</li>
+<li>подпрограммы нижних уровней не вызывают подпрограмм верхних уровней;</li>
+<li>размер подпрограммы не превышает 40-50 операторов;</li>
+<li>в алгоритме использованы только структурные конструкции.</li>
+</ul>
+<p><strong>Объектная декомпозиция</strong> – процесс представления предметной области задачи в виде отдельных функциональных элементов (объектов предметной области), обменивающихся в процессе выполнения программы входными воздействиями (сообщениями) .</p>
+<ol>
+<li>
+<p><strong>Наследование</strong> – механизм, позволяющий строить класс на базе более простого посредством добавления полей и определения новых методов.</p>
+<p>При этом исходный класс, на базе которого выполняется построение, называют <em>родительским</em> или <em>базовым</em>, а строящейся класс – <em>потомком</em> или <em>производным</em> классом.</p>
+<p>Если при наследовании какие-либо методы переопределяются, то такое наследование называется полиморфным.</p>
+<p><img src="https://mermaid.ink/svg/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAg0JrQu9Cw0YHRgdCg0L7QtNC40YLQtdC70YwgPHwtLSDQmtC70LDRgdGB0J_QvtGC0L7QvNC-0LoiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCIsInRoZW1lVmFyaWFibGVzIjp7ImJhY2tncm91bmQiOiJ3aGl0ZSIsInByaW1hcnlDb2xvciI6IiNFQ0VDRkYiLCJzZWNvbmRhcnlDb2xvciI6IiNmZmZmZGUiLCJ0ZXJ0aWFyeUNvbG9yIjoiaHNsKDgwLCAxMDAlLCA5Ni4yNzQ1MDk4MDM5JSkiLCJwcmltYXJ5Qm9yZGVyQ29sb3IiOiJoc2woMjQwLCA2MCUsIDg2LjI3NDUwOTgwMzklKSIsInNlY29uZGFyeUJvcmRlckNvbG9yIjoiaHNsKDYwLCA2MCUsIDgzLjUyOTQxMTc2NDclKSIsInRlcnRpYXJ5Qm9yZGVyQ29sb3IiOiJoc2woODAsIDYwJSwgODYuMjc0NTA5ODAzOSUpIiwicHJpbWFyeVRleHRDb2xvciI6IiMxMzEzMDAiLCJzZWNvbmRhcnlUZXh0Q29sb3IiOiIjMDAwMDIxIiwidGVydGlhcnlUZXh0Q29sb3IiOiJyZ2IoOS41MDAwMDAwMDAxLCA5LjUwMDAwMDAwMDEsIDkuNTAwMDAwMDAwMSkiLCJsaW5lQ29sb3IiOiIjMzMzMzMzIiwidGV4dENvbG9yIjoiIzMzMyIsIm1haW5Ca2ciOiIjRUNFQ0ZGIiwic2Vjb25kQmtnIjoiI2ZmZmZkZSIsImJvcmRlcjEiOiIjOTM3MERCIiwiYm9yZGVyMiI6IiNhYWFhMzMiLCJhcnJvd2hlYWRDb2xvciI6IiMzMzMzMzMiLCJmb250RmFtaWx5IjoiXCJ0cmVidWNoZXQgbXNcIiwgdmVyZGFuYSwgYXJpYWwiLCJmb250U2l6ZSI6IjE2cHgiLCJsYWJlbEJhY2tncm91bmQiOiIjZThlOGU4Iiwibm9kZUJrZyI6IiNFQ0VDRkYiLCJub2RlQm9yZGVyIjoiIzkzNzBEQiIsImNsdXN0ZXJCa2ciOiIjZmZmZmRlIiwiY2x1c3RlckJvcmRlciI6IiNhYWFhMzMiLCJkZWZhdWx0TGlua0NvbG9yIjoiIzMzMzMzMyIsInRpdGxlQ29sb3IiOiIjMzMzIiwiZWRnZUxhYmVsQmFja2dyb3VuZCI6IiNlOGU4ZTgiLCJhY3RvckJvcmRlciI6ImhzbCgyNTkuNjI2MTY4MjI0MywgNTkuNzc2NTM2MzEyOCUsIDg3LjkwMTk2MDc4NDMlKSIsImFjdG9yQmtnIjoiI0VDRUNGRiIsImFjdG9yVGV4dENvbG9yIjoiYmxhY2siLCJhY3RvckxpbmVDb2xvciI6ImdyZXkiLCJzaWduYWxDb2xvciI6IiMzMzMiLCJzaWduYWxUZXh0Q29sb3IiOiIjMzMzIiwibGFiZWxCb3hCa2dDb2xvciI6IiNFQ0VDRkYiLCJsYWJlbEJveEJvcmRlckNvbG9yIjoiaHNsKDI1OS42MjYxNjgyMjQzLCA1OS43NzY1MzYzMTI4JSwgODcuOTAxOTYwNzg0MyUpIiwibGFiZWxUZXh0Q29sb3IiOiJibGFjayIsImxvb3BUZXh0Q29sb3IiOiJibGFjayIsIm5vdGVCb3JkZXJDb2xvciI6IiNhYWFhMzMiLCJub3RlQmtnQ29sb3IiOiIjZmZmNWFkIiwibm90ZVRleHRDb2xvciI6ImJsYWNrIiwiYWN0aXZhdGlvbkJvcmRlckNvbG9yIjoiIzY2NiIsImFjdGl2YXRpb25Ca2dDb2xvciI6IiNmNGY0ZjQiLCJzZXF1ZW5jZU51bWJlckNvbG9yIjoid2hpdGUiLCJzZWN0aW9uQmtnQ29sb3IiOiJyZ2JhKDEwMiwgMTAyLCAyNTUsIDAuNDkpIiwiYWx0U2VjdGlvbkJrZ0NvbG9yIjoid2hpdGUiLCJzZWN0aW9uQmtnQ29sb3IyIjoiI2ZmZjQwMCIsInRhc2tCb3JkZXJDb2xvciI6IiM1MzRmYmMiLCJ0YXNrQmtnQ29sb3IiOiIjOGE5MGRkIiwidGFza1RleHRMaWdodENvbG9yIjoid2hpdGUiLCJ0YXNrVGV4dENvbG9yIjoid2hpdGUiLCJ0YXNrVGV4dERhcmtDb2xvciI6ImJsYWNrIiwidGFza1RleHRPdXRzaWRlQ29sb3IiOiJibGFjayIsInRhc2tUZXh0Q2xpY2thYmxlQ29sb3IiOiIjMDAzMTYzIiwiYWN0aXZlVGFza0JvcmRlckNvbG9yIjoiIzUzNGZiYyIsImFjdGl2ZVRhc2tCa2dDb2xvciI6IiNiZmM3ZmYiLCJncmlkQ29sb3IiOiJsaWdodGdyZXkiLCJkb25lVGFza0JrZ0NvbG9yIjoibGlnaHRncmV5IiwiZG9uZVRhc2tCb3JkZXJDb2xvciI6ImdyZXkiLCJjcml0Qm9yZGVyQ29sb3IiOiIjZmY4ODg4IiwiY3JpdEJrZ0NvbG9yIjoicmVkIiwidG9kYXlMaW5lQ29sb3IiOiJyZWQiLCJsYWJlbENvbG9yIjoiYmxhY2siLCJlcnJvckJrZ0NvbG9yIjoiIzU1MjIyMiIsImVycm9yVGV4dENvbG9yIjoiIzU1MjIyMiIsImNsYXNzVGV4dCI6IiMxMzEzMDAiLCJmaWxsVHlwZTAiOiIjRUNFQ0ZGIiwiZmlsbFR5cGUxIjoiI2ZmZmZkZSIsImZpbGxUeXBlMiI6ImhzbCgzMDQsIDEwMCUsIDk2LjI3NDUwOTgwMzklKSIsImZpbGxUeXBlMyI6ImhzbCgxMjQsIDEwMCUsIDkzLjUyOTQxMTc2NDclKSIsImZpbGxUeXBlNCI6ImhzbCgxNzYsIDEwMCUsIDk2LjI3NDUwOTgwMzklKSIsImZpbGxUeXBlNSI6ImhzbCgtNCwgMTAwJSwgOTMuNTI5NDExNzY0NyUpIiwiZmlsbFR5cGU2IjoiaHNsKDgsIDEwMCUsIDk2LjI3NDUwOTgwMzklKSIsImZpbGxUeXBlNyI6ImhzbCgxODgsIDEwMCUsIDkzLjUyOTQxMTc2NDclKSJ9fSwidXBkYXRlRWRpdG9yIjpmYWxzZX0" alt=""></p>
+</li>
+<li>
+<p><strong>Композиция</strong> – механизм, позволяющий включать несколько объектов других классов в конструируемый.<br>
+<img src="https://mermaid.ink/svg/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAg0J7RgdC90L7QstC90L7QudCa0LvQsNGB0YEgXCIxXCIgKi0tIFwiMVwiINCa0LvQsNGB0YHQp9Cw0YHRgtGMIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQiLCJ0aGVtZVZhcmlhYmxlcyI6eyJiYWNrZ3JvdW5kIjoid2hpdGUiLCJwcmltYXJ5Q29sb3IiOiIjRUNFQ0ZGIiwic2Vjb25kYXJ5Q29sb3IiOiIjZmZmZmRlIiwidGVydGlhcnlDb2xvciI6ImhzbCg4MCwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwicHJpbWFyeUJvcmRlckNvbG9yIjoiaHNsKDI0MCwgNjAlLCA4Ni4yNzQ1MDk4MDM5JSkiLCJzZWNvbmRhcnlCb3JkZXJDb2xvciI6ImhzbCg2MCwgNjAlLCA4My41Mjk0MTE3NjQ3JSkiLCJ0ZXJ0aWFyeUJvcmRlckNvbG9yIjoiaHNsKDgwLCA2MCUsIDg2LjI3NDUwOTgwMzklKSIsInByaW1hcnlUZXh0Q29sb3IiOiIjMTMxMzAwIiwic2Vjb25kYXJ5VGV4dENvbG9yIjoiIzAwMDAyMSIsInRlcnRpYXJ5VGV4dENvbG9yIjoicmdiKDkuNTAwMDAwMDAwMSwgOS41MDAwMDAwMDAxLCA5LjUwMDAwMDAwMDEpIiwibGluZUNvbG9yIjoiIzMzMzMzMyIsInRleHRDb2xvciI6IiMzMzMiLCJtYWluQmtnIjoiI0VDRUNGRiIsInNlY29uZEJrZyI6IiNmZmZmZGUiLCJib3JkZXIxIjoiIzkzNzBEQiIsImJvcmRlcjIiOiIjYWFhYTMzIiwiYXJyb3doZWFkQ29sb3IiOiIjMzMzMzMzIiwiZm9udEZhbWlseSI6IlwidHJlYnVjaGV0IG1zXCIsIHZlcmRhbmEsIGFyaWFsIiwiZm9udFNpemUiOiIzMnB4IiwibGFiZWxCYWNrZ3JvdW5kIjoiI2U4ZThlOCIsIm5vZGVCa2ciOiIjRUNFQ0ZGIiwibm9kZUJvcmRlciI6IiM5MzcwREIiLCJjbHVzdGVyQmtnIjoiI2ZmZmZkZSIsImNsdXN0ZXJCb3JkZXIiOiIjYWFhYTMzIiwiZGVmYXVsdExpbmtDb2xvciI6IiMzMzMzMzMiLCJ0aXRsZUNvbG9yIjoiIzMzMyIsImVkZ2VMYWJlbEJhY2tncm91bmQiOiIjZThlOGU4IiwiYWN0b3JCb3JkZXIiOiJoc2woMjU5LjYyNjE2ODIyNDMsIDU5Ljc3NjUzNjMxMjglLCA4Ny45MDE5NjA3ODQzJSkiLCJhY3RvckJrZyI6IiNFQ0VDRkYiLCJhY3RvclRleHRDb2xvciI6ImJsYWNrIiwiYWN0b3JMaW5lQ29sb3IiOiJncmV5Iiwic2lnbmFsQ29sb3IiOiIjMzMzIiwic2lnbmFsVGV4dENvbG9yIjoiIzMzMyIsImxhYmVsQm94QmtnQ29sb3IiOiIjRUNFQ0ZGIiwibGFiZWxCb3hCb3JkZXJDb2xvciI6ImhzbCgyNTkuNjI2MTY4MjI0MywgNTkuNzc2NTM2MzEyOCUsIDg3LjkwMTk2MDc4NDMlKSIsImxhYmVsVGV4dENvbG9yIjoiYmxhY2siLCJsb29wVGV4dENvbG9yIjoiYmxhY2siLCJub3RlQm9yZGVyQ29sb3IiOiIjYWFhYTMzIiwibm90ZUJrZ0NvbG9yIjoiI2ZmZjVhZCIsIm5vdGVUZXh0Q29sb3IiOiJibGFjayIsImFjdGl2YXRpb25Cb3JkZXJDb2xvciI6IiM2NjYiLCJhY3RpdmF0aW9uQmtnQ29sb3IiOiIjZjRmNGY0Iiwic2VxdWVuY2VOdW1iZXJDb2xvciI6IndoaXRlIiwic2VjdGlvbkJrZ0NvbG9yIjoicmdiYSgxMDIsIDEwMiwgMjU1LCAwLjQ5KSIsImFsdFNlY3Rpb25Ca2dDb2xvciI6IndoaXRlIiwic2VjdGlvbkJrZ0NvbG9yMiI6IiNmZmY0MDAiLCJ0YXNrQm9yZGVyQ29sb3IiOiIjNTM0ZmJjIiwidGFza0JrZ0NvbG9yIjoiIzhhOTBkZCIsInRhc2tUZXh0TGlnaHRDb2xvciI6IndoaXRlIiwidGFza1RleHRDb2xvciI6IndoaXRlIiwidGFza1RleHREYXJrQ29sb3IiOiJibGFjayIsInRhc2tUZXh0T3V0c2lkZUNvbG9yIjoiYmxhY2siLCJ0YXNrVGV4dENsaWNrYWJsZUNvbG9yIjoiIzAwMzE2MyIsImFjdGl2ZVRhc2tCb3JkZXJDb2xvciI6IiM1MzRmYmMiLCJhY3RpdmVUYXNrQmtnQ29sb3IiOiIjYmZjN2ZmIiwiZ3JpZENvbG9yIjoibGlnaHRncmV5IiwiZG9uZVRhc2tCa2dDb2xvciI6ImxpZ2h0Z3JleSIsImRvbmVUYXNrQm9yZGVyQ29sb3IiOiJncmV5IiwiY3JpdEJvcmRlckNvbG9yIjoiI2ZmODg4OCIsImNyaXRCa2dDb2xvciI6InJlZCIsInRvZGF5TGluZUNvbG9yIjoicmVkIiwibGFiZWxDb2xvciI6ImJsYWNrIiwiZXJyb3JCa2dDb2xvciI6IiM1NTIyMjIiLCJlcnJvclRleHRDb2xvciI6IiM1NTIyMjIiLCJjbGFzc1RleHQiOiIjMTMxMzAwIiwiZmlsbFR5cGUwIjoiI0VDRUNGRiIsImZpbGxUeXBlMSI6IiNmZmZmZGUiLCJmaWxsVHlwZTIiOiJoc2woMzA0LCAxMDAlLCA5Ni4yNzQ1MDk4MDM5JSkiLCJmaWxsVHlwZTMiOiJoc2woMTI0LCAxMDAlLCA5My41Mjk0MTE3NjQ3JSkiLCJmaWxsVHlwZTQiOiJoc2woMTc2LCAxMDAlLCA5Ni4yNzQ1MDk4MDM5JSkiLCJmaWxsVHlwZTUiOiJoc2woLTQsIDEwMCUsIDkzLjUyOTQxMTc2NDclKSIsImZpbGxUeXBlNiI6ImhzbCg4LCAxMDAlLCA5Ni4yNzQ1MDk4MDM5JSkiLCJmaWxsVHlwZTciOiJoc2woMTg4LCAxMDAlLCA5My41Mjk0MTE3NjQ3JSkifX0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9" alt=""></p>
+</li>
+<li>
+<p><strong>Наполнение</strong> (<em><strong>агрегация</strong></em>) – механизм, позволяющих включать указатели на объекты других классов в конструируемый.<br>
+<img src="https://mermaid.ink/svg/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAg0JrQu9Cw0YHRgdCQ0LPRgNC10LPQsNGCIG8tLSBcIjAuLipcIiDQmtC70LDRgdGB0KfQsNGB0YLRjCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0IiwidGhlbWVWYXJpYWJsZXMiOnsiYmFja2dyb3VuZCI6IndoaXRlIiwicHJpbWFyeUNvbG9yIjoiI0VDRUNGRiIsInNlY29uZGFyeUNvbG9yIjoiI2ZmZmZkZSIsInRlcnRpYXJ5Q29sb3IiOiJoc2woODAsIDEwMCUsIDk2LjI3NDUwOTgwMzklKSIsInByaW1hcnlCb3JkZXJDb2xvciI6ImhzbCgyNDAsIDYwJSwgODYuMjc0NTA5ODAzOSUpIiwic2Vjb25kYXJ5Qm9yZGVyQ29sb3IiOiJoc2woNjAsIDYwJSwgODMuNTI5NDExNzY0NyUpIiwidGVydGlhcnlCb3JkZXJDb2xvciI6ImhzbCg4MCwgNjAlLCA4Ni4yNzQ1MDk4MDM5JSkiLCJwcmltYXJ5VGV4dENvbG9yIjoiIzEzMTMwMCIsInNlY29uZGFyeVRleHRDb2xvciI6IiMwMDAwMjEiLCJ0ZXJ0aWFyeVRleHRDb2xvciI6InJnYig5LjUwMDAwMDAwMDEsIDkuNTAwMDAwMDAwMSwgOS41MDAwMDAwMDAxKSIsImxpbmVDb2xvciI6IiMzMzMzMzMiLCJ0ZXh0Q29sb3IiOiIjMzMzIiwibWFpbkJrZyI6IiNFQ0VDRkYiLCJzZWNvbmRCa2ciOiIjZmZmZmRlIiwiYm9yZGVyMSI6IiM5MzcwREIiLCJib3JkZXIyIjoiI2FhYWEzMyIsImFycm93aGVhZENvbG9yIjoiIzMzMzMzMyIsImZvbnRGYW1pbHkiOiJcInRyZWJ1Y2hldCBtc1wiLCB2ZXJkYW5hLCBhcmlhbCIsImZvbnRTaXplIjoiMzJweCIsImxhYmVsQmFja2dyb3VuZCI6IiNlOGU4ZTgiLCJub2RlQmtnIjoiI0VDRUNGRiIsIm5vZGVCb3JkZXIiOiIjOTM3MERCIiwiY2x1c3RlckJrZyI6IiNmZmZmZGUiLCJjbHVzdGVyQm9yZGVyIjoiI2FhYWEzMyIsImRlZmF1bHRMaW5rQ29sb3IiOiIjMzMzMzMzIiwidGl0bGVDb2xvciI6IiMzMzMiLCJlZGdlTGFiZWxCYWNrZ3JvdW5kIjoiI2U4ZThlOCIsImFjdG9yQm9yZGVyIjoiaHNsKDI1OS42MjYxNjgyMjQzLCA1OS43NzY1MzYzMTI4JSwgODcuOTAxOTYwNzg0MyUpIiwiYWN0b3JCa2ciOiIjRUNFQ0ZGIiwiYWN0b3JUZXh0Q29sb3IiOiJibGFjayIsImFjdG9yTGluZUNvbG9yIjoiZ3JleSIsInNpZ25hbENvbG9yIjoiIzMzMyIsInNpZ25hbFRleHRDb2xvciI6IiMzMzMiLCJsYWJlbEJveEJrZ0NvbG9yIjoiI0VDRUNGRiIsImxhYmVsQm94Qm9yZGVyQ29sb3IiOiJoc2woMjU5LjYyNjE2ODIyNDMsIDU5Ljc3NjUzNjMxMjglLCA4Ny45MDE5NjA3ODQzJSkiLCJsYWJlbFRleHRDb2xvciI6ImJsYWNrIiwibG9vcFRleHRDb2xvciI6ImJsYWNrIiwibm90ZUJvcmRlckNvbG9yIjoiI2FhYWEzMyIsIm5vdGVCa2dDb2xvciI6IiNmZmY1YWQiLCJub3RlVGV4dENvbG9yIjoiYmxhY2siLCJhY3RpdmF0aW9uQm9yZGVyQ29sb3IiOiIjNjY2IiwiYWN0aXZhdGlvbkJrZ0NvbG9yIjoiI2Y0ZjRmNCIsInNlcXVlbmNlTnVtYmVyQ29sb3IiOiJ3aGl0ZSIsInNlY3Rpb25Ca2dDb2xvciI6InJnYmEoMTAyLCAxMDIsIDI1NSwgMC40OSkiLCJhbHRTZWN0aW9uQmtnQ29sb3IiOiJ3aGl0ZSIsInNlY3Rpb25Ca2dDb2xvcjIiOiIjZmZmNDAwIiwidGFza0JvcmRlckNvbG9yIjoiIzUzNGZiYyIsInRhc2tCa2dDb2xvciI6IiM4YTkwZGQiLCJ0YXNrVGV4dExpZ2h0Q29sb3IiOiJ3aGl0ZSIsInRhc2tUZXh0Q29sb3IiOiJ3aGl0ZSIsInRhc2tUZXh0RGFya0NvbG9yIjoiYmxhY2siLCJ0YXNrVGV4dE91dHNpZGVDb2xvciI6ImJsYWNrIiwidGFza1RleHRDbGlja2FibGVDb2xvciI6IiMwMDMxNjMiLCJhY3RpdmVUYXNrQm9yZGVyQ29sb3IiOiIjNTM0ZmJjIiwiYWN0aXZlVGFza0JrZ0NvbG9yIjoiI2JmYzdmZiIsImdyaWRDb2xvciI6ImxpZ2h0Z3JleSIsImRvbmVUYXNrQmtnQ29sb3IiOiJsaWdodGdyZXkiLCJkb25lVGFza0JvcmRlckNvbG9yIjoiZ3JleSIsImNyaXRCb3JkZXJDb2xvciI6IiNmZjg4ODgiLCJjcml0QmtnQ29sb3IiOiJyZWQiLCJ0b2RheUxpbmVDb2xvciI6InJlZCIsImxhYmVsQ29sb3IiOiJibGFjayIsImVycm9yQmtnQ29sb3IiOiIjNTUyMjIyIiwiZXJyb3JUZXh0Q29sb3IiOiIjNTUyMjIyIiwiY2xhc3NUZXh0IjoiIzEzMTMwMCIsImZpbGxUeXBlMCI6IiNFQ0VDRkYiLCJmaWxsVHlwZTEiOiIjZmZmZmRlIiwiZmlsbFR5cGUyIjoiaHNsKDMwNCwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwiZmlsbFR5cGUzIjoiaHNsKDEyNCwgMTAwJSwgOTMuNTI5NDExNzY0NyUpIiwiZmlsbFR5cGU0IjoiaHNsKDE3NiwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwiZmlsbFR5cGU1IjoiaHNsKC00LCAxMDAlLCA5My41Mjk0MTE3NjQ3JSkiLCJmaWxsVHlwZTYiOiJoc2woOCwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwiZmlsbFR5cGU3IjoiaHNsKDE4OCwgMTAwJSwgOTMuNTI5NDExNzY0NyUpIn19LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ" alt=""></p>
+</li>
+</ol>
+<h1 id="динамические-объекты-и-объекты-с-динамическими-полями-в-консольном-режиме-delphi.-примеры.">29. Динамические объекты и объекты с динамическими полями в консольном режиме Delphi. Примеры.</h1>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">var</span> 
+    a<span class="token punctuation">:</span> TRoom<span class="token punctuation">;</span> <span class="token comment">{объект А класса TRoom}</span>
+    b<span class="token punctuation">:</span> <span class="token keyword">array</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">..</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token keyword">of</span> TRoom<span class="token punctuation">;</span>  <span class="token comment">{массив объектов типа TRoom}</span>
+
+<span class="token keyword">type</span> pTRoom<span class="token operator">=</span><span class="token string">^T</span>Room<span class="token punctuation">;</span>  <span class="token comment">{тип указателя на объекты класса TRoom}</span>
+
+<span class="token keyword">var</span>  pC<span class="token punctuation">:</span> pTRoom<span class="token punctuation">;</span>  <span class="token comment">{указатель на объекта класса TRoom}</span>
+</code></pre>
+<p>Для динамического объекта необходимо выделить память:</p>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">new</span><span class="token punctuation">(</span>pC<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>, а после его использования – освободить память:</p>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">dispose</span><span class="token punctuation">(</span>pC<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Обращение к полям и методам аналогично доступу к полям записей:<br>
+Примеры:</p>
+<pre class=" language-pascal"><code class="prism  language-pascal">v <span class="token operator">:=</span> a<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+s <span class="token operator">:=</span> a<span class="token punctuation">.</span>square<span class="token punctuation">;</span>
+s <span class="token operator">:=</span> s <span class="token operator">+</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>square<span class="token punctuation">;</span>
+pC<span class="token operator">^</span><span class="token punctuation">.</span>length <span class="token operator">:=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="создание-полиморфных-объектов">Создание полиморфных объектов:</h3>
+<p>Функция <code>new(&lt;тип_указателя&gt;)</code> – возвращает адрес размещенного и, возможно, сконструированного объекта. После необходим вызов конструктора.<br>
+Или <code>new(&lt;тип_указателя&gt;, &lt;конструктор&gt;)</code>.</p>
+<p><strong>Деструктор</strong> – метод класса, который используется для корректного уничтожения полиморфного объекта, содержащего невидимое поле. Деструктор можно переопределять.</p>
+<h3 id="уничтожение-полиморфных-объектов">Уничтожение полиморфных объектов</h3>
+<p>Процедура <code>dispose(&lt;указатель&gt;)</code> – освобождает память, на которую указывает указатель. Перед вызовом процедуры необходим вызов деструктора, если он указан, и затем – выполняется освобождение памяти.<br>
+Или <code>dispose(&lt;указатель&gt;, &lt;деконструктор&gt;)</code>.</p>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">program</span> Ex_7_08<span class="token punctuation">;</span>
+
+<span class="token comment">{$APPTYPE CONSOLE}</span>
+<span class="token keyword">uses</span>
+    SysUtils<span class="token punctuation">;</span>
+
+<span class="token keyword">type</span>
+    pTRoomD <span class="token operator">=</span> <span class="token string">^T</span>RoomD<span class="token punctuation">;</span>
+
+    TRoomD <span class="token operator">=</span> <span class="token keyword">object</span>
+        length<span class="token punctuation">,</span> width<span class="token punctuation">:</span> Single<span class="token punctuation">;</span>
+        <span class="token keyword">function</span> square<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> Single<span class="token punctuation">;</span> <span class="token keyword">virtual</span><span class="token punctuation">;</span>
+        <span class="token keyword">constructor</span> init<span class="token punctuation">(</span>l<span class="token punctuation">,</span> w<span class="token punctuation">:</span> Single<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">destructor</span> done<span class="token punctuation">;</span>
+    <span class="token keyword">end</span><span class="token punctuation">;</span>
+
+<span class="token keyword">type</span>
+    pTVRoomD <span class="token operator">=</span> <span class="token string">^T</span>VRoomD<span class="token punctuation">;</span>
+    TVRoomD <span class="token operator">=</span> <span class="token keyword">object</span><span class="token punctuation">(</span>TRoomD<span class="token punctuation">)</span>
+        height<span class="token punctuation">:</span> Single<span class="token punctuation">;</span>
+        <span class="token keyword">function</span> square<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> Single<span class="token punctuation">;</span> <span class="token keyword">virtual</span><span class="token punctuation">;</span>
+        <span class="token keyword">constructor</span> init<span class="token punctuation">(</span>l<span class="token punctuation">,</span> w<span class="token punctuation">,</span> h<span class="token punctuation">:</span> Single<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">end</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> TRoomD<span class="token punctuation">.</span>square<span class="token punctuation">;</span>
+<span class="token keyword">begin</span>
+    <span class="token keyword">result</span> <span class="token operator">:=</span> length <span class="token operator">*</span> width<span class="token punctuation">;</span>
+<span class="token keyword">end</span><span class="token punctuation">;</span>
+
+<span class="token keyword">constructor</span> TRoomD<span class="token punctuation">.</span>init<span class="token punctuation">;</span>
+<span class="token keyword">begin</span>
+    length <span class="token operator">:=</span> l<span class="token punctuation">;</span>
+    width <span class="token operator">:=</span> w<span class="token punctuation">;</span>
+<span class="token keyword">end</span><span class="token punctuation">;</span>
+
+<span class="token keyword">destructor</span> TRoomD<span class="token punctuation">.</span>done<span class="token punctuation">;</span>
+<span class="token keyword">begin</span>
+<span class="token keyword">end</span><span class="token punctuation">;</span>
+
+<span class="token keyword">constructor</span> TVRoomD<span class="token punctuation">.</span>init<span class="token punctuation">;</span>
+<span class="token keyword">begin</span>
+    <span class="token keyword">inherited</span> init<span class="token punctuation">(</span>l<span class="token punctuation">,</span> w<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    height <span class="token operator">:=</span> h<span class="token punctuation">;</span>
+<span class="token keyword">end</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> TVRoomD<span class="token punctuation">.</span>square<span class="token punctuation">;</span>
+<span class="token keyword">begin</span>
+    <span class="token keyword">result</span> <span class="token operator">:=</span> <span class="token number">2</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token keyword">inherited</span> square<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> height <span class="token operator">*</span> <span class="token punctuation">(</span>length <span class="token operator">+</span> width<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">end</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span>
+    pA<span class="token punctuation">:</span> pTRoomD<span class="token punctuation">;</span>
+    pB<span class="token punctuation">:</span> pTVRoomD<span class="token punctuation">;</span>
+
+<span class="token keyword">begin</span>
+    <span class="token comment">{указатель базового типа, объект базового типа}</span>
+    pA <span class="token operator">:=</span> <span class="token keyword">new</span><span class="token punctuation">(</span>pTRoomD<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pA<span class="token operator">^</span><span class="token punctuation">.</span>init<span class="token punctuation">(</span><span class="token number">3.5</span><span class="token punctuation">,</span> <span class="token number">5.1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    writeLn<span class="token punctuation">(</span><span class="token string">'Square ='</span><span class="token punctuation">,</span> pA<span class="token operator">^</span><span class="token punctuation">.</span>square<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// `Square = 17.85`</span>
+    pA<span class="token operator">^</span><span class="token punctuation">.</span>done<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">dispose</span><span class="token punctuation">(</span>pA<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">{указатель производного типа, объект производного типа}</span>
+    pB <span class="token operator">:=</span> <span class="token keyword">new</span><span class="token punctuation">(</span>pTVRoomD<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    pB<span class="token operator">^</span><span class="token punctuation">.</span>init<span class="token punctuation">(</span><span class="token number">3.5</span><span class="token punctuation">,</span> <span class="token number">5.1</span><span class="token punctuation">,</span> <span class="token number">2.7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    writeLn<span class="token punctuation">(</span><span class="token string">'Square ='</span><span class="token punctuation">,</span> pB<span class="token operator">^</span><span class="token punctuation">.</span>square<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// `Square = 82.14`</span>
+    <span class="token keyword">Dispose</span><span class="token punctuation">(</span>pB<span class="token punctuation">,</span> done<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">{указатель базового типа, объект производного типа}</span>
+    pA <span class="token operator">:=</span> <span class="token keyword">new</span><span class="token punctuation">(</span>pTVRoomD<span class="token punctuation">,</span> init<span class="token punctuation">(</span><span class="token number">3.5</span><span class="token punctuation">,</span> <span class="token number">5.1</span><span class="token punctuation">,</span> <span class="token number">2.7</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    writeLn<span class="token punctuation">(</span><span class="token string">'Square ='</span><span class="token punctuation">,</span> pA<span class="token operator">^</span><span class="token punctuation">.</span>square<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// `Square = 82.14`</span>
+    <span class="token keyword">dispose</span><span class="token punctuation">(</span>pA<span class="token punctuation">,</span> done<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    readLn<span class="token punctuation">;</span>
+<span class="token keyword">end</span><span class="token punctuation">.</span>
+</code></pre>
+<h3 id="динамические-поля-в-объектах">Динамические поля в объектах</h3>
+<pre class=" language-pascal"><code class="prism  language-pascal"><span class="token keyword">program</span> Ex_7_09<span class="token punctuation">;</span>
+
+<span class="token comment">{$APPTYPE CONSOLE}</span>
+<span class="token keyword">uses</span>
+    SysUtils<span class="token punctuation">;</span>
+
+<span class="token keyword">type</span>
+    pTRoomD <span class="token operator">=</span> <span class="token string">^T</span>RoomD<span class="token punctuation">;</span>
+
+    TRoomD <span class="token operator">=</span> <span class="token keyword">object</span>
+        length<span class="token punctuation">,</span> width<span class="token punctuation">:</span> Single<span class="token punctuation">;</span>
+        <span class="token keyword">function</span> square<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> Single<span class="token punctuation">;</span> <span class="token keyword">virtual</span><span class="token punctuation">;</span>
+        <span class="token keyword">constructor</span> init<span class="token punctuation">(</span>l<span class="token punctuation">,</span> w<span class="token punctuation">:</span> Single<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">destructor</span> done<span class="token punctuation">;</span> <span class="token keyword">virtual</span><span class="token punctuation">;</span>
+    <span class="token keyword">end</span><span class="token punctuation">;</span>
+
+<span class="token keyword">type</span>
+    pTBRoomD <span class="token operator">=</span> <span class="token string">^T</span>BRoomD<span class="token punctuation">;</span>
+
+    TBRoomD <span class="token operator">=</span> <span class="token keyword">object</span><span class="token punctuation">(</span>TRoomD<span class="token punctuation">)</span>
+        pB<span class="token punctuation">:</span> pTRoomD<span class="token punctuation">;</span>
+        <span class="token keyword">function</span> square<span class="token punctuation">:</span> Single<span class="token punctuation">;</span> <span class="token keyword">virtual</span><span class="token punctuation">;</span>
+        <span class="token keyword">function</span> BSquare<span class="token punctuation">:</span> Single<span class="token punctuation">;</span>
+        <span class="token keyword">constructor</span> init<span class="token punctuation">(</span>l<span class="token punctuation">,</span> w<span class="token punctuation">:</span> Single<span class="token punctuation">;</span> lb<span class="token punctuation">,</span> wb<span class="token punctuation">:</span> Single<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">destructor</span> done<span class="token punctuation">;</span> <span class="token keyword">virtual</span><span class="token punctuation">;</span>
+    <span class="token keyword">end</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> TRoomD<span class="token punctuation">.</span>square<span class="token punctuation">;</span>
+<span class="token keyword">begin</span>
+    square <span class="token operator">:=</span> length <span class="token operator">*</span> width<span class="token punctuation">;</span>
+<span class="token keyword">end</span><span class="token punctuation">;</span>
+
+<span class="token keyword">constructor</span> TRoomD<span class="token punctuation">.</span>init<span class="token punctuation">;</span>
+<span class="token keyword">begin</span>
+    length <span class="token operator">:=</span> l<span class="token punctuation">;</span>
+    width <span class="token operator">:=</span> w<span class="token punctuation">;</span>
+<span class="token keyword">end</span><span class="token punctuation">;</span>
+
+<span class="token keyword">destructor</span> TRoomD<span class="token punctuation">.</span>done<span class="token punctuation">;</span>
+<span class="token keyword">begin</span>
+<span class="token keyword">end</span><span class="token punctuation">;</span>
+
+<span class="token keyword">constructor</span> TBRoomD<span class="token punctuation">.</span>init<span class="token punctuation">;</span>
+<span class="token keyword">begin</span>
+    <span class="token keyword">inherited</span> init<span class="token punctuation">(</span>l<span class="token punctuation">,</span> w<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>lb <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">or</span> <span class="token punctuation">(</span>wb <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">then</span>
+        pB <span class="token operator">:=</span> <span class="token keyword">nil</span>
+    <span class="token keyword">else</span>
+        pB <span class="token operator">:=</span> <span class="token keyword">new</span><span class="token punctuation">(</span>pTRoomD<span class="token punctuation">,</span> init<span class="token punctuation">(</span>lb<span class="token punctuation">,</span> wb<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">end</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> TBRoomD<span class="token punctuation">.</span>BSquare<span class="token punctuation">;</span>
+<span class="token keyword">begin</span>
+    <span class="token keyword">if</span> pB <span class="token operator">&lt;&gt;</span> <span class="token keyword">nil</span> <span class="token keyword">then</span>
+        BSquare <span class="token operator">:=</span> pB<span class="token operator">^</span><span class="token punctuation">.</span>square
+    <span class="token keyword">else</span>
+        BSquare <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">end</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> TBRoomD<span class="token punctuation">.</span>square<span class="token punctuation">;</span>
+<span class="token keyword">begin</span>
+    square <span class="token operator">:=</span> <span class="token keyword">inherited</span> square<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> BSquare<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">end</span><span class="token punctuation">;</span>
+
+<span class="token keyword">destructor</span> TBRoomD<span class="token punctuation">.</span>done<span class="token punctuation">;</span>
+<span class="token keyword">begin</span>
+    <span class="token keyword">if</span> pB <span class="token operator">&lt;&gt;</span> <span class="token keyword">nil</span> <span class="token keyword">then</span>
+        <span class="token keyword">Dispose</span><span class="token punctuation">(</span>pB<span class="token punctuation">,</span> done<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">end</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span>
+    A<span class="token punctuation">:</span> TBRoomD<span class="token punctuation">;</span>
+    pB1<span class="token punctuation">:</span> pTBRoomD<span class="token punctuation">;</span>
+    pB2<span class="token punctuation">:</span> pTRoomD<span class="token punctuation">;</span>
+
+<span class="token keyword">begin</span>
+    <span class="token comment">{статический объект с динамическим полем}</span>
+    A<span class="token punctuation">.</span>init<span class="token punctuation">(</span><span class="token number">3.2</span><span class="token punctuation">,</span> <span class="token number">5.1</span><span class="token punctuation">,</span> <span class="token number">2.5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    writeLn<span class="token punctuation">(</span>A<span class="token punctuation">.</span>Square<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span> A<span class="token punctuation">.</span>BSquare<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment">// ` 18.82  2.50`</span>
+    A<span class="token punctuation">.</span>done<span class="token punctuation">;</span>
+    
+    <span class="token comment">{динамический полиморфный объект с динамическим полем}</span>
+    pB1 <span class="token operator">:=</span> <span class="token keyword">new</span><span class="token punctuation">(</span>pTBRoomD<span class="token punctuation">,</span> init<span class="token punctuation">(</span><span class="token number">3.2</span><span class="token punctuation">,</span> <span class="token number">5.1</span><span class="token punctuation">,</span> <span class="token number">2.5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    writeLn<span class="token punctuation">(</span>pB1<span class="token operator">^</span><span class="token punctuation">.</span>square<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span> pB1<span class="token operator">^</span><span class="token punctuation">.</span>BSquare<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment">// ` 18.82  2.50`</span>
+    <span class="token keyword">dispose</span><span class="token punctuation">(</span>pB1<span class="token punctuation">,</span> Done<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">{динамический полиморфный объект с динамическим полем}</span>
+    pB2 <span class="token operator">:=</span> <span class="token keyword">new</span><span class="token punctuation">(</span>pTBRoomD<span class="token punctuation">,</span> init<span class="token punctuation">(</span><span class="token number">3.2</span><span class="token punctuation">,</span> <span class="token number">5.1</span><span class="token punctuation">,</span> <span class="token number">2.5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    writeLn<span class="token punctuation">(</span>pB2<span class="token operator">^</span><span class="token punctuation">.</span>square<span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">,</span> pTBRoomD<span class="token punctuation">(</span>pB2<span class="token punctuation">)</span><span class="token operator">^</span><span class="token punctuation">.</span>BSquare<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token number">6</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// ` 18.82  2.50`</span>
+    <span class="token keyword">dispose</span><span class="token punctuation">(</span>pB2<span class="token punctuation">,</span> done<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    readLn<span class="token punctuation">;</span>
+<span class="token keyword">end</span><span class="token punctuation">.</span>
+</code></pre>
+<h1 id="технология-событийного-программирования.-события-windows-сообщения-и-события-delphi.-основные-события-delphi.-примеры.">30. Технология событийного программирования. События Windows, сообщения и события Delphi. Основные события Delphi. Примеры.</h1>
+<p><em><strong>Приложение</strong> (в отличие от программы)</em> – набор подпрограмм, вызываемых при наступлении некоторого события, которым считается любое изменение в системе, касающееся данного приложения.</p>
+<h2 id="события-delphi-и-их-обработчики">События Delphi и их обработчики</h2>
+<p>Обработчики сообщений <em>Windows</em> предусмотрены у объектов класса <code>TForm</code> и классов управляющих компонентов, таких как кнопки, редакторы и т. п.</p>
+<p>Обработка выполняется следующим образом:</p>
+<ol>
+<li>В системе происходит событие, например, пользователь передвинул мышь или нажал на клавишу клавиатуры, в результате генерируется сообщение об этом событии – <em><strong>сообщение Windows</strong></em>.</li>
+<li>Сообщение <em>Windows</em> диспетчируется конкретному приложению.</li>
+<li>В приложении сообщение передается активному компоненту (окну или управляющему элементу).</li>
+<li>Метод обработки сообщения <em>Windows</em> компонента инициирует заранее предусмотренные <em><strong>события Delphi</strong></em>.</li>
+<li>Если в приложении предусмотрен соответствующий обработчик события <em>Delphi</em>, то он вызывается, если нет – то продолжается обработка сообщения <em>Windows</em>.</li>
+</ol>
+<h3 id="события-delphi">События <em>Delphi</em></h3>
+<p>Обработчики сообщений <em>Windows</em>, встроенные в классы компонентов VCL, инициируют множество событий <em>Delphi</em>.</p>
+<p>Например, обработчик события клавиатуры <code>WM_CHAR</code> класса <code>TForm</code> инициирует три события <strong>Delphi</strong>.</p>
+<p><img src="https://i.imgur.com/ZmOBN8n.png" alt="enter image description here"></p>
+<h3 id="обработчики-событий-delphi">Обработчики событий Delphi</h3>
+<p>Для каждого обработчика событий предусмотрен заголовок и определённый список передаваемых ему параметров.<br>
+<code>procedure &lt;компонент&gt;.&lt;Имя_компонента&gt;&lt;Имя_события_delphi&gt;(Sender: TObject[, {...}]);</code></p>
+<ol>
+<li><code>procedure TForm1.FormActivate(Sender:TObject);</code><br>
+Параметр <code>Sender</code> – отправитель (инициатор события).</li>
+<li><code>procedure TForm1.Edit1KeyPress(Sender: TObject; var Key: Char);</code><br>
+Параметр Key – символ ANSI.</li>
+<li><code>procedure TForm1.Edit1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);</code><br>
+Параметры: Key – виртуальный код, Shift – управляющие клав.</li>
+<li><code>procedure TForm1.Edit1KeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);</code></li>
+</ol>
+<h2 id="примеры-событий-delphi-обрабатываемые-объектами-класса-tform">Примеры событий Delphi, обрабатываемые объектами класса <em>TForm</em></h2>
+<ol>
+<li>
+<p>при изменении состояния формы:</p>
+<ul>
+<li><code>OnCreate</code> – в начальной стадии создания формы - используется при необходимости задания параметров (цвет или размер);</li>
+<li><code>OnActivate</code> – при получении формой фокуса ввода (окно становится активным и ему адресуется весь ввод с клавиатуры);</li>
+<li><code>OnShow</code> – когда форма (окно) становится видимой;</li>
+<li><code>OnPaint</code> – при необходимости нарисовать или перерисовать форму;</li>
+<li><code>OnResize</code> - при изменении размеров формы на экране;</li>
+<li><code>OnDeactivate</code> – при потере формой фокуса ввода (окно становится неактивным);</li>
+<li><code>OnHide</code> – при удалении формы с экрана (окно становится невидимым);</li>
+<li><code>OnCloseQuery</code> – при попытке закрыть форму - обычно используется для создания запроса-подтверждения необходимости закрытия окна;</li>
+<li><code>OnClose</code> – при закрытии формы;</li>
+<li><code>OnDestroy</code> – при уничтожении формы;</li>
+</ul>
+</li>
+<li>
+<p>от клавиатуры и мыши:</p>
+<ul>
+<li><code>OnKeyPressed</code> – при нажатии клавиш, которым соответствует код ANSI;</li>
+<li><code>OnKeyDown</code>, <code>OnKeyUp</code> – при нажатии и отпускании любых клавиш;</li>
+<li><code>OnClick</code>, <code>OnDblClick</code> – при обычном и двойном нажатии клавиш мыши;</li>
+<li><code>OnMouseMove</code> – при перемещении мыши (многократно);</li>
+<li><code>OnMouseDown</code>, <code>OnMouseUp</code> – при нажатии и отпускании клавиш мыши;</li>
+</ul>
+</li>
+<li>
+<p>при перетаскивании объекта мышью:</p>
+<ul>
+<li><code>OnDragDrop</code> – в момент опускания объекта на форму;</li>
+<li><code>OnDragOver</code> – в процессе перетаскивания объекта над формой (многократно);</li>
+</ul>
+</li>
+<li>
+<p>другие:</p>
+<ul>
+<li><code>OnHelp</code> – при вызове подсказки;</li>
+<li><code>OnChange</code> – при изменении содержимого компонент.</li>
+</ul>
+</li>
+</ol>
+
+    </div>
+  </div>
+</body>
+
+</html>
