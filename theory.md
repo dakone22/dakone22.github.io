@@ -1,12 +1,13 @@
+﻿
 # Основы программирования. Теория
 
 **Язык**: *Delphi Pascal*.
 
-## Синтаксис и семантика языков программирования. Алфавит языка Delphi Pascal. Описание синтаксиса языка: синтаксические диаграммы
+# Синтаксис и семантика языков программирования. Алфавит языка Delphi Pascal. Cинтаксические диаграммы
 
 **Синтаксис** - совокупность правил, определяющих допустимые конструкции (слова, предложения) языка, его форму.
 
-**Семантика**  -- правила, определяющие смысл синтаксически корректных предложений.
+**Семантика**  -- правила, определяющие смысл синтаксически корректных предложений. 
 
 Ясная или «интуитивно-понятная» *семантика* -- семантика, позволяющая без большого труда определять смысл программы или «читать» ее.
 
@@ -23,21 +24,21 @@
 
 ![Syntax diagram example](https://i.imgur.com/PpBOjy8.png)
 
-## Представление данных в Delphi Pascal: константы и переменные
+# Представление данных в Delphi Pascal: константы и переменные
 
-### Представление данных
+## Представление данных
 
 * Данные.
   1. Константы.
       1. Литералы.
-      2. Поименованные константы.
+      2. Поименованные константы. 
   2. Переменные.
 
 В языке *Delphi Pascal*  все данные подразделяются на *константы* и *переменные*:
 
 **Константы** -- данные, не изменяемые в процессе выполнения программы.
 
-Константы, в свою очередь, подразделяются на *литералы* и *поименованные константы*.
+Константы, в свою очередь, подразделяются на *литералы* и *поименованные константы*. 
 
 **Литералы** -- константы, указанные непосредственно в тексте программы.
 
@@ -63,23 +64,23 @@ const
 **Переменные** -- поименованные данные, которые могут изменяться в процессе выполнения программы. Объявляются также в разделе описаний: `var <имя>[, <имя>]: <тип>;`
 ```pascal
 var
-    a, b:integer;
-    c:real;
+    a, b: Integer;
+    c: Real;
 ```
 
 ---
 
 При установленной опции  `Extended syntax`  `{$X+}` (*расширенный синтаксис*) переменным при объявлении можно задавать начальные значения:
 ```pascal
-var
-    a: integer = 56;
-    b: real = 85.25;
+var 
+    a: Integer = 56;
+    b: Real = 85.25;
 ```
 
 -----
-Для **наложения** или же создания **абсолютной переменной** (которая находится по заданному или абсолютному адресу в памяти) используется служебное слово **`absolute`**:
+Для **наложения** или же создания **абсолютной переменной** (которая находится по заданному или абсолютному адресу в памяти) используется служебное слово **`absolute`**: 
 
-`var <имя>: <тип> absoulute <адрес>:<смещение>;` или
+`var <имя>: <тип> absoulute <адрес>:<смещение>;` или 
 
 `var <имя>: <тип> absoulute <переменная>;`.
 
@@ -89,7 +90,7 @@ var
     a: Word absolute $0000:$00FF;  // адрес_сегмента:смещение
     c: Byte;
     b: Real absolute c;  // наложение на ранее определенную переменную;
-       // обычно используется, когда тип переменной, которая тут `c`, может быть разным.
+       // обычно используется, когда тип переменной, которая тут `c`, может быть разным. 
        // (см. нетипизированные параметры)
 ```
 
@@ -102,24 +103,24 @@ var
 Для объявления новых типов данных используется конструкция: `type <имя> = <тип>;`:
 ```pascal
 type
-    int = longint;
-    date = 1..31;  // объявление нового типа данных
+    Int = LongInt;
+    Date = 1..31;  // объявление нового типа данных
 
 var
-    d1: date;  // объявление переменной этого типа
+    d1: Date;  // объявление переменной этого типа
 ```
 
-## Классификация  скалярных типов данных, операции над ними
+# Классификация  скалярных типов данных, операции над ними
 
-### Классификация типов данных языка
+## Классификация типов данных языка
 1. Тип
     1. Простой
-        1. Порядковые
+        1. Порядковые 
             1. Целые;
             2. Логические;
             3. Символ;
-            4. Перечисление;
-            5. Отрезок (Интервал);
+            4. *Перечисление;*
+            5. *Отрезок (Интервал);*
         3. Вещественный
             1. Вещественные;
             2. Большое целое;
@@ -207,7 +208,7 @@ type
 
 ###### Источники: [wiki.freepascal.org 1](https://wiki.freepascal.org/Data_type), [wiki.freepascal.org 2](https://wiki.freepascal.org/Variables_and_Data_Types), [delphibasics.ru](http://delphibasics.ru/1Types.php).
 
-### Процедуры и функции порядковых типов данных
+## Процедуры и функции порядковых типов данных
 
 1. Функция `ord(x: ordinal): int` -- возвращает номер значения по порядку (не применима к 64-битным аргументам)
    ```Pascal
@@ -240,9 +241,7 @@ type
    writeLn(low(m), ', ', high(m));  // 5, 35
    ```
 
------
-
-### Операции над скалярными типами данных.
+## Операции над скалярными типами данных.
 
 1. **Арифметические  операции** -- применяют к вещественным и целым константам и переменным:
    ```pascal
@@ -262,7 +261,7 @@ type
    var
        a, b: Boolean;
    {...}
-   a := true;
+   a := true; 
    b := false;
    a and b {false};  not a {false};  a xor b {true}
    a or b {true};    not b {true};   a xor a {false}
@@ -270,7 +269,7 @@ type
 4. **Побитовые (поразрядные) операции** -- выполняются поразрядно, применяют к целым. Результат целое число.
    `not`, `and`, `or`, `xor`, `shr` (сдвиг вправо), `shl` (сдвиг влево).
    ```pascal
-   var
+   var 
        a: Byte;
    {...}
    a := 5;
@@ -278,9 +277,8 @@ type
    a shl 2 {побитовый сдвиг влево на 2: 00000101 -> 00010100};
    ```
 
------
 
-### Математические функции
+## Математические функции
 
 (`int` -- абстрактный целочисленный тип, `float` -- абстрактный вещественный тип)
 
@@ -306,8 +304,8 @@ type
 
 ## Совместимость типов данных и операции преобразования типов
 
-### Правила вычисления выражений -- приоритеты
-1. Порядок выполнения операций определяется **приоритетами и скобками**:
+### Правила вычисления выражений. Приоритеты
+1. Порядок выполнения операций определяется **приоритетами** и **скобками**:
    ||Операции|Приоритет (порядок выполнения)|
    |--|--|--|
    |Унарные|`+`, `-`, `not`, `@`, `^`|1|
@@ -316,7 +314,7 @@ type
    |Логические|`=`, `<>`, `<`, `>`, `<=`, `>=`|4|
 
    Примеры:
-   1. $\dfrac{x(x+2)}{y(y-1)} \Rightarrow x*(x+2) / y\textcolor{red}{/} (y-1) = x*(x+2) / \textcolor{red}{(}y*(y - 1)\textcolor{red}{)}$
+   1. $\dfrac{x(x+2)}{y(y-1)} \Rightarrow x*(x+2) / y\textcolor{red}{/} (y-1) = x*(x+2) / \textcolor{red}{(}y*(y - 1)\textcolor{red}{)}$ 
    2. $\textcolor{red}{(}a < b\textcolor{red}{)} \space and \space \textcolor{red}{(}b >= 1\textcolor{red}{)}$
 
 2. При выполнении арифметических операций над числами различных типов автоматически осуществляется **неявное преобразование:**
@@ -368,9 +366,9 @@ var
 
 ```pascal
 var
-    l: LongInt;
-    e, x: Extended;
-    i: Integer;
+    l: LongInt; 
+    e, x: Extended; 
+    i: Integer; 
     r: Single;
 
 begin
@@ -387,9 +385,9 @@ r := i * e / (x + l);  // тип результата выражения `i * e 
 
 > Здесь что-то странное. Немного протестировав, у меня получилось так:
 
-* Если в опциях компилятора установлено `Overflow checking {$Q+}`, то если в результате каких-либо арифметических действий или присвоении произойдёт переполнение целочисленного типа, то вызывается ошибка.
+* При `Overflow checking {$Q+}`: если в результате каких-либо арифметических действий или присвоении произойдёт переполнение целочисленного типа, то вызывается ошибка.
 
-* Если в опциях компилятора установлено `Range checking {$R+}`, то если при присвоении произойдёт переполнение целочисленного типа, то вызывается ошибка.
+* При `Range checking {$R+}`: если при присвоении произойдёт переполнение целочисленного типа, то вызывается ошибка.
 
 
 ### Явное преобразование типов
@@ -414,7 +412,7 @@ r := i * e / (x + l);  // тип результата выражения `i * e 
 
 Оператор позволяет программировать несколько вариантов решения.
 
-Формат:
+Формат: 
 ```pascal
 case <выражение> of
     <константа/диапазон>: <оператор>;
@@ -454,11 +452,11 @@ end;
 
 Выполняется конкретное количество раз.
 
-Формат:
+Формат: 
 `for <переменная-счётчик> := <значение_от> to <значение_по> do <оператор>;` (если *от* < *по*)
 `for <переменная-счётчик> := <значение_от> downto <значение_по> do <оператор>;` (если *от* > *по*)
 
-Пример:
+Пример: 
 ```pascal
 var i: Integer;
 {...}
@@ -473,14 +471,14 @@ for i := 1 to 10 do
 
 ### Цикл-пока `while-do`
 
-Блок-схема:
+Блок-схема: 
 ![while-do-diagramm](https://i.imgur.com/LdGMa6z.png)
 
 Выполняется, пока *условие **истинно***.
 
 Формат: `while <логическое_выражение> do <оператор>;`
 
-Пример:
+Пример: 
 ```pascal
 while abs(e) >= 1e-5 do
     begin
@@ -493,20 +491,20 @@ while abs(e) >= 1e-5 do
 
 ### Цикл-до `repeat-until`
 
-Блок-схема:
+Блок-схема: 
 ![repeat-until-diagramm](https://i.imgur.com/92dV0CE.png)
 
 Выполняется, до тех пор, пока *условие не станет **истинно*** (то есть пока условие ложно).
 
-Формат:
+Формат: 
 ```pascal
-repeat
+repeat 
     <оператор>;
     [<оператор>; ...]
 until <логическое выражение>;
 ```
 
-Пример:
+Пример: 
 ```pascal
 repeat
     x := x + 1;
@@ -517,8 +515,8 @@ until abs(e) < 1e-5;
 ## Поисковый цикл. Неструктурная и структурная реализации поискового цикла.
 
 > В лекциях конкретного мало было, поэтому попробую расписать самостоятельно ...
-<!--- На самом деле, кто вообще выделяет поисковые циклы как отдельные?
-Это же просто немного особый итерационный цикл (с флагом, если нужно)  -->
+<!--- На самом деле, кто вообще выделяет поисковые циклы как отдельные? 
+Это же просто немного особый итерационный цикл (с флагом, если нужно)  --> 
 
 **Поисковый цикл** -- особый вид цикла, который имеет два случая выхода:
 1. нашли,
@@ -526,8 +524,8 @@ until abs(e) < 1e-5;
 
 Существуют **структурная** (приведённая к обычному итерационному циклу) и **неструктурная** реализации данного цикла. <!--- Хотя я не уверен, что это правильно-->
 
-* *Задача для примера*:
-   * определить сумму ряда $S = 1 - \dfrac{1}{x} + \dfrac{1}{x^2} - \dfrac{1}{x^3} +...$ с заданной точностью $\varepsilon$.
+* *Задача для примера*: 
+   * определить сумму ряда $S = 1 - \dfrac{1}{x} + \dfrac{1}{x^2} - \dfrac{1}{x^3} +...$ с заданной точностью $\varepsilon$. 
      (Рекуррентная формула последовательности: $R_1 = 1; R_n = -\dfrac{R_{n-1}}{x}$).
 
 
@@ -543,14 +541,14 @@ found := false;
 while true do
     begin
         {операторы, выполняемые до проверки}
-
+        
         if {проверка на то, нашли ли необходимое} then begin
                 found := true;  // ставим флаг, что нашли
                 break;          // прерываем цикл
             end;
         if {проверка на то, не перебрали ли всё} then
             break;
-
+        
         {операторы, выполняемые после проверки}
     end;
 
@@ -562,7 +560,7 @@ else
 
 * *Решение примера*:
 
-   * Блок-схема:
+   * Блок-схема: 
       ![non-struct-search-loop](https://i.imgur.com/8lmr4ml.png)
 
    * Код:
@@ -612,7 +610,7 @@ else
 
 * *Решение примера*:
 
-   * Блок-схема:
+   * Блок-схема: 
      ![struct-1-search-loop](https://i.imgur.com/NaYb68j.png)
 
    * Код:
@@ -646,7 +644,7 @@ var
 found := false;
 repeat
     {операторы, выполняемые после проверки}
-    {операторы, выполняемые до проверки} // !!!
+    {операторы, выполняемые до проверки} // !!! 
                                          // тут отличается от первой структурной реализации:
                   // выполнится в первый раз в любой случае, в отличие от первой реализации!
     if {нашли ли необходимое} then
@@ -661,7 +659,7 @@ else
 
 * *Решение примера*:
 
-   * Блок-схема:
+   * Блок-схема: 
      ![struct-2-search-loop](https://i.imgur.com/9UR8Oli.png)
 
    * Код:
@@ -700,10 +698,10 @@ else
 
 Примеры объявления массива:
 ```pascal
-type
+type 
     mas = array[1..10] of Integer;
 
-var
+var 
     a: array[1..5] of Integer;
     с: array[’A’..’C’, -5..-3] of Byte;
     b: array[Byte] of Char;
@@ -727,7 +725,7 @@ var
        c: array[Boolean] of Real;
    {...}
    b := a;
-   c := a; // ОШИБКА! Их типы считаются разными, так как объявлены раздельно,
+   c := a; // ОШИБКА! Их типы считаются разными, так как объявлены раздельно, 
            //         несмотря на то, что по факту они идентичны!
    ```
 2. Доступ к элементу массива (**прямой** и **косвенный доступ**):
@@ -737,7 +735,7 @@ var
    {...}
    a[’A’, true] := 5.1; {прямой доступ}
    {...}
-   ch := ’B’;
+   ch := ’B’; 
    b := false;
    a[ch, b] := 3; {косвенный доступ: значения индексов находятся в переменных}
    ```
@@ -808,8 +806,8 @@ var
 
 Примеры описания строк:
 ```pascal
-var
-    s1, s2: string[40];
+var 
+    s1, s2: string[40]; 
     s3: string;
 ```
 ```pascal
@@ -852,7 +850,7 @@ var
 
 4. **Операции отношения** – выполняется попарным сравнением кодов символов, результат определяется по отношению кодов первых различных символов:
    ```pascal
-   s1 := 'ABCD';
+   s1 := 'ABCD'; 
    s2 := 'ABCA';
    b := s1 > s2;  // true, так как 4: 'D' > 'A'
    'T' < 'Ta';    // true, так как размер первой строки меньше
@@ -860,7 +858,7 @@ var
 
 5. Ввод-вывод  строк:
    ```pascal
-   readLn(s1);  // Строка вводится до Enter (переноса строки, пропуская сам перенос)
+   readLn(s1);  // Строка вводится до Enter (переноса строки, пропуская сам перенос) 
                 // или максимальной длины
    writeLn(s1);
    ```
@@ -899,7 +897,7 @@ var
        s: string;
        a: real;
        code: integer;
-
+   
    {...}
    repeat
       write('Input a: ');
@@ -947,7 +945,7 @@ var
     // or
     number: set of 1..31;
     cif: set of 0..9;
-    codes: set of #0..#255;
+    codes: set of #0..#255; 
 ```
 
 
@@ -968,7 +966,7 @@ var
 ```pascal
 type
     SetNum = set of Byte;
-var
+var 
     s: SetNum = [1..10];
 ```
 
@@ -1016,7 +1014,7 @@ var
   var
       s: set of 1..100;
       n: Word;
-
+  
   {...}
   s := [];
   read(n);
@@ -1047,13 +1045,13 @@ var
 
 **Запись** – это структура данных, образованная *фиксированным числом разнотипных компонентов*, называемых **полями** записи
 
-Формат:
+Формат: 
 ```pascal
 type
     <имя> = record
         <переменные>: <тип>;               // фиксированная часть
         {--//--}
-        [case [тэг:] [набор_типов] of      // вариативная часть
+        [case [тэг:] [набор_типов] of      // вариантная часть
 	        <тип>: (
 	            <переменные>: <тип>;
 	            {--//--}
@@ -1079,7 +1077,7 @@ type
         year: Word;
     end;
 
-var
+var 
     rec1: Data;
     birthDay: Data = (day: 30; month: 6; year: 1973);
 ```
@@ -1092,7 +1090,7 @@ type
         case tag: EntryType of
             Book: (publisher, city: String);
             Magazine: (
-                magName: String;
+                magName: String; 
                 volume, issue: Integer
             );            // case не имеет своего end'а и пишется последним.
     end;
@@ -1120,18 +1118,18 @@ e.city := 'London';
 	       month: 1.12;
 	       year: Word;
 	   end;
-
+   
    var
        a, b: Date;
        c: Date;
        d, e: record day: 1..31; month: 1.12; year: Word; end;
-
+   
    {...}
    a := b;
    b := c;
    a := c;
    d := e;
-
+   
    a := d; // ОШИБКА! Считаются разными типами!
    e := c; // ОШИБКА! Считаются разными типами!
    ```
@@ -1282,7 +1280,7 @@ n := proc(5, 2.1);  // a = 5, b = 2.1
   ```
 
 * **Параметры-константы** при описании подпрограммы помечаются служебным словом `const`.
-  Как и с *параметрами-переменными*, по факту происходит передача переменной *по адресу*, но при попытке изменить значение переменной в подпрограмме, вызывается ошибка. То есть изменять значение в подпрограмме запрещено.
+  Как и с *параметрами-переменными*, по факту происходит передача переменной *по адресу*, но при попытке изменить значение переменной в подпрограмме, вызывается ошибка. То есть изменять значение в подпрограмме запрещено. 
   ```pascal
   function gamma(const x: Integer; n: Byte): Integer;
   begin
@@ -1327,7 +1325,7 @@ end.
 
 ### Открытые массивы
 
-**Открытый массив** – конструкция описания типа массива без указания типа индексов.
+**Открытый массив** – конструкция описания типа массива без указания типа индексов. 
 Используется только при объявлении *формальных параметров*.
 
 ```pascal
@@ -1361,9 +1359,9 @@ interface
 
 implementation
     procedure add;
-    var
+    var 
         ch: Char;
-
+    
     begin
         ch := s[length(s)];
         s := s + chr(succ(Ord(Ch)));
@@ -1412,12 +1410,12 @@ end.
    ```pascal
    type
        TType = (TReal, TInteger);
-
+   
    procedure proc(var a; t: TType);
    var
        r: Real absolute a;
        i: Integer absolute a;
-
+   
    {...}
        if t = TReal then
            {используем переменную `r`}
@@ -1472,7 +1470,7 @@ test_function(f);  // или test_function(fun1);
 
 Структура модуля:
 ```pascal
-unit <имя_модуля>;  // Имя модуля должно совпадать с
+unit <имя_модуля>;  // Имя модуля должно совпадать с 
                     // именем файла, в котором он описан.
 
 interface
@@ -1541,7 +1539,7 @@ begin
 
 **Рекурсия** – организация вычислений, при которой процедура или функция обращаются к самим себе.
 
-Различают *явную* и *косвенную* рекурсии.
+Различают *явную* и *косвенную* рекурсии. 
 При *явной* – в теле подпрограммы существует вызов самой себя, при *косвенной* – вызов осуществляется в подпрограммах, вызываемых из рассматриваемой.
 
 Косвенная рекурсия требует предопределения `forward`:
@@ -1584,7 +1582,7 @@ end;
    ///               pointer: 4 bytes;  string[255]: 256 bytes
    function reverse1(const st: string): string;
    begin
-       if length(st) = 0 then
+       if length(st) = 0 then 
            result := ‘‘
        else
            result := reverse1(copy(st, 2, length(st) - 1)) + st[1];
@@ -1597,9 +1595,9 @@ end;
    procedure reverse2(var ss: string; n: integer);
    var
        temp: char;
-
+   
    begin
-       if n <= length(ss) div 2 then
+       if n <= length(ss) div 2 then 
            begin
                temp := ss[n];
                ss[n] := ss[length(ss) - n + 1];
@@ -1663,7 +1661,7 @@ $А_{см}$ -- смещение -- расстояние от базового а
 ```pascal
 type
     TPI = ^Integer;
-
+ 
  var
      pi: TPI;
      pr: ^Real;
@@ -1706,7 +1704,7 @@ var
    var
        i: Integer;
        pi: ^Integer;
-
+   
    {...}
    pi := @i;
    ```
@@ -1740,7 +1738,7 @@ var
    var
        a: Integer;
        p: Pointer;
-
+   
    {...}
    p := ptr(a);
    ```
@@ -1756,7 +1754,7 @@ var
    ```pascal
    var
        pi: ^Integer;
-
+   
    {...}
    writeLn(assigned(pi)); // false
    new(pi);
@@ -1774,12 +1772,12 @@ var
    ```pascal
    var
        buffer: ^array[1..100] of Byte;
-
+   
    {...}
    getMem(buffer, sizeOf(buffer));
    buffer^[1] := 125;
    {...}
-   freeMem(buffer, sizeOf(buffer));
+   freeMem(buffer, sizeOf(buffer)); 
    ```
    <!--- sizeOf(buffer) = 4  ?????-->
 
@@ -1837,9 +1835,9 @@ graph TD;
 
 Полное имя файла включает:
 
-<Имя диска>:<Список имен каталогов>\<Имя файла>.<Расширение>
+`<Имя диска>:<Список имен каталогов>\<Имя файла>.<Расширение>`
 
-Имя файла в Windows составляют из строчных и прописных букв латинского и русского алфавитов, арабских цифр и некоторых специальных символов, например, символов подчеркивания «_» или доллара «$»
+Имя файла в Windows составляют из строчных и прописных букв латинского и русского алфавитов, арабских цифр и некоторых специальных символов, например, символов подчеркивания `_` или доллара `$`
 
 ### Файлы *Delphi Pascal*
 
@@ -1997,7 +1995,7 @@ begin
 3. Процедура `readLn([var f: text;] v1, v2, {...} vn)` – осуществляет ввод символов, строк и чисел. После чтения последней переменной оставшаяся часть строки до маркера конца строки пропускается так, что следующее обращение к `readLn` или `read` начинается с первого символа новой строки.
 
 4. Процедура `write([var f: text;] v1, v2, {...} vn)` – осуществляет вывод одного или более выражений типа `CHAR`, `STRING`, `BOOLEAN`, а также целого или вещественного типов. При выводе числовых значений последние преобразуются в символьное представление. Если файловая переменная не указана, то вывод осуществляется в файл `OUTPUT`.
-   Любой параметр из списка вывода может иметь формат:
+   Любой параметр из списка вывода может иметь формат: 
    `<Параметр> [: <Целое1> [: <Целое2> ]]`.
 
 5. Процедура `writeLn([var f: text;] v1, v2, {...} vn)` – осуществляет вывод в текстовый файл. Если файловая переменная не указана, то вывод осуществляется в файл `OUTPUT`.
@@ -2196,12 +2194,12 @@ graph TD;
    При этом исходный класс, на базе которого выполняется построение, называют *родительским* или *базовым*, а строящейся класс – *потомком* или *производным* классом.
 
    Если при наследовании какие-либо методы переопределяются, то такое наследование называется полиморфным.
-
+   
    ![](https://mermaid.ink/svg/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAg0JrQu9Cw0YHRgdCg0L7QtNC40YLQtdC70YwgPHwtLSDQmtC70LDRgdGB0J_QvtGC0L7QvNC-0LoiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCIsInRoZW1lVmFyaWFibGVzIjp7ImJhY2tncm91bmQiOiJ3aGl0ZSIsInByaW1hcnlDb2xvciI6IiNFQ0VDRkYiLCJzZWNvbmRhcnlDb2xvciI6IiNmZmZmZGUiLCJ0ZXJ0aWFyeUNvbG9yIjoiaHNsKDgwLCAxMDAlLCA5Ni4yNzQ1MDk4MDM5JSkiLCJwcmltYXJ5Qm9yZGVyQ29sb3IiOiJoc2woMjQwLCA2MCUsIDg2LjI3NDUwOTgwMzklKSIsInNlY29uZGFyeUJvcmRlckNvbG9yIjoiaHNsKDYwLCA2MCUsIDgzLjUyOTQxMTc2NDclKSIsInRlcnRpYXJ5Qm9yZGVyQ29sb3IiOiJoc2woODAsIDYwJSwgODYuMjc0NTA5ODAzOSUpIiwicHJpbWFyeVRleHRDb2xvciI6IiMxMzEzMDAiLCJzZWNvbmRhcnlUZXh0Q29sb3IiOiIjMDAwMDIxIiwidGVydGlhcnlUZXh0Q29sb3IiOiJyZ2IoOS41MDAwMDAwMDAxLCA5LjUwMDAwMDAwMDEsIDkuNTAwMDAwMDAwMSkiLCJsaW5lQ29sb3IiOiIjMzMzMzMzIiwidGV4dENvbG9yIjoiIzMzMyIsIm1haW5Ca2ciOiIjRUNFQ0ZGIiwic2Vjb25kQmtnIjoiI2ZmZmZkZSIsImJvcmRlcjEiOiIjOTM3MERCIiwiYm9yZGVyMiI6IiNhYWFhMzMiLCJhcnJvd2hlYWRDb2xvciI6IiMzMzMzMzMiLCJmb250RmFtaWx5IjoiXCJ0cmVidWNoZXQgbXNcIiwgdmVyZGFuYSwgYXJpYWwiLCJmb250U2l6ZSI6IjE2cHgiLCJsYWJlbEJhY2tncm91bmQiOiIjZThlOGU4Iiwibm9kZUJrZyI6IiNFQ0VDRkYiLCJub2RlQm9yZGVyIjoiIzkzNzBEQiIsImNsdXN0ZXJCa2ciOiIjZmZmZmRlIiwiY2x1c3RlckJvcmRlciI6IiNhYWFhMzMiLCJkZWZhdWx0TGlua0NvbG9yIjoiIzMzMzMzMyIsInRpdGxlQ29sb3IiOiIjMzMzIiwiZWRnZUxhYmVsQmFja2dyb3VuZCI6IiNlOGU4ZTgiLCJhY3RvckJvcmRlciI6ImhzbCgyNTkuNjI2MTY4MjI0MywgNTkuNzc2NTM2MzEyOCUsIDg3LjkwMTk2MDc4NDMlKSIsImFjdG9yQmtnIjoiI0VDRUNGRiIsImFjdG9yVGV4dENvbG9yIjoiYmxhY2siLCJhY3RvckxpbmVDb2xvciI6ImdyZXkiLCJzaWduYWxDb2xvciI6IiMzMzMiLCJzaWduYWxUZXh0Q29sb3IiOiIjMzMzIiwibGFiZWxCb3hCa2dDb2xvciI6IiNFQ0VDRkYiLCJsYWJlbEJveEJvcmRlckNvbG9yIjoiaHNsKDI1OS42MjYxNjgyMjQzLCA1OS43NzY1MzYzMTI4JSwgODcuOTAxOTYwNzg0MyUpIiwibGFiZWxUZXh0Q29sb3IiOiJibGFjayIsImxvb3BUZXh0Q29sb3IiOiJibGFjayIsIm5vdGVCb3JkZXJDb2xvciI6IiNhYWFhMzMiLCJub3RlQmtnQ29sb3IiOiIjZmZmNWFkIiwibm90ZVRleHRDb2xvciI6ImJsYWNrIiwiYWN0aXZhdGlvbkJvcmRlckNvbG9yIjoiIzY2NiIsImFjdGl2YXRpb25Ca2dDb2xvciI6IiNmNGY0ZjQiLCJzZXF1ZW5jZU51bWJlckNvbG9yIjoid2hpdGUiLCJzZWN0aW9uQmtnQ29sb3IiOiJyZ2JhKDEwMiwgMTAyLCAyNTUsIDAuNDkpIiwiYWx0U2VjdGlvbkJrZ0NvbG9yIjoid2hpdGUiLCJzZWN0aW9uQmtnQ29sb3IyIjoiI2ZmZjQwMCIsInRhc2tCb3JkZXJDb2xvciI6IiM1MzRmYmMiLCJ0YXNrQmtnQ29sb3IiOiIjOGE5MGRkIiwidGFza1RleHRMaWdodENvbG9yIjoid2hpdGUiLCJ0YXNrVGV4dENvbG9yIjoid2hpdGUiLCJ0YXNrVGV4dERhcmtDb2xvciI6ImJsYWNrIiwidGFza1RleHRPdXRzaWRlQ29sb3IiOiJibGFjayIsInRhc2tUZXh0Q2xpY2thYmxlQ29sb3IiOiIjMDAzMTYzIiwiYWN0aXZlVGFza0JvcmRlckNvbG9yIjoiIzUzNGZiYyIsImFjdGl2ZVRhc2tCa2dDb2xvciI6IiNiZmM3ZmYiLCJncmlkQ29sb3IiOiJsaWdodGdyZXkiLCJkb25lVGFza0JrZ0NvbG9yIjoibGlnaHRncmV5IiwiZG9uZVRhc2tCb3JkZXJDb2xvciI6ImdyZXkiLCJjcml0Qm9yZGVyQ29sb3IiOiIjZmY4ODg4IiwiY3JpdEJrZ0NvbG9yIjoicmVkIiwidG9kYXlMaW5lQ29sb3IiOiJyZWQiLCJsYWJlbENvbG9yIjoiYmxhY2siLCJlcnJvckJrZ0NvbG9yIjoiIzU1MjIyMiIsImVycm9yVGV4dENvbG9yIjoiIzU1MjIyMiIsImNsYXNzVGV4dCI6IiMxMzEzMDAiLCJmaWxsVHlwZTAiOiIjRUNFQ0ZGIiwiZmlsbFR5cGUxIjoiI2ZmZmZkZSIsImZpbGxUeXBlMiI6ImhzbCgzMDQsIDEwMCUsIDk2LjI3NDUwOTgwMzklKSIsImZpbGxUeXBlMyI6ImhzbCgxMjQsIDEwMCUsIDkzLjUyOTQxMTc2NDclKSIsImZpbGxUeXBlNCI6ImhzbCgxNzYsIDEwMCUsIDk2LjI3NDUwOTgwMzklKSIsImZpbGxUeXBlNSI6ImhzbCgtNCwgMTAwJSwgOTMuNTI5NDExNzY0NyUpIiwiZmlsbFR5cGU2IjoiaHNsKDgsIDEwMCUsIDk2LjI3NDUwOTgwMzklKSIsImZpbGxUeXBlNyI6ImhzbCgxODgsIDEwMCUsIDkzLjUyOTQxMTc2NDclKSJ9fSwidXBkYXRlRWRpdG9yIjpmYWxzZX0)
 
 2. **Композиция** –  механизм, позволяющий включать несколько объектов других классов в конструируемый.
       ![](https://mermaid.ink/svg/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAg0J7RgdC90L7QstC90L7QudCa0LvQsNGB0YEgXCIxXCIgKi0tIFwiMVwiINCa0LvQsNGB0YHQp9Cw0YHRgtGMIiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQiLCJ0aGVtZVZhcmlhYmxlcyI6eyJiYWNrZ3JvdW5kIjoid2hpdGUiLCJwcmltYXJ5Q29sb3IiOiIjRUNFQ0ZGIiwic2Vjb25kYXJ5Q29sb3IiOiIjZmZmZmRlIiwidGVydGlhcnlDb2xvciI6ImhzbCg4MCwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwicHJpbWFyeUJvcmRlckNvbG9yIjoiaHNsKDI0MCwgNjAlLCA4Ni4yNzQ1MDk4MDM5JSkiLCJzZWNvbmRhcnlCb3JkZXJDb2xvciI6ImhzbCg2MCwgNjAlLCA4My41Mjk0MTE3NjQ3JSkiLCJ0ZXJ0aWFyeUJvcmRlckNvbG9yIjoiaHNsKDgwLCA2MCUsIDg2LjI3NDUwOTgwMzklKSIsInByaW1hcnlUZXh0Q29sb3IiOiIjMTMxMzAwIiwic2Vjb25kYXJ5VGV4dENvbG9yIjoiIzAwMDAyMSIsInRlcnRpYXJ5VGV4dENvbG9yIjoicmdiKDkuNTAwMDAwMDAwMSwgOS41MDAwMDAwMDAxLCA5LjUwMDAwMDAwMDEpIiwibGluZUNvbG9yIjoiIzMzMzMzMyIsInRleHRDb2xvciI6IiMzMzMiLCJtYWluQmtnIjoiI0VDRUNGRiIsInNlY29uZEJrZyI6IiNmZmZmZGUiLCJib3JkZXIxIjoiIzkzNzBEQiIsImJvcmRlcjIiOiIjYWFhYTMzIiwiYXJyb3doZWFkQ29sb3IiOiIjMzMzMzMzIiwiZm9udEZhbWlseSI6IlwidHJlYnVjaGV0IG1zXCIsIHZlcmRhbmEsIGFyaWFsIiwiZm9udFNpemUiOiIzMnB4IiwibGFiZWxCYWNrZ3JvdW5kIjoiI2U4ZThlOCIsIm5vZGVCa2ciOiIjRUNFQ0ZGIiwibm9kZUJvcmRlciI6IiM5MzcwREIiLCJjbHVzdGVyQmtnIjoiI2ZmZmZkZSIsImNsdXN0ZXJCb3JkZXIiOiIjYWFhYTMzIiwiZGVmYXVsdExpbmtDb2xvciI6IiMzMzMzMzMiLCJ0aXRsZUNvbG9yIjoiIzMzMyIsImVkZ2VMYWJlbEJhY2tncm91bmQiOiIjZThlOGU4IiwiYWN0b3JCb3JkZXIiOiJoc2woMjU5LjYyNjE2ODIyNDMsIDU5Ljc3NjUzNjMxMjglLCA4Ny45MDE5NjA3ODQzJSkiLCJhY3RvckJrZyI6IiNFQ0VDRkYiLCJhY3RvclRleHRDb2xvciI6ImJsYWNrIiwiYWN0b3JMaW5lQ29sb3IiOiJncmV5Iiwic2lnbmFsQ29sb3IiOiIjMzMzIiwic2lnbmFsVGV4dENvbG9yIjoiIzMzMyIsImxhYmVsQm94QmtnQ29sb3IiOiIjRUNFQ0ZGIiwibGFiZWxCb3hCb3JkZXJDb2xvciI6ImhzbCgyNTkuNjI2MTY4MjI0MywgNTkuNzc2NTM2MzEyOCUsIDg3LjkwMTk2MDc4NDMlKSIsImxhYmVsVGV4dENvbG9yIjoiYmxhY2siLCJsb29wVGV4dENvbG9yIjoiYmxhY2siLCJub3RlQm9yZGVyQ29sb3IiOiIjYWFhYTMzIiwibm90ZUJrZ0NvbG9yIjoiI2ZmZjVhZCIsIm5vdGVUZXh0Q29sb3IiOiJibGFjayIsImFjdGl2YXRpb25Cb3JkZXJDb2xvciI6IiM2NjYiLCJhY3RpdmF0aW9uQmtnQ29sb3IiOiIjZjRmNGY0Iiwic2VxdWVuY2VOdW1iZXJDb2xvciI6IndoaXRlIiwic2VjdGlvbkJrZ0NvbG9yIjoicmdiYSgxMDIsIDEwMiwgMjU1LCAwLjQ5KSIsImFsdFNlY3Rpb25Ca2dDb2xvciI6IndoaXRlIiwic2VjdGlvbkJrZ0NvbG9yMiI6IiNmZmY0MDAiLCJ0YXNrQm9yZGVyQ29sb3IiOiIjNTM0ZmJjIiwidGFza0JrZ0NvbG9yIjoiIzhhOTBkZCIsInRhc2tUZXh0TGlnaHRDb2xvciI6IndoaXRlIiwidGFza1RleHRDb2xvciI6IndoaXRlIiwidGFza1RleHREYXJrQ29sb3IiOiJibGFjayIsInRhc2tUZXh0T3V0c2lkZUNvbG9yIjoiYmxhY2siLCJ0YXNrVGV4dENsaWNrYWJsZUNvbG9yIjoiIzAwMzE2MyIsImFjdGl2ZVRhc2tCb3JkZXJDb2xvciI6IiM1MzRmYmMiLCJhY3RpdmVUYXNrQmtnQ29sb3IiOiIjYmZjN2ZmIiwiZ3JpZENvbG9yIjoibGlnaHRncmV5IiwiZG9uZVRhc2tCa2dDb2xvciI6ImxpZ2h0Z3JleSIsImRvbmVUYXNrQm9yZGVyQ29sb3IiOiJncmV5IiwiY3JpdEJvcmRlckNvbG9yIjoiI2ZmODg4OCIsImNyaXRCa2dDb2xvciI6InJlZCIsInRvZGF5TGluZUNvbG9yIjoicmVkIiwibGFiZWxDb2xvciI6ImJsYWNrIiwiZXJyb3JCa2dDb2xvciI6IiM1NTIyMjIiLCJlcnJvclRleHRDb2xvciI6IiM1NTIyMjIiLCJjbGFzc1RleHQiOiIjMTMxMzAwIiwiZmlsbFR5cGUwIjoiI0VDRUNGRiIsImZpbGxUeXBlMSI6IiNmZmZmZGUiLCJmaWxsVHlwZTIiOiJoc2woMzA0LCAxMDAlLCA5Ni4yNzQ1MDk4MDM5JSkiLCJmaWxsVHlwZTMiOiJoc2woMTI0LCAxMDAlLCA5My41Mjk0MTE3NjQ3JSkiLCJmaWxsVHlwZTQiOiJoc2woMTc2LCAxMDAlLCA5Ni4yNzQ1MDk4MDM5JSkiLCJmaWxsVHlwZTUiOiJoc2woLTQsIDEwMCUsIDkzLjUyOTQxMTc2NDclKSIsImZpbGxUeXBlNiI6ImhzbCg4LCAxMDAlLCA5Ni4yNzQ1MDk4MDM5JSkiLCJmaWxsVHlwZTciOiJoc2woMTg4LCAxMDAlLCA5My41Mjk0MTE3NjQ3JSkifX0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9)
-
+   
 3. **Наполнение** – механизм, позволяющих включать указатели на объекты других классов в конструируемый.
       ![](https://mermaid.ink/svg/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAg0JrQu9Cw0YHRgdCQ0LPRgNC10LPQsNGCIG8tLSBcIjAuLipcIiDQmtC70LDRgdGB0KfQsNGB0YLRjCIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0IiwidGhlbWVWYXJpYWJsZXMiOnsiYmFja2dyb3VuZCI6IndoaXRlIiwicHJpbWFyeUNvbG9yIjoiI0VDRUNGRiIsInNlY29uZGFyeUNvbG9yIjoiI2ZmZmZkZSIsInRlcnRpYXJ5Q29sb3IiOiJoc2woODAsIDEwMCUsIDk2LjI3NDUwOTgwMzklKSIsInByaW1hcnlCb3JkZXJDb2xvciI6ImhzbCgyNDAsIDYwJSwgODYuMjc0NTA5ODAzOSUpIiwic2Vjb25kYXJ5Qm9yZGVyQ29sb3IiOiJoc2woNjAsIDYwJSwgODMuNTI5NDExNzY0NyUpIiwidGVydGlhcnlCb3JkZXJDb2xvciI6ImhzbCg4MCwgNjAlLCA4Ni4yNzQ1MDk4MDM5JSkiLCJwcmltYXJ5VGV4dENvbG9yIjoiIzEzMTMwMCIsInNlY29uZGFyeVRleHRDb2xvciI6IiMwMDAwMjEiLCJ0ZXJ0aWFyeVRleHRDb2xvciI6InJnYig5LjUwMDAwMDAwMDEsIDkuNTAwMDAwMDAwMSwgOS41MDAwMDAwMDAxKSIsImxpbmVDb2xvciI6IiMzMzMzMzMiLCJ0ZXh0Q29sb3IiOiIjMzMzIiwibWFpbkJrZyI6IiNFQ0VDRkYiLCJzZWNvbmRCa2ciOiIjZmZmZmRlIiwiYm9yZGVyMSI6IiM5MzcwREIiLCJib3JkZXIyIjoiI2FhYWEzMyIsImFycm93aGVhZENvbG9yIjoiIzMzMzMzMyIsImZvbnRGYW1pbHkiOiJcInRyZWJ1Y2hldCBtc1wiLCB2ZXJkYW5hLCBhcmlhbCIsImZvbnRTaXplIjoiMzJweCIsImxhYmVsQmFja2dyb3VuZCI6IiNlOGU4ZTgiLCJub2RlQmtnIjoiI0VDRUNGRiIsIm5vZGVCb3JkZXIiOiIjOTM3MERCIiwiY2x1c3RlckJrZyI6IiNmZmZmZGUiLCJjbHVzdGVyQm9yZGVyIjoiI2FhYWEzMyIsImRlZmF1bHRMaW5rQ29sb3IiOiIjMzMzMzMzIiwidGl0bGVDb2xvciI6IiMzMzMiLCJlZGdlTGFiZWxCYWNrZ3JvdW5kIjoiI2U4ZThlOCIsImFjdG9yQm9yZGVyIjoiaHNsKDI1OS42MjYxNjgyMjQzLCA1OS43NzY1MzYzMTI4JSwgODcuOTAxOTYwNzg0MyUpIiwiYWN0b3JCa2ciOiIjRUNFQ0ZGIiwiYWN0b3JUZXh0Q29sb3IiOiJibGFjayIsImFjdG9yTGluZUNvbG9yIjoiZ3JleSIsInNpZ25hbENvbG9yIjoiIzMzMyIsInNpZ25hbFRleHRDb2xvciI6IiMzMzMiLCJsYWJlbEJveEJrZ0NvbG9yIjoiI0VDRUNGRiIsImxhYmVsQm94Qm9yZGVyQ29sb3IiOiJoc2woMjU5LjYyNjE2ODIyNDMsIDU5Ljc3NjUzNjMxMjglLCA4Ny45MDE5NjA3ODQzJSkiLCJsYWJlbFRleHRDb2xvciI6ImJsYWNrIiwibG9vcFRleHRDb2xvciI6ImJsYWNrIiwibm90ZUJvcmRlckNvbG9yIjoiI2FhYWEzMyIsIm5vdGVCa2dDb2xvciI6IiNmZmY1YWQiLCJub3RlVGV4dENvbG9yIjoiYmxhY2siLCJhY3RpdmF0aW9uQm9yZGVyQ29sb3IiOiIjNjY2IiwiYWN0aXZhdGlvbkJrZ0NvbG9yIjoiI2Y0ZjRmNCIsInNlcXVlbmNlTnVtYmVyQ29sb3IiOiJ3aGl0ZSIsInNlY3Rpb25Ca2dDb2xvciI6InJnYmEoMTAyLCAxMDIsIDI1NSwgMC40OSkiLCJhbHRTZWN0aW9uQmtnQ29sb3IiOiJ3aGl0ZSIsInNlY3Rpb25Ca2dDb2xvcjIiOiIjZmZmNDAwIiwidGFza0JvcmRlckNvbG9yIjoiIzUzNGZiYyIsInRhc2tCa2dDb2xvciI6IiM4YTkwZGQiLCJ0YXNrVGV4dExpZ2h0Q29sb3IiOiJ3aGl0ZSIsInRhc2tUZXh0Q29sb3IiOiJ3aGl0ZSIsInRhc2tUZXh0RGFya0NvbG9yIjoiYmxhY2siLCJ0YXNrVGV4dE91dHNpZGVDb2xvciI6ImJsYWNrIiwidGFza1RleHRDbGlja2FibGVDb2xvciI6IiMwMDMxNjMiLCJhY3RpdmVUYXNrQm9yZGVyQ29sb3IiOiIjNTM0ZmJjIiwiYWN0aXZlVGFza0JrZ0NvbG9yIjoiI2JmYzdmZiIsImdyaWRDb2xvciI6ImxpZ2h0Z3JleSIsImRvbmVUYXNrQmtnQ29sb3IiOiJsaWdodGdyZXkiLCJkb25lVGFza0JvcmRlckNvbG9yIjoiZ3JleSIsImNyaXRCb3JkZXJDb2xvciI6IiNmZjg4ODgiLCJjcml0QmtnQ29sb3IiOiJyZWQiLCJ0b2RheUxpbmVDb2xvciI6InJlZCIsImxhYmVsQ29sb3IiOiJibGFjayIsImVycm9yQmtnQ29sb3IiOiIjNTUyMjIyIiwiZXJyb3JUZXh0Q29sb3IiOiIjNTUyMjIyIiwiY2xhc3NUZXh0IjoiIzEzMTMwMCIsImZpbGxUeXBlMCI6IiNFQ0VDRkYiLCJmaWxsVHlwZTEiOiIjZmZmZmRlIiwiZmlsbFR5cGUyIjoiaHNsKDMwNCwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwiZmlsbFR5cGUzIjoiaHNsKDEyNCwgMTAwJSwgOTMuNTI5NDExNzY0NyUpIiwiZmlsbFR5cGU0IjoiaHNsKDE3NiwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwiZmlsbFR5cGU1IjoiaHNsKC00LCAxMDAlLCA5My41Mjk0MTE3NjQ3JSkiLCJmaWxsVHlwZTYiOiJoc2woOCwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwiZmlsbFR5cGU3IjoiaHNsKDE4OCwgMTAwJSwgOTMuNTI5NDExNzY0NyUpIn19LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ)
 
@@ -2211,7 +2209,7 @@ graph TD;
 C точки зрения синтаксиса **класс** – структурный тип данных, в котором помимо полей разрешается описывать *прототипы* (заголовки) процедур и функций, работающих с этими полями данных.
 
 ```pascal
-type
+type 
     TRoom = object
         length, width: Single;
         function square: Single;  {прототип функции}
@@ -2238,7 +2236,7 @@ End;
 ### Объявление объектов класса
 
 ```pascal
-var
+var 
     a: TRoom; {объект А класса TRoom}
     b: array[1..5] of TRoom;  {массив  объектов  типа  TRoom}
 
@@ -2267,7 +2265,7 @@ pC^.length := 3;
 
 Над объектами одного класса определена операция **присваивания**. Физически при этом происходит копирование полей одного объекта в другой методом «поле за полем»:
 
-### Ограничение доступа к полям и методам -- инкапсуляция
+### Инкапсуляция -- ограничение доступа к полям и методам
 
 |Модификатор доступа|Доступность|
 |--|--|
@@ -2294,7 +2292,7 @@ interface
     type TRoom = object
         private                     // !!!
             length, width: Single;
-        public
+        public 
             function square: Single;
             procedure init(l, w: Single);
     end;
@@ -2302,15 +2300,15 @@ interface
 implementation
     function TRoom.square;
     begin
-        result := length * width;
+        result := length * width; 
     end;
-
+    
     procedure TRoom.init;
-    begin
+    begin 
         length := l;
         width := w;
     end;
-
+    
 end.
 ```
 ```pascal
@@ -2324,7 +2322,7 @@ var a: TRoom;
 
 begin
     a.init(3.5, 5.1);
-    writeLn('Room: length = ', a.length:6:2,
+    writeLn('Room: length = ', a.length:6:2, 
             '; width = ', a.width:6:2);
     writeLn('Square = ', a.square:8:2);
 
@@ -2348,27 +2346,755 @@ uses  SysUtils, Room  in 'Ex_08_02\Room.pas';
 type  
     TVRoom = object(TRoom)
         height: Single;
-        function V:single;
-        procedure NewInit(l,w,h:single);
+        function V: single;
+        procedure newInit(l, w, h: single);
+    end;
 
+procedure TVRoom.newInit;
+begin
+    init(l, w);
+    height := h;
 end;
+
+function TVRoom.V;
+begin
+    result := square * height;
+end;
+
+var
+    a: TVRoom;
+begin
+    a.newInit(3.4, 5.1, 2.8);
+    writeLn('Square = ', a.square:6:2);
+    writeLn('V = ', a.V:6:2);
+    readLn;
+end.
 ```
 
-## 26. Классы консольного режима Delphi: описание классов, поля и методы, объявление объектов класса, доступ к полям и методам объекта, ограничение доступа. Пример.
+#### Присваивание объектов иерархии
 
-## 27. Классы консольного режима Delphi: Способы инициализация полей. Неявный параметр Self. Пример.
+Допустимо присваивать переменной типа базового класса значение переменной типа объекта производного класса.
 
-## 28. Процедурная и объектная декомпозиция. Диаграммы классов. Отношения между  классами. Примеры.
+```pascal
+var
+    a: TRoom;
+    b: TVRoom;
 
-## 29. Динамические объекты и объекты с динамическими полями в консольном режиме Delphi. Примеры.
+{...}
+a := b; {допустимо}
+b := a; {не допустимо!}
+```
 
-## 30. Технология событийного программирования. События Windows, сообщения и события Delphi. Основные события Delphi. Примеры.
+#### Присваивание указателей в иерархии
 
-# Варианты 2-го вопроса билета:
+**Допустимо указателю на объект базового класса присваивать адреса объекта производного класса.**
+Однако при этом возникает проблема «невидимых» полей.
 
-Разработать диаграмму классов для реализации двух заданных объектов. При построении классов необходимо выбрать и реализовать отношение между классами: наследование, композицию или наполнение. Классы должны включать методы инициализации значений и их вывода. Составить тестирующую программу
+![Проблема «невидимых» полей](https://i.imgur.com/O26KMSe.png)
+
+```pascal
+var
+    pC: ^TRoom;
+    e: TVRoom;
+
+{...}
+pC := @e;
+pC^.length := 3.1;
+pC^.height := 2.7;  {ошибка!}
+```
+```pascal
+type
+    pTVRoom = ^TVRoom;
+
+var
+    pC: ^TRoom;
+    e: TVRoom;
+
+{...}
+pC := @e;
+pTVRoom(pC)^.height := 2.7;
+```
+
+### Композиция
+
+**Композиция**  – включение объектов одного класса в объекты другого. Реализуется механизмом поддержки объектных полей.
+
+![](https://mermaid.ink/svg/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAgY2xhc3MgVFJvb217XG4gICAgICAgICBsZW5ndGhcbiAgICAgICAgIHdpZHRoXG4gICAgICAgICArc3F1YXJlKClcbiAgICAgICAgICtpbml0KClcbiAgICB9XG5cbiAgICBjbGFzcyBURmxhdHtcbiAgICAgICAgIG5cbiAgICAgICAgIHJvb21zOiBUUm9vbVtuXVxuICAgICAgICAgK2ZsYXRTcXVhcmUoKVxuICAgICAgICAgK2luaXQoKVxuICAgIH1cblxuICAgIFRSb29tIFwiMTVcIiAtLSogVEZsYXQiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCIsInRoZW1lVmFyaWFibGVzIjp7ImJhY2tncm91bmQiOiJ3aGl0ZSIsInByaW1hcnlDb2xvciI6IiNFQ0VDRkYiLCJzZWNvbmRhcnlDb2xvciI6IiNmZmZmZGUiLCJ0ZXJ0aWFyeUNvbG9yIjoiaHNsKDgwLCAxMDAlLCA5Ni4yNzQ1MDk4MDM5JSkiLCJwcmltYXJ5Qm9yZGVyQ29sb3IiOiJoc2woMjQwLCA2MCUsIDg2LjI3NDUwOTgwMzklKSIsInNlY29uZGFyeUJvcmRlckNvbG9yIjoiaHNsKDYwLCA2MCUsIDgzLjUyOTQxMTc2NDclKSIsInRlcnRpYXJ5Qm9yZGVyQ29sb3IiOiJoc2woODAsIDYwJSwgODYuMjc0NTA5ODAzOSUpIiwicHJpbWFyeVRleHRDb2xvciI6IiMxMzEzMDAiLCJzZWNvbmRhcnlUZXh0Q29sb3IiOiIjMDAwMDIxIiwidGVydGlhcnlUZXh0Q29sb3IiOiJyZ2IoOS41MDAwMDAwMDAxLCA5LjUwMDAwMDAwMDEsIDkuNTAwMDAwMDAwMSkiLCJsaW5lQ29sb3IiOiIjMzMzMzMzIiwidGV4dENvbG9yIjoiIzMzMyIsIm1haW5Ca2ciOiIjRUNFQ0ZGIiwic2Vjb25kQmtnIjoiI2ZmZmZkZSIsImJvcmRlcjEiOiIjOTM3MERCIiwiYm9yZGVyMiI6IiNhYWFhMzMiLCJhcnJvd2hlYWRDb2xvciI6IiMzMzMzMzMiLCJmb250RmFtaWx5IjoiXCJ0cmVidWNoZXQgbXNcIiwgdmVyZGFuYSwgYXJpYWwiLCJmb250U2l6ZSI6IjE2cHgiLCJsYWJlbEJhY2tncm91bmQiOiIjZThlOGU4Iiwibm9kZUJrZyI6IiNFQ0VDRkYiLCJub2RlQm9yZGVyIjoiIzkzNzBEQiIsImNsdXN0ZXJCa2ciOiIjZmZmZmRlIiwiY2x1c3RlckJvcmRlciI6IiNhYWFhMzMiLCJkZWZhdWx0TGlua0NvbG9yIjoiIzMzMzMzMyIsInRpdGxlQ29sb3IiOiIjMzMzIiwiZWRnZUxhYmVsQmFja2dyb3VuZCI6IiNlOGU4ZTgiLCJhY3RvckJvcmRlciI6ImhzbCgyNTkuNjI2MTY4MjI0MywgNTkuNzc2NTM2MzEyOCUsIDg3LjkwMTk2MDc4NDMlKSIsImFjdG9yQmtnIjoiI0VDRUNGRiIsImFjdG9yVGV4dENvbG9yIjoiYmxhY2siLCJhY3RvckxpbmVDb2xvciI6ImdyZXkiLCJzaWduYWxDb2xvciI6IiMzMzMiLCJzaWduYWxUZXh0Q29sb3IiOiIjMzMzIiwibGFiZWxCb3hCa2dDb2xvciI6IiNFQ0VDRkYiLCJsYWJlbEJveEJvcmRlckNvbG9yIjoiaHNsKDI1OS42MjYxNjgyMjQzLCA1OS43NzY1MzYzMTI4JSwgODcuOTAxOTYwNzg0MyUpIiwibGFiZWxUZXh0Q29sb3IiOiJibGFjayIsImxvb3BUZXh0Q29sb3IiOiJibGFjayIsIm5vdGVCb3JkZXJDb2xvciI6IiNhYWFhMzMiLCJub3RlQmtnQ29sb3IiOiIjZmZmNWFkIiwibm90ZVRleHRDb2xvciI6ImJsYWNrIiwiYWN0aXZhdGlvbkJvcmRlckNvbG9yIjoiIzY2NiIsImFjdGl2YXRpb25Ca2dDb2xvciI6IiNmNGY0ZjQiLCJzZXF1ZW5jZU51bWJlckNvbG9yIjoid2hpdGUiLCJzZWN0aW9uQmtnQ29sb3IiOiJyZ2JhKDEwMiwgMTAyLCAyNTUsIDAuNDkpIiwiYWx0U2VjdGlvbkJrZ0NvbG9yIjoid2hpdGUiLCJzZWN0aW9uQmtnQ29sb3IyIjoiI2ZmZjQwMCIsInRhc2tCb3JkZXJDb2xvciI6IiM1MzRmYmMiLCJ0YXNrQmtnQ29sb3IiOiIjOGE5MGRkIiwidGFza1RleHRMaWdodENvbG9yIjoid2hpdGUiLCJ0YXNrVGV4dENvbG9yIjoid2hpdGUiLCJ0YXNrVGV4dERhcmtDb2xvciI6ImJsYWNrIiwidGFza1RleHRPdXRzaWRlQ29sb3IiOiJibGFjayIsInRhc2tUZXh0Q2xpY2thYmxlQ29sb3IiOiIjMDAzMTYzIiwiYWN0aXZlVGFza0JvcmRlckNvbG9yIjoiIzUzNGZiYyIsImFjdGl2ZVRhc2tCa2dDb2xvciI6IiNiZmM3ZmYiLCJncmlkQ29sb3IiOiJsaWdodGdyZXkiLCJkb25lVGFza0JrZ0NvbG9yIjoibGlnaHRncmV5IiwiZG9uZVRhc2tCb3JkZXJDb2xvciI6ImdyZXkiLCJjcml0Qm9yZGVyQ29sb3IiOiIjZmY4ODg4IiwiY3JpdEJrZ0NvbG9yIjoicmVkIiwidG9kYXlMaW5lQ29sb3IiOiJyZWQiLCJsYWJlbENvbG9yIjoiYmxhY2siLCJlcnJvckJrZ0NvbG9yIjoiIzU1MjIyMiIsImVycm9yVGV4dENvbG9yIjoiIzU1MjIyMiIsImNsYXNzVGV4dCI6IiMxMzEzMDAiLCJmaWxsVHlwZTAiOiIjRUNFQ0ZGIiwiZmlsbFR5cGUxIjoiI2ZmZmZkZSIsImZpbGxUeXBlMiI6ImhzbCgzMDQsIDEwMCUsIDk2LjI3NDUwOTgwMzklKSIsImZpbGxUeXBlMyI6ImhzbCgxMjQsIDEwMCUsIDkzLjUyOTQxMTc2NDclKSIsImZpbGxUeXBlNCI6ImhzbCgxNzYsIDEwMCUsIDk2LjI3NDUwOTgwMzklKSIsImZpbGxUeXBlNSI6ImhzbCgtNCwgMTAwJSwgOTMuNTI5NDExNzY0NyUpIiwiZmlsbFR5cGU2IjoiaHNsKDgsIDEwMCUsIDk2LjI3NDUwOTgwMzklKSIsImZpbGxUeXBlNyI6ImhzbCgxODgsIDEwMCUsIDkzLjUyOTQxMTc2NDclKSJ9fSwidXBkYXRlRWRpdG9yIjpmYWxzZX0)
+
+```pascal
+program Ex_7_04;
+
+{$APPTYPE CONSOLE}
+uses
+    SysUtils,
+    Room in 'Ex_08_02\Room.pas';
+
+type
+    TFlat = object
+        n: byte;
+        rooms: array[1..15] of TRoom;
+        function flatSquare(): Single;
+        procedure init(an: Byte; const ar: array of TRoom);
+    end;
+
+procedure TFlat.init;
+var
+    i: Byte;
+begin
+    n := an;
+    for i := 1 to n do
+        rooms[i].init(ar[i - 1].length, ar[i - 1].width);
+end;
+
+function TFlat.flatSquare;
+var
+    s: Single;
+    i: Integer;
+begin
+    s := 0;
+    for i := 1 to n do
+        s := s + rooms[i].square();
+    result := s;
+end;
+
+var
+    mas: array[1..3] of TRoom = ((length: 2.5; width: 3.75), 
+                                 (length: 2.85; width: 4.1),
+                                 (length: 2.3; width: 2.8));
+    f: TFlat;
+
+begin
+    f.init(3, mas);
+    writeLn('S flast = ', f.flatSquare());
+    readLn;
+end.
+```
+
+### Наполнение (агрегация)
+
+**Наполнение** – способ конструирования классов, при котором объекты строящегося класса могут включать неопределенное количество: от 0 до сравнительно больших значений (на практике обычно до нескольких десятков), объектов других классов.
+
+![agregation](https://mermaid.ink/svg/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAgIGNsYXNzIFRSb29te1xuICAgICAgICAgIGxlbmd0aFxuICAgICAgICAgIHdpZHRoXG4gICAgICAgICAgK3NxdWFyZSgpXG4gICAgICAgICAgK2luaXQoKVxuICAgICB9XG5cbiAgICAgY2xhc3MgVEJSb29te1xuICAgICAgICAgIC1wQjogXlRSb29tXG4gICAgICAgICAgK0JTcXVhcmUoKVxuICAgICAgICAgICtpbml0QWxsKClcbiAgICAgfVxuXG4gICAgIFRCUm9vbSAtLT4gVFJvb21cbiAgICAgVFJvb20gXCIwLi4xXCIgLS1vIFRCUm9vbSIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0IiwidGhlbWVWYXJpYWJsZXMiOnsiYmFja2dyb3VuZCI6IndoaXRlIiwicHJpbWFyeUNvbG9yIjoiI0VDRUNGRiIsInNlY29uZGFyeUNvbG9yIjoiI2ZmZmZkZSIsInRlcnRpYXJ5Q29sb3IiOiJoc2woODAsIDEwMCUsIDk2LjI3NDUwOTgwMzklKSIsInByaW1hcnlCb3JkZXJDb2xvciI6ImhzbCgyNDAsIDYwJSwgODYuMjc0NTA5ODAzOSUpIiwic2Vjb25kYXJ5Qm9yZGVyQ29sb3IiOiJoc2woNjAsIDYwJSwgODMuNTI5NDExNzY0NyUpIiwidGVydGlhcnlCb3JkZXJDb2xvciI6ImhzbCg4MCwgNjAlLCA4Ni4yNzQ1MDk4MDM5JSkiLCJwcmltYXJ5VGV4dENvbG9yIjoiIzEzMTMwMCIsInNlY29uZGFyeVRleHRDb2xvciI6IiMwMDAwMjEiLCJ0ZXJ0aWFyeVRleHRDb2xvciI6InJnYig5LjUwMDAwMDAwMDEsIDkuNTAwMDAwMDAwMSwgOS41MDAwMDAwMDAxKSIsImxpbmVDb2xvciI6IiMzMzMzMzMiLCJ0ZXh0Q29sb3IiOiIjMzMzIiwibWFpbkJrZyI6IiNFQ0VDRkYiLCJzZWNvbmRCa2ciOiIjZmZmZmRlIiwiYm9yZGVyMSI6IiM5MzcwREIiLCJib3JkZXIyIjoiI2FhYWEzMyIsImFycm93aGVhZENvbG9yIjoiIzMzMzMzMyIsImZvbnRGYW1pbHkiOiJcInRyZWJ1Y2hldCBtc1wiLCB2ZXJkYW5hLCBhcmlhbCIsImZvbnRTaXplIjoiMTZweCIsImxhYmVsQmFja2dyb3VuZCI6IiNlOGU4ZTgiLCJub2RlQmtnIjoiI0VDRUNGRiIsIm5vZGVCb3JkZXIiOiIjOTM3MERCIiwiY2x1c3RlckJrZyI6IiNmZmZmZGUiLCJjbHVzdGVyQm9yZGVyIjoiI2FhYWEzMyIsImRlZmF1bHRMaW5rQ29sb3IiOiIjMzMzMzMzIiwidGl0bGVDb2xvciI6IiMzMzMiLCJlZGdlTGFiZWxCYWNrZ3JvdW5kIjoiI2U4ZThlOCIsImFjdG9yQm9yZGVyIjoiaHNsKDI1OS42MjYxNjgyMjQzLCA1OS43NzY1MzYzMTI4JSwgODcuOTAxOTYwNzg0MyUpIiwiYWN0b3JCa2ciOiIjRUNFQ0ZGIiwiYWN0b3JUZXh0Q29sb3IiOiJibGFjayIsImFjdG9yTGluZUNvbG9yIjoiZ3JleSIsInNpZ25hbENvbG9yIjoiIzMzMyIsInNpZ25hbFRleHRDb2xvciI6IiMzMzMiLCJsYWJlbEJveEJrZ0NvbG9yIjoiI0VDRUNGRiIsImxhYmVsQm94Qm9yZGVyQ29sb3IiOiJoc2woMjU5LjYyNjE2ODIyNDMsIDU5Ljc3NjUzNjMxMjglLCA4Ny45MDE5NjA3ODQzJSkiLCJsYWJlbFRleHRDb2xvciI6ImJsYWNrIiwibG9vcFRleHRDb2xvciI6ImJsYWNrIiwibm90ZUJvcmRlckNvbG9yIjoiI2FhYWEzMyIsIm5vdGVCa2dDb2xvciI6IiNmZmY1YWQiLCJub3RlVGV4dENvbG9yIjoiYmxhY2siLCJhY3RpdmF0aW9uQm9yZGVyQ29sb3IiOiIjNjY2IiwiYWN0aXZhdGlvbkJrZ0NvbG9yIjoiI2Y0ZjRmNCIsInNlcXVlbmNlTnVtYmVyQ29sb3IiOiJ3aGl0ZSIsInNlY3Rpb25Ca2dDb2xvciI6InJnYmEoMTAyLCAxMDIsIDI1NSwgMC40OSkiLCJhbHRTZWN0aW9uQmtnQ29sb3IiOiJ3aGl0ZSIsInNlY3Rpb25Ca2dDb2xvcjIiOiIjZmZmNDAwIiwidGFza0JvcmRlckNvbG9yIjoiIzUzNGZiYyIsInRhc2tCa2dDb2xvciI6IiM4YTkwZGQiLCJ0YXNrVGV4dExpZ2h0Q29sb3IiOiJ3aGl0ZSIsInRhc2tUZXh0Q29sb3IiOiJ3aGl0ZSIsInRhc2tUZXh0RGFya0NvbG9yIjoiYmxhY2siLCJ0YXNrVGV4dE91dHNpZGVDb2xvciI6ImJsYWNrIiwidGFza1RleHRDbGlja2FibGVDb2xvciI6IiMwMDMxNjMiLCJhY3RpdmVUYXNrQm9yZGVyQ29sb3IiOiIjNTM0ZmJjIiwiYWN0aXZlVGFza0JrZ0NvbG9yIjoiI2JmYzdmZiIsImdyaWRDb2xvciI6ImxpZ2h0Z3JleSIsImRvbmVUYXNrQmtnQ29sb3IiOiJsaWdodGdyZXkiLCJkb25lVGFza0JvcmRlckNvbG9yIjoiZ3JleSIsImNyaXRCb3JkZXJDb2xvciI6IiNmZjg4ODgiLCJjcml0QmtnQ29sb3IiOiJyZWQiLCJ0b2RheUxpbmVDb2xvciI6InJlZCIsImxhYmVsQ29sb3IiOiJibGFjayIsImVycm9yQmtnQ29sb3IiOiIjNTUyMjIyIiwiZXJyb3JUZXh0Q29sb3IiOiIjNTUyMjIyIiwiY2xhc3NUZXh0IjoiIzEzMTMwMCIsImZpbGxUeXBlMCI6IiNFQ0VDRkYiLCJmaWxsVHlwZTEiOiIjZmZmZmRlIiwiZmlsbFR5cGUyIjoiaHNsKDMwNCwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwiZmlsbFR5cGUzIjoiaHNsKDEyNCwgMTAwJSwgOTMuNTI5NDExNzY0NyUpIiwiZmlsbFR5cGU0IjoiaHNsKDE3NiwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwiZmlsbFR5cGU1IjoiaHNsKC00LCAxMDAlLCA5My41Mjk0MTE3NjQ3JSkiLCJmaWxsVHlwZTYiOiJoc2woOCwgMTAwJSwgOTYuMjc0NTA5ODAzOSUpIiwiZmlsbFR5cGU3IjoiaHNsKDE4OCwgMTAwJSwgOTMuNTI5NDExNzY0NyUpIn19LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ)
+
+```pascal
+program Ex_7_05;
+
+{$APPTYPE CONSOLE}
+uses
+    SysUtils,
+    Room in 'Ex_08_02\Room.pas';
+
+type
+    TBRoom = object(TRoom)
+        pB: ^TRoom;
+        function BSquare(): Single;
+        procedure initAll(l, w: single; lb: single = 0; wb: single = 0);
+    end;
+
+procedure TBRoom.initAll;
+begin
+    init(l, w);
+    if (lb = 0) or (wb = 0) then
+        pB := nil
+    else
+	    begin
+	        new(pB);
+	        pB^.init(lb, wb);
+	    end;
+end;
+
+function TBRoom.BSquare;
+begin
+    if pB = nil then
+        result := square()
+    else
+        result := square() + pB^.square;
+end;
+
+var
+    b: TBRoom;
+begin
+    b.initAll(3.4, 5.1, 1.8, 0.8);
+    writeLn('BSquare =', b.BSquare():8:2);
+    readLn;
+end.
+```
+
+## Простой полиморфизм
+
+**Простой полиморфизм** – механизм переопределения методов при наследовании, при котором связь метода с объектом выполняется на этапе компиляции (*раннее связывание*).
+
+```pascal
+program Ex_7_06;
+
+{$APPTYPE CONSOLE}
+uses
+    SysUtils,
+    Room in 'Ex_08_02\Room.pas';
+
+type
+    TVRoom2 = object(TRoom)
+        height: Single;
+        function square(): Single;
+        procedure init(l, w, h: Single);
+    end;
+
+procedure TVRoom2.init;
+begin
+    inherited init(l, w);     { TRoom.init(l,w);}
+    Height := h;
+end;
+
+function TVRoom2.square;
+begin
+    result := 2 * (inherited square() + height * (length + width));
+end;
+
+var
+    a: TVRoom2;
+
+begin
+    a.init(3.4, 5.1, 2.8);
+    writeLn('Square = ', a.square():6:2);
+    readLn;
+end.
+```
+
+### Обращение объекта производного класса к переопределенному методу базового класса в программе
+
+При необходимости обращении к переопределенному методу базового класса явно меняют тип переменной – объекта класса, например так
+```pascal
+var
+    a: TVRoom2;
+    b: TRoom;
+
+{...}
+b := a;
+b.square();
+```
+
+## Сложный полиморфизм. Конструкторы
+
+Существует три ситуации, в которых определение ***типа*** объекта на этапе компиляции программы невозможно, и, следовательно, невозможно правильное подключение переопределенного метода.
+
+### 3 случая обязательного использования сложного полиморфизма
+
+**1-й случай** – если наследуемый метод для объекта производного класса вызывает метод, переопределенный в производном классе.
+
+**2-й случай** – если объект производного класса через указатель базового класса обращается к методу, переопределенному производным классом.
+
+**3-й случай** – если процедура вызывает переопределенный метод для объекта производного класса, переданного в процедуру через параметр-переменную, описанный как объект базового класса («процедура с полиморфным объектом»).
+
+#### 1-й случай
+
+![](https://mermaid.ink/svg/eyJjb2RlIjoiY2xhc3NEaWFncmFtXG4gICAgIGNsYXNzIFRSb29tUHtcbiAgICAgICAgICBsZW5ndGhcbiAgICAgICAgICB3aWR0aFxuICAgICAgICAgICtzcXVhcmUoKVxuICAgICAgICAgICtpbml0KClcbiAgICAgICAgICAraW5pdFAoKVxuICAgICB9XG5cbiAgICAgY2xhc3MgVFZSb29tUHtcbiAgICAgICAgICBoZWlnaHRcbiAgICAgICAgICArc3F1YXJlKClcbiAgICAgICAgICAraW5pdCgpXG4gICAgIH1cblxuICAgICBUUm9vbVAgPC0tIFRWUm9vbVAiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCIsInRoZW1lVmFyaWFibGVzIjp7ImJhY2tncm91bmQiOiJ3aGl0ZSIsInByaW1hcnlDb2xvciI6IiNFQ0VDRkYiLCJzZWNvbmRhcnlDb2xvciI6IiNmZmZmZGUiLCJ0ZXJ0aWFyeUNvbG9yIjoiaHNsKDgwLCAxMDAlLCA5Ni4yNzQ1MDk4MDM5JSkiLCJwcmltYXJ5Qm9yZGVyQ29sb3IiOiJoc2woMjQwLCA2MCUsIDg2LjI3NDUwOTgwMzklKSIsInNlY29uZGFyeUJvcmRlckNvbG9yIjoiaHNsKDYwLCA2MCUsIDgzLjUyOTQxMTc2NDclKSIsInRlcnRpYXJ5Qm9yZGVyQ29sb3IiOiJoc2woODAsIDYwJSwgODYuMjc0NTA5ODAzOSUpIiwicHJpbWFyeVRleHRDb2xvciI6IiMxMzEzMDAiLCJzZWNvbmRhcnlUZXh0Q29sb3IiOiIjMDAwMDIxIiwidGVydGlhcnlUZXh0Q29sb3IiOiJyZ2IoOS41MDAwMDAwMDAxLCA5LjUwMDAwMDAwMDEsIDkuNTAwMDAwMDAwMSkiLCJsaW5lQ29sb3IiOiIjMzMzMzMzIiwidGV4dENvbG9yIjoiIzMzMyIsIm1haW5Ca2ciOiIjRUNFQ0ZGIiwic2Vjb25kQmtnIjoiI2ZmZmZkZSIsImJvcmRlcjEiOiIjOTM3MERCIiwiYm9yZGVyMiI6IiNhYWFhMzMiLCJhcnJvd2hlYWRDb2xvciI6IiMzMzMzMzMiLCJmb250RmFtaWx5IjoiXCJ0cmVidWNoZXQgbXNcIiwgdmVyZGFuYSwgYXJpYWwiLCJmb250U2l6ZSI6IjE2cHgiLCJsYWJlbEJhY2tncm91bmQiOiIjZThlOGU4Iiwibm9kZUJrZyI6IiNFQ0VDRkYiLCJub2RlQm9yZGVyIjoiIzkzNzBEQiIsImNsdXN0ZXJCa2ciOiIjZmZmZmRlIiwiY2x1c3RlckJvcmRlciI6IiNhYWFhMzMiLCJkZWZhdWx0TGlua0NvbG9yIjoiIzMzMzMzMyIsInRpdGxlQ29sb3IiOiIjMzMzIiwiZWRnZUxhYmVsQmFja2dyb3VuZCI6IiNlOGU4ZTgiLCJhY3RvckJvcmRlciI6ImhzbCgyNTkuNjI2MTY4MjI0MywgNTkuNzc2NTM2MzEyOCUsIDg3LjkwMTk2MDc4NDMlKSIsImFjdG9yQmtnIjoiI0VDRUNGRiIsImFjdG9yVGV4dENvbG9yIjoiYmxhY2siLCJhY3RvckxpbmVDb2xvciI6ImdyZXkiLCJzaWduYWxDb2xvciI6IiMzMzMiLCJzaWduYWxUZXh0Q29sb3IiOiIjMzMzIiwibGFiZWxCb3hCa2dDb2xvciI6IiNFQ0VDRkYiLCJsYWJlbEJveEJvcmRlckNvbG9yIjoiaHNsKDI1OS42MjYxNjgyMjQzLCA1OS43NzY1MzYzMTI4JSwgODcuOTAxOTYwNzg0MyUpIiwibGFiZWxUZXh0Q29sb3IiOiJibGFjayIsImxvb3BUZXh0Q29sb3IiOiJibGFjayIsIm5vdGVCb3JkZXJDb2xvciI6IiNhYWFhMzMiLCJub3RlQmtnQ29sb3IiOiIjZmZmNWFkIiwibm90ZVRleHRDb2xvciI6ImJsYWNrIiwiYWN0aXZhdGlvbkJvcmRlckNvbG9yIjoiIzY2NiIsImFjdGl2YXRpb25Ca2dDb2xvciI6IiNmNGY0ZjQiLCJzZXF1ZW5jZU51bWJlckNvbG9yIjoid2hpdGUiLCJzZWN0aW9uQmtnQ29sb3IiOiJyZ2JhKDEwMiwgMTAyLCAyNTUsIDAuNDkpIiwiYWx0U2VjdGlvbkJrZ0NvbG9yIjoid2hpdGUiLCJzZWN0aW9uQmtnQ29sb3IyIjoiI2ZmZjQwMCIsInRhc2tCb3JkZXJDb2xvciI6IiM1MzRmYmMiLCJ0YXNrQmtnQ29sb3IiOiIjOGE5MGRkIiwidGFza1RleHRMaWdodENvbG9yIjoid2hpdGUiLCJ0YXNrVGV4dENvbG9yIjoid2hpdGUiLCJ0YXNrVGV4dERhcmtDb2xvciI6ImJsYWNrIiwidGFza1RleHRPdXRzaWRlQ29sb3IiOiJibGFjayIsInRhc2tUZXh0Q2xpY2thYmxlQ29sb3IiOiIjMDAzMTYzIiwiYWN0aXZlVGFza0JvcmRlckNvbG9yIjoiIzUzNGZiYyIsImFjdGl2ZVRhc2tCa2dDb2xvciI6IiNiZmM3ZmYiLCJncmlkQ29sb3IiOiJsaWdodGdyZXkiLCJkb25lVGFza0JrZ0NvbG9yIjoibGlnaHRncmV5IiwiZG9uZVRhc2tCb3JkZXJDb2xvciI6ImdyZXkiLCJjcml0Qm9yZGVyQ29sb3IiOiIjZmY4ODg4IiwiY3JpdEJrZ0NvbG9yIjoicmVkIiwidG9kYXlMaW5lQ29sb3IiOiJyZWQiLCJsYWJlbENvbG9yIjoiYmxhY2siLCJlcnJvckJrZ0NvbG9yIjoiIzU1MjIyMiIsImVycm9yVGV4dENvbG9yIjoiIzU1MjIyMiIsImNsYXNzVGV4dCI6IiMxMzEzMDAiLCJmaWxsVHlwZTAiOiIjRUNFQ0ZGIiwiZmlsbFR5cGUxIjoiI2ZmZmZkZSIsImZpbGxUeXBlMiI6ImhzbCgzMDQsIDEwMCUsIDk2LjI3NDUwOTgwMzklKSIsImZpbGxUeXBlMyI6ImhzbCgxMjQsIDEwMCUsIDkzLjUyOTQxMTc2NDclKSIsImZpbGxUeXBlNCI6ImhzbCgxNzYsIDEwMCUsIDk2LjI3NDUwOTgwMzklKSIsImZpbGxUeXBlNSI6ImhzbCgtNCwgMTAwJSwgOTMuNTI5NDExNzY0NyUpIiwiZmlsbFR5cGU2IjoiaHNsKDgsIDEwMCUsIDk2LjI3NDUwOTgwMzklKSIsImZpbGxUeXBlNyI6ImhzbCgxODgsIDEwMCUsIDkzLjUyOTQxMTc2NDclKSJ9fSwidXBkYXRlRWRpdG9yIjpmYWxzZX0)
+
+```pascal
+program Ex_7_07;
+
+{$APPTYPE CONSOLE}
+uses
+    SysUtils;
+
+// ================ TRoomP ================
+type
+    TRoomP = object
+        length, width: Single;
+        function square: Single;
+        procedure print();
+        procedure init(l, w: Single);
+    end;
+
+function TRoomP.square;
+begin
+    result := length * width;
+end;
+
+procedure TRoomP.print;
+begin
+    writeln('Square = ', square():6:2);
+end;
+
+procedure TRoomP.init;
+begin
+    length := l;
+    width := w;
+end;
+
+// ================ TVRoomP ================
+type
+    TVRoomP = object(TRoomP)
+        height: Single;
+        function square: Single;
+        procedure init(l, w, h: Single);
+    end;
+
+procedure TVRoomP.init;
+begin
+    inherited init(l, w);
+    height := h;
+end;
+
+function TVRoomP.square;
+begin
+    square := 2 * (inherited square() + height * (length + width));
+end;
+
+// ================  ================
+var
+    a: TRoomP;
+    b: TVRoomP;
+begin
+    a.init(3.5, 5.1);
+    a.print();               // `Square =  17.85` -- верно
+    
+    b.init(3.5, 5.1, 2.7);
+    b.print();               // `Square =  17.85` -- неверно, должно быть: `82.14`
+    writeLn(b.square():6:2); // `82.14`           -- верно
+    readln;
+end.
+```
+
+##### Пояснение к ошибке
+![explanation](https://i.imgur.com/BX04rP7.png)
+При **позднем связывании** нужный аспект полиморфного метода определяется на этапе выполнения программы по типу объекта, для которого вызывается метод.
+
+##### Реализация сложного полиморфизма
+
+Для организации сложного полиморфизма необходимо:
+1. переопределяемые методы описать служебным словом **`virtual`**;
+2. к методам класса с виртуальными полиморфными методами добавить специальный метод-процедуру – ***конструктор***, в котором служебное слово `procedure` заменено служебным словом **`constructor`**;
+3. вызвать конструктор прежде, чем произойдет первое обращение к виртуальным полиморфным методам.
+
+Подключение осуществляется с использованием ***таблицы виртуальных методов*** (ТВМ), которая создается при выполнении конструктора.
+
+![tbm](https://i.imgur.com/MHpwCZp.png)
+
+##### Различие раннего и позднего связывания
+
+**Раннее связывание** – адрес метода определяется на этапе компиляции по объявленному типу переменной.
+
+![early](https://i.imgur.com/qVIESir.png)
+
+**Позднее связывание** – адрес метода определяется на этапе выполнения по фактическому типу объекта через таблицу виртуальных методов класса, адрес которой хранится в объекте.
+
+![lately](https://i.imgur.com/wXILqBN.png)
+
+##### Исправленный пример
+
+```pascal
+unit RoomP;
+
+interface
+	type
+	    TRoomP = object
+	        length, sidth: Single;
+	        function square(): Single; virtual;    // !!!
+	        procedure print();
+	        constructor init(l, w: Single);
+	    end;
+
+	type
+	    TVRoomP = object(TRoomP)
+	        height: Single;
+	        function square: Single; virtual;      // !!!
+	        constructor init(l, w, h: Single);
+	    end;
+
+implementation
+	function TRoomP.square;
+	begin
+	    result := length * width;
+	end;
+
+	procedure TRoomP.print;
+	begin
+	    writeln('Square = ', square():6:2);
+	end;
+
+	constructor TRoomP.init;
+	begin
+	    length := l;
+	    width := w;
+	end;
+
+	constructor TVRoomP.init;
+	begin
+	    inherited init(l, w);
+	    height := h;
+	end;
+
+	function TVRoomP.square;
+	begin
+	    square := 2 * (inherited square() + height * (length + width));
+	end;
+
+end.
+```
+```pascal
+program Ex_7_07a;
+
+{$APPTYPE CONSOLE}
+uses
+    SysUtils,
+    RoomP in 'RoomP.pas';
+
+var
+    a: TRoomP;
+    b: TVRoomP;
+begin
+    a.init(3.5, 5.1);
+    a.print();                // `Square = 17.85`
+    b.init(3.5, 5.1, 2.7);
+    b.print();                // `Square =  82.14`
+    readln;
+end.
+```
+
+#### 2-й случай
+
+```pascal
+program Ex_7_07b;
+
+{$APPTYPE CONSOLE}
+uses
+    SysUtils,
+    RoomP in 'Ex_07_07\RoomP.pas';
+
+var
+    pA: ^TRoomP;
+    B: TVRoomP;
+begin
+    B.init(3.5, 5.1, 2.7);
+    writeLn('Square =', B.Square:6:2);    // `Square = 82.14`
+    pA := @B;
+    writeLn('Square =', pA^.Square:6:2);  // `Square = 82.14`
+    readLn;
+end.
+```
 
 
+#### 3-й случай
+
+```pascal
+program Ex_7_07c;
+
+{$APPTYPE CONSOLE}
+uses
+    SysUtils,
+    RoomP in 'Ex_08_07\RoomP.pas';
+
+procedure print(var r: TRoomP);
+begin
+    writeln('Square =', r.square:6:2);
+end;
+
+var
+    a: TRoomP;
+    b: TVRoomP;
+
+begin
+    a.init(3.5, 5.1);
+    b.init(3.5, 5.1, 2.7);
+    print(a);
+    print(b);
+    readln;
+end.
+```
+
+### Функция определения типа полиморфного объекта
+
+`typeOf(<имя_класса_или_объекта>): pointer` – возвращает адрес ТВМ класса или класса объекта. Если адрес *ТВМ* объекта и класса совпадают, то объект является переменной данного класса.
+
+```pascal
+if typeOf(self) = typeOf(<имя_класса>) then
+    {Объект принадлежит класс}>
+else
+    {Объект не принадлежит классу}
+```
+
+### Свойства виртуальных методов класса
+
+1. позднее связывание требует построения ТВМ, а следовательно **больше памяти**;
+2. вызов виртуальных полиморфных методов происходит через ТВМ, а следовательно **медленнее**;
+3. **список параметров** одноименных виртуальных полиморфных методов **должен совпадать**, а статических полиморфных – не обязательно;
+4. статический полиморфный метод не может переопределить виртуальный полиморфный метод.
+
+## Динамические полиморфные объекты. Деструкторы
+
+### Создание полиморфных объектов:
+
+Функция `new(<тип_указателя>)` – возвращает адрес размещенного и, возможно, сконструированного объекта. После необходим вызов конструктора.
+Или `new(<тип_указателя>, <конструктор>)`.
+
+**Деструктор** – метод класса, который используется для корректного уничтожения полиморфного объекта, содержащего невидимое поле. Деструктор можно переопределять.
+
+### Уничтожение полиморфных объектов
+
+Процедура `dispose(<указатель>)` – освобождает память, на которую указывает указатель. Перед вызовом процедуры необходим вызов деструктора, если он указан, и затем – выполняется освобождение памяти.
+Или `dispose(<указатель>, <деконструктор>)`.
+
+```pascal
+program Ex_7_08;
+
+{$APPTYPE CONSOLE}
+uses
+    SysUtils;
+
+type
+    pTRoomD = ^TRoomD;
+
+    TRoomD = object
+        length, width: Single;
+        function square(): Single; virtual;
+        constructor init(l, w: Single);
+        destructor done;
+    end;
+
+type
+    pTVRoomD = ^TVRoomD;
+    TVRoomD = object(TRoomD)
+        height: Single;
+        function square(): Single; virtual;
+        constructor init(l, w, h: Single);
+    end;
+
+function TRoomD.square;
+begin
+    result := length * width;
+end;
+
+constructor TRoomD.init;
+begin
+    length := l;
+    width := w;
+end;
+
+destructor TRoomD.done;
+begin
+end;
+
+constructor TVRoomD.init;
+begin
+    inherited init(l, w);
+    height := h;
+end;
+
+function TVRoomD.square;
+begin
+    result := 2 * (inherited square() + height * (length + width));
+end;
+
+var
+    pA: pTRoomD;
+    pB: pTVRoomD;
+
+begin
+    {указатель базового типа, объект базового типа}
+    pA := new(pTRoomD);
+    pA^.init(3.5, 5.1);
+    writeLn('Square =', pA^.square():6:2);  // `Square = 17.85`
+    pA^.done();
+    dispose(pA);
+
+    {указатель производного типа, объект производного типа}
+    pB := new(pTVRoomD);
+    pB^.init(3.5, 5.1, 2.7);
+    writeLn('Square =', pB^.square():6:2);  // `Square = 82.14`
+    Dispose(pB, done);
+
+    {указатель базового типа, объект производного типа}
+    pA := new(pTVRoomD, init(3.5, 5.1, 2.7));
+    writeLn('Square =', pA^.square():6:2);  // `Square = 82.14`
+    dispose(pA, done);
+
+    readLn;
+end.
+```
+
+### Динамические поля в объектах
+
+```pascal
+program Ex_7_09;
+
+{$APPTYPE CONSOLE}
+uses
+    SysUtils;
+
+type
+    pTRoomD = ^TRoomD;
+
+    TRoomD = object
+        length, width: Single;
+        function square(): Single; virtual;
+        constructor init(l, w: Single);
+        destructor done; virtual;
+    end;
+
+type
+    pTBRoomD = ^TBRoomD;
+
+    TBRoomD = object(TRoomD)
+        pB: pTRoomD;
+        function square: Single; virtual;
+        function BSquare: Single;
+        constructor init(l, w: Single; lb, wb: Single);
+        destructor done; virtual;
+    end;
+
+function TRoomD.square;
+begin
+    square := length * width;
+end;
+
+constructor TRoomD.init;
+begin
+    length := l;
+    width := w;
+end;
+
+destructor TRoomD.done;
+begin
+end;
+
+constructor TBRoomD.init;
+begin
+    inherited init(l, w);
+    if (lb = 0) or (wb = 0) then
+        pB := nil
+    else
+        pB := new(pTRoomD, init(lb, wb));
+end;
+
+function TBRoomD.BSquare;
+begin
+    if pB <> nil then
+        BSquare := pB^.square
+    else
+        BSquare := 0;
+end;
+
+function TBRoomD.square;
+begin
+    square := inherited square() + BSquare();
+end;
+
+destructor TBRoomD.done;
+begin
+    if pB <> nil then
+        Dispose(pB, done);
+end;
+
+var
+    A: TBRoomD;
+    pB1: pTBRoomD;
+    pB2: pTRoomD;
+
+begin
+    {статический объект с динамическим полем}
+    A.init(3.2, 5.1, 2.5, 1);
+    writeLn(A.Square():6:2, A.BSquare():6:2);                // ` 18.82  2.50`
+    A.done;
+    
+    {динамический полиморфный объект с динамическим полем}
+    pB1 := new(pTBRoomD, init(3.2, 5.1, 2.5, 1));
+    writeLn(pB1^.square():6:2, pB1^.BSquare():6:2);          // ` 18.82  2.50`
+    dispose(pB1, Done);
+    
+    {динамический полиморфный объект с динамическим полем}
+    pB2 := new(pTBRoomD, init(3.2, 5.1, 2.5, 1));
+    writeLn(pB2^.square:6:2, pTBRoomD(pB2)^.BSquare():6:2);  // ` 18.82  2.50`
+    dispose(pB2, done);
+    
+    readLn;
+end.
+```
+# Технология событийного программирования. События Windows, сообщения и события Delphi. Основные события Delphi. Примеры.
+
+***Приложение**  (в отличие от программы)* – набор подпрограмм, вызываемых при наступлении некоторого события, которым считается любое изменение в системе, касающееся данного приложения.
+
+## События Delphi и их обработчики
+
+Обработчики сообщений *Windows* предусмотрены у объектов класса `TForm` и классов управляющих компонентов, таких как кнопки, редакторы и т. п.
+
+Обработка выполняется следующим образом:
+1. В системе происходит событие, например, пользователь передвинул мышь или нажал на клавишу клавиатуры, в результате генерируется сообщение об этом событии – ***сообщение Windows***.
+2. Сообщение *Windows* диспетчируется конкретному приложению.
+3. В приложении сообщение передается активному компоненту (окну или управляющему элементу).
+4. Метод обработки сообщения *Windows* компонента  инициирует заранее предусмотренные ***события Delphi***.
+5. Если в приложении предусмотрен соответствующий обработчик события *Delphi*, то он вызывается, если нет – то продолжается обработка сообщения *Windows*.
+
+### События *Delphi*
+
+Обработчики сообщений *Windows*, встроенные в классы компонентов VCL, инициируют множество событий *Delphi*.
+
+Например, обработчик события клавиатуры `WM_CHAR` класса `TForm`  инициирует три события **Delphi**.
+
+![enter image description here](https://i.imgur.com/ZmOBN8n.png)
+
+### Обработчики событий Delphi
+
+Для каждого обработчика событий предусмотрен заголовок и определённый список передаваемых ему параметров.
+`procedure <компонент>.<Имя_компонента><Имя_события_delphi>(Sender: TObject[, {...}]);`
+
+1. `procedure TForm1.FormActivate(Sender:TObject);`
+   Параметр `Sender` – отправитель (инициатор события).
+2. `procedure TForm1.Edit1KeyPress(Sender: TObject; var  Key: Char);`
+   Параметр  Key  –  символ ANSI.
+3. `procedure TForm1.Edit1KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);`
+   Параметры:  Key  – виртуальный код, Shift  – управляющие клав.
+4. `procedure TForm1.Edit1KeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);`
+
+## Примеры событий Delphi, обрабатываемые объектами класса *TForm*
+1. при изменении состояния формы:
+   * `OnCreate` – в начальной стадии создания формы - используется при необходимости задания параметров (цвет или размер);
+   * `OnActivate` – при получении формой фокуса ввода (окно становится активным и ему адресуется весь ввод с клавиатуры);
+   * `OnShow` – когда форма (окно) становится видимой;
+   * `OnPaint` – при необходимости нарисовать или перерисовать форму;
+   * `OnResize` - при изменении размеров формы на экране;
+   * `OnDeactivate` – при потере формой фокуса ввода (окно становится неактивным);
+   * `OnHide` – при удалении формы с экрана (окно становится невидимым);
+   * `OnCloseQuery` – при попытке закрыть форму - обычно используется для создания запроса-подтверждения необходимости закрытия окна;
+   * `OnClose` – при закрытии формы;
+   * `OnDestroy` – при уничтожении формы;
+
+2. от клавиатуры и мыши:
+   * `OnKeyPressed` – при нажатии клавиш, которым соответствует код ANSI;
+   * `OnKeyDown`, `OnKeyUp` – при нажатии и отпускании любых клавиш;
+   * `OnClick`, `OnDblClick` – при обычном и двойном нажатии клавиш мыши;
+   * `OnMouseMove` – при перемещении мыши (многократно);
+   * `OnMouseDown`, `OnMouseUp` – при нажатии и отпускании клавиш мыши;
+
+3. при перетаскивании объекта мышью:
+   * `OnDragDrop` – в момент опускания объекта на форму;
+   * `OnDragOver` – в процессе перетаскивания объекта над формой (многократно);
+
+4. другие:
+   * `OnHelp` – при вызове подсказки;
+   * `OnChange` – при изменении содержимого компонент.
+
+---
+---
+
+# Ещё полезные вещи
+
+
+## Некоторые опции/директивы компилятора
+
+Каждая из них может быть включена директивой `{$@+}` или `{$<dir> On}` и отключена директивой `{$@-}` или `{$<dir> Off}` , где `@` -- одна из допустимых букв, `<dir>` -- полное имя директивы (см. таблицу)
+
+|Краткая форма|Полная форма|По умолчанию*|Описание|
+|--|--|--|--|
+|`{$X}`|`{$ExtendedSyntax}`|`+`|Если включено можно: использовать `result` в функциях для возврата значений; вызывать функции как процедуры (никуда не возвращая результат); Обрабатывать массив `char`'ов как строки|
+|`{$I}`|`{$IOChecks}`|`+`|Если включено: проверяет правильность завершения операций ввода-вывода, если ошибка -- вызывает ошибку выполнения программы; иначе -- функция `IOResult(): Word` возвращает код статуса последней операции ввода-вывода| 
+|`{$H}`|`{$LongStrings}`|`+`|Если включено: тип `string` присваивается к `AnsiString`, иначе к `ShortString`. (*Хотя, кажется, с Delphi 2009 `string` всегда считается `UnicodeString`*)|
+|`{$Q}`\*\*|`{$OverFlowChecks}`\*\*|`-`|Если включено: проверяет наличие переполнения при выполнении некоторых арифметических операций. При переполнении программа аварийно завершается| 
+|`{$R}`\*\*|`{$RangeChecks}`\*\*|`-`|Если включено: проверяет правильность вычисленных индексов массивов. При выходе за рамки программа аварийно завершается| 
+
+\* -- в *Delphi Pascal 2009* 
+\*\* -- являются отладочными директивами, поэтому с ними выполнение программы потребует больше времени и/или памяти
+
+###### Источник: [delphibasics.co.uk](http://www.delphibasics.co.uk/ByType.asp?Type=Compiler%20Directive)
 
 
 > Written with [StackEdit](https://stackedit.io/).
