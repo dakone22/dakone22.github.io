@@ -1754,14 +1754,16 @@ var
 5. Процедура `sizeOf(x): Integer` -- возвращает размер объекта в байтах.
 
    ```pascal
+   type
+       ByteArr = array[1..100] of Byte
    var
-       buffer: ^array[1..100] of Byte;
+       buffer: ^ByteArr;
    
    {...}
-   getMem(buffer, sizeOf(buffer));
+   getMem(buffer, sizeOf(ByteArr));
    buffer^[1] := 125;
    {...}
-   freeMem(buffer, sizeOf(buffer)); 
+   freeMem(buffer, sizeOf(Byte) * 100); 
    ```
    <!--- sizeOf(buffer) = 4  ?????-->
 
