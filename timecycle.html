@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Time Of Day Images</title>
+<script type="text/javascript">
+function TODimage() {
+  let now = new Date();
+  hr = now.getHours();                               // alert(hr);  // for testing
+  let url = '';                                               // midnight to  5:59 am
+  if ((hr >= 6) && (hr < 12)) { url = 'https://image.shutterstock.com/image-vector/hand-drawn-good-morning-card-600w-189282455.jpg'; }   // 6am to 11:59am
+  if ((hr >= 12) && (hr < 18)) { url = 'https://thumbs.dreamstime.com/b/blue-sky-clouds-sun-reflection-shines-bright-daytime-summer-163249190.jpg'; } // Noon to 5:59 pm
+  if ((hr >= 18) && (hr < 24)) { url = 'https://images.pexels.com/photos/771883/pexels-photo-771883.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'; } // 6pm to midnight
+  window.location.replace(url);
+}
+</script>
+</head>
+<body onload="TODimage()">
+</body>
+</html>
